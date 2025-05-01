@@ -1,6 +1,29 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import {
+  Geist,
+  Geist_Mono,
+  Manrope,
+  PT_Sans,
+  PT_Sans_Caption,
+} from "next/font/google";
 import "./globals.css";
+
+const manrope = Manrope({
+  subsets: ["latin"],
+  variable: "--font-manrope",
+});
+
+const ptSans = PT_Sans({
+  weight: "700",
+  subsets: ["latin"],
+  variable: "--font-pt-sans",
+});
+
+const ptSansCaptions = PT_Sans_Caption({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-pt-sans-caption",
+});
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,7 +48,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${manrope.variable} ${ptSans.variable} ${manrope.variable} ${ptSansCaptions.variable}  antialiased`}
       >
         {children}
       </body>
