@@ -108,6 +108,11 @@ body {
   color: var(--color-gray-900);
 }
 
+/* COLORS */
+.bg-purple-800 {
+  background-color: var(--color-puple-800);
+}
+
 /* HEADLINE */
 .headline {
   font-family: var(--font-manrope);
@@ -372,4 +377,39 @@ body {
   line-height: 24px;
   letter-spacing: 0;
   color: var(--color-gray-500);
+}
+
+.brr {
+  border: 2px solid red;
+}
+.brr-blue {
+  border: 2px solid blue;
+}
+.brr-white {
+  border: 2px solid white;
+}
+
+/* Flex center vertically only */
+.flex-cent-v {
+  display: flex;
+  align-items: center; /* vertical alignment */
+}
+
+/* Flex center horizontally only */
+.flex-cent-h {
+  display: flex;
+  justify-content: center; /* horizontal alignment */
+}
+
+/* Flex center both vertically and horizontally */
+.flex-cent-vh {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-cent-vhb {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }

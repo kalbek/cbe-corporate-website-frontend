@@ -7,6 +7,7 @@ import {
   PT_Sans_Caption,
 } from "next/font/google";
 import "./globals.css";
+import Footer from "./footer";
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -51,6 +52,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} ${manrope.variable} ${ptSans.variable} ${manrope.variable} ${ptSansCaptions.variable}  antialiased`}
       >
         {children}
+        <Footer />
       </body>
     </html>
   );
