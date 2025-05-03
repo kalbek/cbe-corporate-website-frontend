@@ -143,12 +143,12 @@ export default function Footer() {
         {/* right footer decorative */}
         <div className="absolute w-[70.34%] aspect-square top-["></div>
       </div>
-      {/* decorative right mask */}
-      <div className="absolute h-[70.345%] aspect-square brr-blue right-0 translate-x-[70%] -top-[11%]">
+      {/* decorative right mask  component to hide the right mask overflow => width is arbitrary value*/}
+      <div className="absolute img h-[70.345%] w-[6.5%] brr-blue right-0 -top-[11%] overflow-hidden">
         <img
           src="/icon-and-logos/logos-svg/mask-light-bg.svg"
           alt="Decorative mask"
-          className="h-full object-fill"
+          className="object-left h-full w-auto object-cover"
         />
       </div>
     </footer>
