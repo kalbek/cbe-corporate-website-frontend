@@ -2,15 +2,23 @@ import React from "react";
 
 export default function Footer() {
   return (
-    <footer>
+    <footer className="h-[59.44vh] sm:h-[70vh] lg:h-[59.44vh] relative">
       <div className="brr   overflow-hidden  h-[59.44vh] sm:h-[70vh] lg:h-[59.44vh] relative">
-        {/* decorative left container */}
+        {/* decorative left circle container - the background */}
         <div className="h-full w-[117.5%] brr-blue right-[12.92%] absolute  z-0">
           <div className="absolute left-0 top-0 w-full h-[117.5vw] rounded-full bg-purple-800"></div>
         </div>
-        {/* decorative right circle container */}
+        {/* decorative right circle container - the background */}
         <div className="h-full w-[117.5%]  brr-blue absolute left-[13.47%] top-12 z-0">
           <div className="left-0 top-0 w-full  h-[117.5vw] rounded-full bg-purple-800"></div>
+        </div>
+        {/* decorative left mask */}
+        <div className="absolute w-[18.48%] aspect-square left-0 brr-white -bottom-4 -translate-x-[70%]">
+          <img
+            src="/icon-and-logos/logos-svg/mask-light-bg.svg"
+            alt="Decorative mask"
+            className="h-full object-fill brr"
+          />
         </div>
         {/* footer content */}
         <div className="absolute h-[69.78%] brr bottom-[10%]  w-full z-10">
@@ -131,9 +139,17 @@ export default function Footer() {
           </div>
         </div>
         {/* footer bottom */}
-        <div className="absolute w-full h-[10%] bottom-0 flex-cent-vh brr-white z-10">
-          fasdfasdf
-        </div>
+        <div className="absolute w-full h-[10%] bottom-0 flex-cent-vh brr-white z-10"></div>
+        {/* right footer decorative */}
+        <div className="absolute w-[70.34%] aspect-square top-["></div>
+      </div>
+      {/* decorative right mask */}
+      <div className="absolute h-[70.345%] aspect-square brr-blue right-0 translate-x-[70%] -top-[11%]">
+        <img
+          src="/icon-and-logos/logos-svg/mask-light-bg.svg"
+          alt="Decorative mask"
+          className="h-full object-fill"
+        />
       </div>
     </footer>
   );
