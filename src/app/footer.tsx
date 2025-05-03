@@ -25,7 +25,30 @@ export default function Footer() {
           {/* footer content container */}
           <div className="mx-[6.94%] h-full brr-white flex flex-col relative">
             {/* footer links container */}
-            <div className="absolute h-[48%] top-0 flex justify-between w-full brr-blue"></div>
+            <div className="absolute h-[48%]  top-0 flex justify-between w-full bg-amber-50 brr-blue">
+              <div className="flex w-[89%] brr-white gap-3 justify-between h-full flex-wrap">
+                {/* footer menu */}
+                <div className="flex gap-1  justify flex-wrap brr-blue">
+                  <div className=" w-1/8 brr-blue"></div>
+                  <div className=" w-1/8 brr-blue"></div>
+                  <div className=" w-1/8 brr-blue"></div>
+                  <div className=" w-1/8 brr-blue"></div>
+                  <div className=" w-1/8 brr-blue"></div>
+                  <div className=" w-1/8 brr-blue"></div>
+                  <div className=" w-1/8 brr-blue"></div>
+                </div>
+              </div>
+              <div className="flex items-end justify-start h-full w-auto brr-blue">
+                <div className="flex flex-col items-baseline">
+                  <p>Ras Desta Damtew St,</p>
+                  <p>01, Kirkos, Addis Ababa,Ethiopia.</p>
+                  <p>Tel1:251-551-50-04,</p>
+                  <p> Fax: 251-551-45-22</p>
+                  <p>SWIFT Code: CBETETAA </p>
+                  <p>Email: info@cbe.com.et</p>
+                </div>
+              </div>
+            </div>
             {/* footer social container */}
             <div className="absolute flex justify-between w-full brr-blue h-[25%] bottom-[9%]">
               <div className="relative w-full h-full">
