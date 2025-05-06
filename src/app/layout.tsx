@@ -7,7 +7,7 @@ import {
   PT_Sans_Caption,
 } from "next/font/google";
 import "./globals.css";
-import Footer from "./footer";
+import Footer from "../components/footer";
 
 const manrope = Manrope({
   subsets: ["latin"],
