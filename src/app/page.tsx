@@ -1,11 +1,14 @@
+import Subnav from './components/subnav';
+import MainNav from './components/mainnav';
+
 export default function Home() {
   return (
     <>
       <div className="flex flex-col w-full">
         {/* sub navigation */}
-        <div className="brr h-7 flex-cent-h ">sub navigation</div>
+        <Subnav />
         {/* primary navigation */}
-        <div className="brr h-16 flex-cent-vh">primary navigation</div>
+        <MainNav />
         {/* hero section*/}
         <div className="brr h-[50vh] flex-cent-vh">hero section</div>
         {/* services section*/}
