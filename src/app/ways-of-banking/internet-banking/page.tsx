@@ -3,7 +3,7 @@ export default function InternetBanking() {
     <div className="bg-white">
       <div className="min-h-screen relative">
         <img
-          src="/hero.png"
+          src="/images/hero.png"
           alt="Internet Banking Hero"
           className="w-full h-full object-cover"
         />
@@ -73,7 +73,7 @@ export default function InternetBanking() {
       <div className="bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="mb-8">
-            <img src="/howto.png" alt="How to use Internet Banking" className="mx-auto max-w-2xl" />
+            <img src="/images/howto.png" alt="How to use Internet Banking" className="mx-auto max-w-2xl" />
           </div>
           <h2 className="text-3xl font-bold mb-4 text-[--color-puple-800]">
             How to use Internet Banking

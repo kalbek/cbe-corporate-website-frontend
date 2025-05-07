@@ -3,7 +3,7 @@ export default function MobileBanking() {
     <div className="bg-white">
       <div className="min-h-screen relative">
         <img
-          src="/hero.png"
+          src="/images/hero.png"
           alt="Internet Banking Hero"
           className="w-full h-full object-cover"
         />
@@ -41,7 +41,7 @@ export default function MobileBanking() {
           {/* Left side - image */}
           <div className="md:w-1/2">
             <img
-              src="/mobilebank.png"
+              src="/images/mobilebank.png"
               alt="Mobile Banking Services"
               className="w-full h-auto rounded-lg"
             />

@@ -1,6 +1,6 @@
 'use client';
 
-import { Metadata } from "next";
+import { useState } from "react";
 
 interface BranchData {
   branchName: string;
@@ -78,9 +78,6 @@ const sampleData: BranchData[] = [
   }
 ];
 
-import { useState } from "react";
-import { metadata } from "./metadata";
-
 export default function Branch() {
   const [activeTab, setActiveTab] = useState('Branch Network');
 
@@ -92,7 +89,7 @@ export default function Branch() {
     <div className="bg-white">
       <div className="min-h-screen relative">
         <img
-          src="/hero.png"
+          src="/images/hero.png"
           alt="Internet Banking Hero"
           className="w-full h-full object-cover"
         />

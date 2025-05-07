@@ -17,7 +17,7 @@ export default function AtmBranchLocator() {
     <div className="bg-white">
       <div className="min-h-screen relative">
         <img
-          src="/hero.png"
+          src="/images/hero.png"
           alt="Internet Banking Hero"
           className="w-full h-full object-cover"
         />
