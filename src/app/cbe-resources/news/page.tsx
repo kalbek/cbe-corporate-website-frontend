@@ -77,7 +77,7 @@ export default function News() {
       {/* Hero Section */}
       <div className="relative h-[549.14px] w-[1440]"> 
         <Image
-          src="/images/hero-news.png"    
+          src="/images/announcement-img.png"    
           alt="News Hero"
           layout="fill"
           objectFit="cover"
@@ -95,6 +95,15 @@ export default function News() {
             </button>
           </div>
         </div>
+        {/* Left Arrow */}
+        <div className="w-[40px] h-[40px] absolute top-[256.57px] left-[22px] cursor-pointer">
+                &lt;
+            </div>
+
+            {/* Right Arrow */}
+            <div className="w-[40px] h-[40px] absolute top-[256.57px] left-[1376px] cursor-pointer">
+                &gt;
+            </div>
       </div>
 
       {/* News Section */}
