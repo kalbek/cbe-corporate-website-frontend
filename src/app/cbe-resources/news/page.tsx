@@ -1,4 +1,4 @@
-'use client'	
+'use client'  
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
@@ -6,80 +6,78 @@ import { useState } from "react";
 const newsItems = [
     {
       id: 1,
-      title: "News Title One",
+      title: "የኢትዮጵያ ንግድ ባንክ 122.5 ሚሊዮን ዶላር ለደንበኞቹ ድልድል አደረገ።",
       date: "05 Apr 2025",
-      image: "/images/news1.jpg",
+      image: "/images/news-image1.png",
       slug: "news-title-one",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      description: "የደምበኞቻችንን የውጪ ምንዛሪ ጥያቄ ለመመለስ እ.ኤ.አ እስከ 31/03/2025 ድረስ ባጠቃላይ በቁጥር 711 ደንበኞቻችን ያቀረቡትን ጥያቄዎች በሙሉ በመገምገም ከቀረቡት ጥያቄዎች ውስጥ ብዛታቸው 698(98%) ለሆኑ ደንበኞች በድምሩ የ122.5 ሚሊዮን የአሜሪካን ዶላር ድልድል የተደረገ መሆኑን እንገልጻለን።"
     },
     {
       id: 2,
-      title: "News Title Two",
+      title: "የኢትዮጵያ ንግድ ባንክ ባለፉት ስምንት ወራት ብቻ 264.65 ቢልዮን ብር ብድር ለደንበኞቹ ማቅረቡ ተገለፀ።",
       date: "04 Apr 2025",
-      image: "/images/news2.jpg",
+      image: "/images/news-image2.png",
       slug: "news-title-two",
-      description: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+      description: "አቶ አቤ በዲጂታል አማራጭ ባለፉት ስምንት ወራት አጠቃላይ ብር 3.9 ቢሊዮን ብድር ማቅረብ የተቻለ መሆኑን ገልፀው፣ በዚህም እስከ ፌብርዋሪ 28 ቀን 2025 ድረስ 717 ሺህ ደንበኞች ተጠቃሚ መሆናቸውን አስረድተዋል፡፡"
     },
     {
       id: 3,
-      title: "News Title Three",
+      title: "የኢትዮጵያ ንግድ ባንክ በባንክ ኢንዱስትሪው ውስጥ ያለውን የገበያ ድርሻ ማሳደጉ ተገለፀ፡፡",
       date: "04 Apr 2025",
-      image: "/images/news3.jpg",
+      image: "/images/news-image3.png",
       slug: "news-title-three",
-      description: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+      description: "በፌብሩዋሪ 2025 መጨረሻ የኢትዮጵያ ንግድ ባንክ ጠቅላላ ተቀማጭ ገንዘብ ብር 1.541 ትሪሊዮን፣ ጠቅላላ የብድርና የቦንድ ክምችት መጠን ብር 1.393 ትሪሊዮን፣ እንዲሁም አጠቃላይ ሃብት ብር 2.073 ትሪሊየን መድረሱን አቶ አቤ በሪፖርታቸው አመላክተዋል፡፡"
     },
     {
       id: 4,
-      title: "News Title Four",
+      title: "የኢትዮጵያ ንግድ ባንክ በስምንት ወራት ብር 367.40 ቢሊዮን ተቀማጭ ገንዘብ አሰባሰበ፡፡",
       date: "04 Apr 2025",
-      image: "/images/news3.jpg",
+      image: "/images/news-image4.png",
       slug: "news-title-Four",
-      description: "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+      description: "አቶ አቤ በስምንት ወራት በተቀማጭ ገንዘብ አሰባሰብ የነበረው አፈፃፀም በጁን 2024 ከነበረው ጠቅላላ ተቀማጭ አንጻር የ31.3% ዕድገት እንዲያሳይ ማስቻሉን ገልፀዋል፡፡"
     },
     {
       id: 5,
-      title: "News Title Five",
+      title: "የኢትዮጵያ ንግድ ባንክ የፖስ ማሽኖችን በመጠቀም ክፍያ የፈጸሙ ደንበኞችን ሸለመ።",
       date: "03 Apr 2025",
-      image: "/images/news1.jpg",
+      image: "/images/news-image5.png",
       slug: "news-title-five",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      description: "የሲቢኢ ኑር ፕሮዳክት ዴቨሎፕመንት እና ቢዝነስ ኤክስፓንሽን ሥራ አስኪያጅ አቶ አንዋር መሐመድ ደንበኞች ዲጂታል የባንክ አገልግሎቶችን እንዲጠቀሙ ለማበረታታት የሽልማት መርሀ ግብሩ መዘጋጀቱን ገልፀዋል፡፡"
     },
     {
       id: 6,
-      title: "News Title Six",
+      title: "የኢትዮጵያ ንግድ ባንክ ከማስተር ካርድ ኩባንያ ጋር በመሆን አዲስ የፕላስቲክ እና ቨርችዋል ካርድ አገልግሎት ላይ አዋለ፡፡",
       date: "02 Apr 2025",
-      image: "/images/news2.jpg",
+      image: "/images/news-image6.png",
       slug: "news-title-six",
-      description: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+      description: "አቶ አቤ ይህ ስትራቴጂካዊ ትብብር የኢትዮጵያ ንግድ ባንክ በሞባይል ባንኪንግ አገልግሎት ያለውን ሰፊ የገበያ ድርሻ በመጠቀም፤ በቨርቹዋል የካርድ አገልግሎት የባንኩን ከ40 ሚሊየን በላይ ደንበኞች የዘመናዊ ዲጂታል የባንክ አገልግሎት ተጠቃሚ ማድረግ እንደሚያስችል ገልፀዋል፡፡"
     },
     {
       id: 7,
-      title: "News Title Seven",
+      title: "”አብሮነት ለበጎነት ፤ በረመዷን ” በሚል መሪ ቃል የኢትዮጵያ ንግድ ባንክ ታላቅ የኢፍጣር መርሃ-ግብር አከናወነ፡፡",
       date: "01 Apr 2025",
-      image: "/images/news3.jpg",
+      image: "/images/news-image7.png",
       slug: "news-title-seven",
-      description: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+      description: "የኢትዮጵያ ንግድ ባንክ ፕሬዚዳንት አቶ አቤ ሳኖ በበኩላቸው ከወለድ ነፃ የባንክ አገልግሎት በመስጠት 11 ስኬታማ ዓመታትን ያስቆጠረው የሲቢኢ ኑር አገልግሎት በደንበኞቹ ዘንድ ተአማኒነት በማትረፉ ውጤታማ ስለሆነ ለአጋርነታችሁ ምስጋና ይገባችሃል ብለዋል፡፡"
     },
     {
       id: 8,
-      title: "News Title Eight",
+      title: "የኢትዮጵያ ንግድ ባንክ 15 ሚሊዮን ብር ድጋፍ አደረገ።",
       date: "31 Mar 2025",
-      image: "/images/news1.jpg",
+      image: "/images/news-image8.png",
       slug: "news-title-eight",
-      description: "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+      description: "ባቡል ኽይር የበጎ አድራጎት ድርጅት በቀን ከአራት ሺህ ስምንት መቶ በላይ አባወራዎችን የምገባ አገልግሎት ይሰጣል፡፡"
     }
   ];
 
 export default function News() {
     const [activePage, setActivePage] = useState(1);
-
     return <>
-
-<div className="bg-white text-white w-[1440] h-[2831.53px]">
+    <div className="bg-[#ffffff] text-white w-[1440] h-[2831.53px]">
       {/* Hero Section */}
       <div className="relative h-[549.14px] w-[1440]"> 
         <Image
-          src="/images/hero-home-img.png"        //I added this image since its the only one I found in the images folder
+          src="/images/hero-news.png"    
           alt="News Hero"
           layout="fill"
           objectFit="cover"
@@ -91,7 +89,7 @@ export default function News() {
             <p className="w-[523px] h-[84px] font-pt-sans-caption font-normal text-[18px] leading-[28px] tracking-[0%]">
             Explore past announcements, updates, and media coverage from CBE—your source for historical insights and institutional milestones.
             </p>
-            <button className="bg-gray-400 rounded w-[139px] h-[48px] gap-[50px] pt-[12px] pr-[20px] pb-[12px] pl-[20px] rounded-[8px]">
+            <button className="bg-gray-400 w-[139px] h-[48px] gap-[50px] pt-[12px] pr-[20px] pb-[12px] pl-[20px] rounded-[8px]">
               
               Know More
             </button>
@@ -100,7 +98,7 @@ export default function News() {
       </div>
 
       {/* News Section */}
-      <div className="w-full bg-white">
+      <div className="w-full bg-[#ffffff]">
         <div className="max-w-7xl mx-auto px-4 py-16">
           <div className="w-[1440px] h-[138px] gap-[28px] pt-[60px] pr-[80px] pb-[40px] pl-[80px]">
             <h2 className="text-[#892890] text-[30px] font-bold font-pt-sans-caption">News</h2>
@@ -111,7 +109,7 @@ export default function News() {
             {/* Grid */}
             <div className="w-[1280px] h-[1219.39px] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
               {newsItems.map((item) => (
-                <div key={item.id} className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition w-[299px] h-[569.69px] gap-[20px]">
+                <div key={item.id} className="bg-[#ffffff] rounded-lg overflow-hidden transition w-[299px] h-[569.69px] gap-[20px]">
                   <div className="relative w-[299px] h-[237.69px]">
                     <Image
                       src={item.image}
@@ -125,28 +123,29 @@ export default function News() {
                     <h3 className="w-[299px] h-[72px] font-bold text-[20px] leading-[24px] tracking-[0] font-kefa text-black">{item.title}</h3>
                     <p className="w-[299px] h-[168px] font-normal text-[14px] leading-[24px] tracking-[0] text-black">{item.description}</p>
                     <Link href={`/news/${item.slug}`} className="w-[107px] h-[24px]">
-                      <button className="w-[83px] h-[24px] font-pt font-normal text-[16px] leading-[24px] tracking-[0] text-[#892890]">
-                        Read More
+                      <button className="w-[107px] h-[24px] font-pt font-normal text-[16px] leading-[24px] tracking-[0] text-[#892890] cursor-pointer">
+                        <span className="w-[83px] h-[24px] font-pt-sans-caption font-normal text-base leading-6 tracking-normal text-[#892890]">Read More  </span>  
+                        <span className="w-[24px] h-[24px] rotate-90">&gt;</span>
                       </button>
                     </Link>
                   </div>
                 </div>
               ))}
             </div>
-
             {/* Pagination */}
-            <div className="flex justify-center mt-12 space-x-2">
+            <div className="flex w-[352px] h-[36px] gap-[6px] ml-auto ">
               <button 
-                className="flex items-center gap-2 px-2 py-1.5 cursor-pointer text-purple-800 border-1 bg-white-700 rounded"
+                className="flex w-[77px] h-[36px] px-[12px] py-[8px] gap-[4px] border-1 border-purple-800 rounded-[4px] cursor-pointer"
                 onClick={() => setActivePage(prev => prev > 1 ? prev - 1 : 1)}
                 disabled={activePage === 1}
               > 
-                <span className="group-hover:translate-x-1 transition">&lt;</span> Back
+                <span className="w-[16px] h-[16px] text-[#892890]">&lt;</span>
+                 <span className="w-[33px] h-[20px] text-[#892890] font-inter font-normal text-sm leading-5 tracking-normal">Back</span>
               </button>
               {[1, 2, 3, 4, 5].map((page) => (
                 <button 
-                  key={page} 
-                  className={`px-4 py-2 text-purple-800 bg-white border-1 cursor-pointer border-purple-800 rounded hover:bg-purple-100 transition-colors ${
+                  key={page}
+                  className={`w-[31px] h-[36px] px-[12px] py-[8px] text-purple-800 bg-white border-1 cursor-pointer border-purple-800 rounded-[4px] hover:bg-purple-100 transition-colors ${
                     activePage === page ? 'bg-purple-800 text-white' : ''
                   }`}
                   onClick={() => setActivePage(page)}
@@ -155,11 +154,12 @@ export default function News() {
                 </button>
               ))}
               <button 
-                className="flex items-center gap-2 px-2 py-1.5 cursor-pointer text-purple-800 border-1 bg-white-800 rounded hover:bg-gray-600"
+                className="flex w-[76px] h-[36px] px-[12px] py-[8px] gap-[4px] border-1 border-purple-800 rounded-[4px] cursor-pointer"
                 onClick={() => setActivePage(prev => prev < 5 ? prev + 1 : 5)}
                 disabled={activePage === 5}
               >
-                Next <span className="group-hover:translate-x-1 transition">&gt;</span>
+                <span className="w-[32px] h-[20px] text-[#892890] font-inter font-normal text-sm leading-5 tracking-normal">Next</span> 
+                <span className="w-[16px] h-[16px] text-[#892890]">&gt;</span>
               </button>
             </div>
           </div>
