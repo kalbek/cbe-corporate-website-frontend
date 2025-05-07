@@ -35,34 +35,34 @@ export default function InternetBanking() {
         </div>
         <div className="relative">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl font-bold mb-4 text-[#892890]">Internet Banking Features</h2>
+            <h2 className="text-3xl font-bold mb-4 text-[--color-puple-800]">Internet Banking Features</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div>
                 <div className="mb-4">
                   <h3 className="text-xl font-semibold">Account Balances</h3>
-                  <div className="border-b-2 border-[#f0c681] w-full"></div>
+                  <div className="border-b-2 border-[--color-gold-300] w-full"></div>
                 </div>
                 <div className="mb-4">
                   <h3 className="text-xl font-semibold">Create Standing Payment Orders</h3>
-                  <div className="border-b-2 border-[#f0c681] w-full"></div>
+                  <div className="border-b-2 border-[--color-gold-300] w-full"></div>
                 </div>
                 <div className="mb-4">
                   <h3 className="text-xl font-semibold">Local Money Transfers</h3>
-                  <div className="border-b-2 border-[#f0c681] w-full"></div>
+                  <div className="border-b-2 border-[--color-gold-300] w-full"></div>
                 </div>
               </div>
               <div>
                 <div className="mb-4">
                   <h3 className="text-xl font-semibold">Account Transaction Details</h3>
-                  <div className="border-b-2 border-[#f0c681] w-full"></div>
+                  <div className="border-b-2 border-[--color-gold-300] w-full"></div>
                 </div>
                 <div className="mb-4">
                   <h3 className="text-xl font-semibold">Manage Beneficiary</h3>
-                  <div className="border-b-2 border-[#f0c681] w-full"></div>
+                  <div className="border-b-2 border-[--color-gold-300] w-full"></div>
                 </div>
                 <div className="mb-4">
                   <h3 className="text-xl font-semibold">Utility Payments</h3>
-                  <div className="border-b-2 border-[#f0c681] w-full"></div>
+                  <div className="border-b-2 border-[--color-gold-300] w-full"></div>
                 </div>
               </div>
             </div>
@@ -75,23 +75,23 @@ export default function InternetBanking() {
           <div className="mb-8">
             <img src="/howto.png" alt="How to use Internet Banking" className="mx-auto max-w-2xl" />
           </div>
-          <h2 className="text-3xl font-bold mb-4 text-[#892890]">
+          <h2 className="text-3xl font-bold mb-4 text-[--color-puple-800]">
             How to use Internet Banking
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-[#892890] text-white p-6 rounded-lg">
+            <div className="bg-[--color-puple-800] text-white p-6 rounded-lg">
               <h3 className="text-2xl font-bold mb-4">Step 1</h3>
               <p>Register for internet banking by visiting any CBE branch or through our mobile banking app.</p>
             </div>
-            <div className="bg-[#892890] text-white p-6 rounded-lg">
+            <div className="bg-[--color-puple-800] text-white p-6 rounded-lg">
               <h3 className="text-2xl font-bold mb-4">Step 2</h3>
               <p>Log in to your internet banking account using your customer ID and password.</p>
             </div>
-            <div className="bg-[#892890] text-white p-6 rounded-lg">
+            <div className="bg-[--color-puple-800] text-white p-6 rounded-lg">
               <h3 className="text-2xl font-bold mb-4">Step 3</h3>
               <p>Set up security questions and answers for additional protection.</p>
             </div>
-            <div className="bg-[#892890] text-white p-6 rounded-lg">
+            <div className="bg-[--color-puple-800] text-white p-6 rounded-lg">
               <h3 className="text-2xl font-bold mb-4">Step 4</h3>
               <p>Start using all the features of internet banking including transfers, payments, and account management.</p>
             </div>
