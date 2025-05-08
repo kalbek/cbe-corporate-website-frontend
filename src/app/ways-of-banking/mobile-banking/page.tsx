@@ -1,7 +1,7 @@
 export default function MobileBanking() {
   return (
     <div className="bg-white">
-      <div className="min-h-screen relative">
+      <div className="relative">
         <img
           src="/images/hero.png"
           alt="Internet Banking Hero"
@@ -36,7 +36,7 @@ export default function MobileBanking() {
       </div>
       
       {/* New Services Section */}
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 py-12">
         <div className="flex flex-col md:flex-row gap-8">
           {/* Left side - image */}
           <div className="md:w-1/2">
@@ -80,26 +80,26 @@ export default function MobileBanking() {
       </div>
 
       {/* Additional Services Section */}
-      <div className="container mx-auto px-4 md:px-8 lg:px-12">
+      <div className="container mx-auto px-4 md:px-8 lg:px-12 py-12">
         <div className="w-full space-y-6">
           <div className="space-y-6">
             <div>
-                <h3 className="text-2xl font-bold !text-[--color-puple-800] mb-2 font-bold">Travel</h3>
+                <h3 className="text-2xl font-bold !text-[#892890] mb-2 font-bold">Travel</h3>
                 <p className="text-gray-700">It enables customers to pay for both land(Guzo go, ride driver, Guzo bus ticket &Kelal ticket) and air transport.</p>
-                <hr className="border-t border-[--color-gold-300] my-4" />
+                <hr className="border-t border-[#ffd700] my-4" />
               </div>
               <div>
-                <h3 className="text-2xl font-bold !text-[--color-puple-800] mb-2 font-bold">Entertainment</h3>
+                <h3 className="text-2xl font-bold !text-[#892890] mb-2 font-bold">Entertainment</h3>
                 <p className="text-gray-700">It enables customers to pay for entertainment channels such as Canal+, DSTV and Webs Prix.</p>
-                <hr className="border-t border-[--color-gold-300] my-4" />
+                <hr className="border-t border-[#ffd700] my-4" />
               </div>
               <div>
-                <h3 className="text-2xl font-bold !text-[--color-puple-800] mb-2 font-bold">Banking</h3>
+                <h3 className="text-2xl font-bold !text-[#892890] mb-2 font-bold">Banking</h3>
                 <p className="text-gray-700">It enables customers to acquire non-financial services such as viewing locked amounts, standing orders, requesting new and replacement ATM/ Visa cards, managing beneficiaries, exchange rate, ATM, branch, CBEBirr agent, and Merchant POS locator and customer feedback.</p>
-                <hr className="border-t border-[--color-gold-300] my-4" />
+                <hr className="border-t border-[#ffd700] my-4" />
               </div>
               <div>
-                <h3 className="text-2xl font-bold !text-[--color-puple-800] mb-2 font-bold text-wrap">In addition to the above-mentioned mobile banking service, customers can get the following services at any CBE branch and 951:</h3>
+                <h3 className="text-2xl font-bold !text-[#892890] mb-2 font-bold text-wrap">In addition to the above-mentioned mobile banking service, customers can get the following services at any CBE branch and 951:</h3>
                 <p className="text-gray-700">
                   • Channels add: if a customer has only one channel, he/she can request an additional channel in any of the CBE branches
                   • Modify End Date: if the customer's access date for mobile banking is expired, he/she can appear at any of the branches and request an access date extension.

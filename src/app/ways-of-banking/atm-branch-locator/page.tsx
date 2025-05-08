@@ -15,7 +15,7 @@ const atmData = [
 export default function AtmBranchLocator() {
   return (
     <div className="bg-white">
-      <div className="min-h-screen relative">
+      <div className="relative">
         <img
           src="/images/hero.png"
           alt="Internet Banking Hero"
@@ -49,13 +49,13 @@ export default function AtmBranchLocator() {
         </div>
       </div>
    
-    <div className="min-h-screen bg-gray-50">
-      <div className="container mx-auto px-4 py-8">
-        <h1 className="text-2xl font-bold text-purple-700 mb-4">Locator</h1>
+    <div className="bg-gray-50">
+      <div className="container mx-auto px-4 py-4">
+        <h1 className="text-2xl font-bold text-[#892890] mb-2">Locator</h1>
         
         <div className="flex flex-wrap gap-4 mb-6">
-          <button className="px-6 py-2 bg-purple-700 text-white rounded-lg">ATM's</button>
-          <button className="px-6 py-2 border border-purple-700 text-purple-700 rounded-lg">Branches</button>
+          <button className="px-6 py-2 bg-[#892890] text-white rounded-lg">ATM's</button>
+          <button className="px-6 py-2 border border-[#892890] text-[#892890] rounded-lg">Branches</button>
         </div>
 
         <div className="relative mb-4">
