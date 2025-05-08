@@ -17,10 +17,11 @@ const hero: React.FC<HeroProps> = ({ header, description, cta }) => {
           src="/icon-and-logos/about-us/previous.svg"
           width={40}
           height={40}
-          alt="Picture of the author"
+          alt="previous"
           className="ml-2"
         />
       </Link>
+
       <div className="flex justify-between items-center gap-20">
         <div className="text-foreground w-[523px] my-[160px]">
           <h1 className="text-5xl font-bold mb-5">{header}</h1>
@@ -32,12 +33,13 @@ const hero: React.FC<HeroProps> = ({ header, description, cta }) => {
             {cta.label}
           </Link>
         </div>
-        <Link href="/dashboard">
+
+        <Link href="/">
           <Image
             src="/icon-and-logos/about-us/next.svg"
             width={40}
             height={40}
-            alt="Picture of the author"
+            alt="next"
             className="mr-2"
           />
         </Link>

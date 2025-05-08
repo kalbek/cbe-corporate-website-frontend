@@ -14,7 +14,7 @@ const page = () => {
   ];
 
   return (
-    <div>
+    <div className="font-primary">
       <Hero
         header="About CBE"
         description="With a legacy of trust, innovation, and service excellence, Commercial Bank of Ethiopia stands as the nation’s leading financial institution. Discover our journey, values, and unwavering commitment to empowering individuals, businesses, and communities across Ethiopia and beyond."
@@ -55,9 +55,6 @@ const page = () => {
         <div className="relative">
           <Image
             src="/icon-and-logos/about-us/cbe.png"
-            // width={}
-            // height={100%}
-            // style={{ objectFit: "contain" }}
             alt="Picture of the author"
             className=""
             layout="fill"
@@ -66,7 +63,7 @@ const page = () => {
         </div>
       </section>
 
-      <section className="container mx-auto px-4 mb-20">
+      <section className="container mx-auto px-4 mb-30">
         <div>
           <h2 className="text-accent text-3xl font-bold mb-5">Core Value</h2>
           <p className="mb-5">
@@ -83,10 +80,9 @@ const page = () => {
                 src="/icon-and-logos/about-us/play.svg"
                 width={12}
                 height={12}
-                alt="Picture of the author"
-                className=""
+                alt="play bullet"
               />
-              <p className="text-xl font-bold text-">{item}</p>
+              <p className="card-content">{item}</p>
             </div>
           ))}
         </div>

@@ -1,5 +1,7 @@
-export default function Detail() {
-    return (
-      <>csr detail</>
-    )
-  }
+const page = () => {
+  return (
+    <div>page</div>
+  )
+}
+
+export default page
