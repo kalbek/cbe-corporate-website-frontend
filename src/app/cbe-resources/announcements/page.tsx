@@ -40,7 +40,7 @@ export default function News() {
           objectFit="cover"
           className="opacity-90"
         />
-        <div className="relative w-[523px] h-[232px] top-[145px] left-[720px] gap-[20px]">
+        <div className="relative w-[523px] h-[232px] top-[145px] left-[920px] gap-[20px]">
           <div>
             <h1 className="w-[523px] h-[60px] font-pt-sans-caption font-bold text-[48px] leading-[60px] tracking-[-0.02em]">Announcements</h1>
             <p className="w-[523px] h-[84px] font-pt-sans-caption font-normal text-[18px] leading-[28px] tracking-[0%]">
@@ -58,7 +58,7 @@ export default function News() {
             </div>
 
             {/* Right Arrow */}
-            <div className="w-[40px] h-[40px] absolute top-[256.57px] left-[1376px] cursor-pointer">
+            <div className="w-[40px] h-[40px] absolute top-[256.57px] right-[22px] cursor-pointer">
                 &gt;
             </div>
       </div>

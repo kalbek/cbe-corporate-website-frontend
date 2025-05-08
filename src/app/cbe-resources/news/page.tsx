@@ -73,7 +73,7 @@ const newsItems = [
 export default function News() {
     const [activePage, setActivePage] = useState(1);
     return <>
-    <div className="bg-[#ffffff] text-white w-[1440] h-[2831.53px]">
+    <div className="bg-[#ffffff] text-white w-[1440]">
       {/* Hero Section */}
       <div className="relative h-[549.14px] w-[1440]"> 
         <Image
@@ -83,7 +83,7 @@ export default function News() {
           objectFit="cover"
           className="opacity-90"
         />
-        <div className="relative w-[523px] h-[232px] top-[145px] left-[720px] gap-[20px]">
+        <div className="relative w-[523px] h-[232px] top-[145px] left-[920px] gap-[20px]">
           <div>
             <h1 className="w-[523px] h-[60px] font-pt-sans-caption font-bold text-[48px] leading-[60px] tracking-[-0.02em]">News</h1>
             <p className="w-[523px] h-[84px] font-pt-sans-caption font-normal text-[18px] leading-[28px] tracking-[0%]">
@@ -101,14 +101,14 @@ export default function News() {
             </div>
 
             {/* Right Arrow */}
-            <div className="w-[40px] h-[40px] absolute top-[256.57px] left-[1376px] cursor-pointer">
+            <div className="w-[40px] h-[40px] absolute top-[256.57px] right-[22px] cursor-pointer">
                 &gt;
             </div>
       </div>
 
       {/* News Section */}
-      <div className="w-full bg-[#ffffff]">
-        <div className="max-w-7xl mx-auto px-4 py-16">
+      <div className=" bg-[#ffffff]">
+        <div className="mx-auto w-[1440px] h-[1412.39] gap-[57px] pr-[80px] pb-[100px] pl-[80px]">
           <div className="w-[1440px] h-[138px] gap-[28px] pt-[60px] pr-[80px] pb-[40px] pl-[80px]">
             <h2 className="text-[#892890] text-[30px] font-bold font-pt-sans-caption">News</h2>
           </div>
