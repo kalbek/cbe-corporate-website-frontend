@@ -46,9 +46,9 @@ export default function CbeBirr() {
   ];
   return (
     <div>
-      <section className="container mx-auto px-4 grid grid-cols-3 gap-5 py-16">
+      <section className="container mx-auto px-4 grid grid-cols-3 gap-10 py-15">
         <div className="col-span-2 pb-20 pr-5">
-          <h2 className="text-accent text-[18px] font-bold mb-5 ">
+          <h2 className="text-accent text-[18px] font-bold mb-5 text-[#892890]">
             CBE Birr (*847#)
           </h2>
           <p className="mb-4">
@@ -69,12 +69,12 @@ export default function CbeBirr() {
           <div className=" flex gap-10 w-fit">
             {/* app store */}
             <img
-              src="/icon-and-logos/logos-svg/appstore white.svg"
+              src="/icon-and-logos/logos-svg/appstore-white.svg"
               alt="phone-icon"
             />
             {/* google play */}
             <img
-              src="/icon-and-logos/logos-svg/googleplay white.svg"
+              src="/icon-and-logos/logos-svg/googleplay-white.svg"
               alt="phone-icon"
             />
           </div>
@@ -86,21 +86,28 @@ export default function CbeBirr() {
           />
         </div>
       </section>
+      <div className="absolute w-[15.48%] aspect-square left-0 top-[35%] -translate-x-[70%]">
+        <img
+          src="/icon-and-logos/logos-svg/mask-light-bg.svg"
+          alt="Decorative mask"
+          className="h-full object-fill"
+        />
+      </div>
       <div className="container mx-auto py-4 bg-white flex flex-col items-center justify-center">
-
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
           {steps.map((step, index) => (
             <div
               key={index}
               className="text-white px-10 py-7 text-center rounded-2xl bg-[#892890]"
             >
-              <h2 className="text-xl text-white font-bold mb-2">{step.title}</h2>
+              <h2 className="text-xl text-white font-bold mb-2">
+                {step.title}
+              </h2>
               <p className="text-xl font-normal">{step.description}</p>
             </div>
           ))}
         </div>
       </div>
-
       <div className="bg-white px-6 py-12 flex justify-center items-start ">
         <div className="container mx-auto px-4 w-full">
           <h1 className="text-2xl md:text-3xl font-bold text-[#892890] mb-10">
