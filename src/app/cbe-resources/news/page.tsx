@@ -131,7 +131,7 @@ export default function News() {
                     <p className="w-[299px] h-[18px] font-pt font-bold text-[12px] leading-[18px] tracking-[0] text-[#E8A029]">{item.date}</p>
                     <h3 className="w-[299px] h-[72px] font-bold text-[20px] leading-[24px] tracking-[0] font-kefa text-black">{item.title}</h3>
                     <p className="w-[299px] h-[168px] font-normal text-[14px] leading-[24px] tracking-[0] text-black">{item.description}</p>
-                    <Link href={`/news/${item.slug}`} className="w-[107px] h-[24px]">
+                    <Link href={`/cbe-resources/news/${item.slug}`} className="w-[107px] h-[24px]">
                       <button className="w-[107px] h-[24px] font-pt font-normal text-[16px] leading-[24px] tracking-[0] text-[#892890] cursor-pointer">
                         <span className="w-[83px] h-[24px] font-pt-sans-caption font-normal text-base leading-6 tracking-normal text-[#892890]">Read More  </span>  
                         <span className="w-[24px] h-[24px] rotate-90">&gt;</span>

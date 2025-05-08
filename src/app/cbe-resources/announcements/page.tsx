@@ -8,21 +8,21 @@ const newsItems = [
       id: 1,
       title: "የኢትዮጵያ ንግድ ባንክ ተደራሽነቱን ከሀገር ውጭ ማስፋት እንዳለበት ተገለፀ፡፡",
       image: "/images/announcement-1.png",
-      slug: "news-title-one",
+      slug: "news-title-nine",
       description: "የኢትዮጵያ ንግድ ባንክ ተደራሽነቱን ከሀገር ውጭ ማስፋት እንዳለበት ተገለፀ፡፡ የኢትዮጵያን ኢንቨስትመንት ሆልዲንግስ (EIH) የባንኩን የግማሽ ዓመት የሥራ አፈፃፀም ገምግሟል፡፡"
     },
     {
       id: 2,
       title: "እንኳን ለደንበኞች አገልግሎት ወር በሰላም አደረሰዎ!",
       image: "/images/announcement-2.png",
-      slug: "news-title-two",
+      slug: "news-title-ten",
       description: "ትላንት ለገንዘብዎ ሁነኛ ባላደራ ሲፈልጉ በመላው ሀገራችን ቅርንጫፎቹን በመክፈት እርስዎ ወዳሉበት የደረሰው ባንካችን፣ ዛሬም በፈጣን እንቅስቃሴ ላይ ባለችው ዓለማችን፤ ከዘመኑ ጋር እየዘመነ አማራጮችዎን እያሰፋና ፍላጎትዎን እያሟላ በተለመደው ትጋቱ..."
     },
     {
       id: 3,
       title: "ለነጋድራስ የኢትዮጵያ ንግድ ባንክ የሥራ ፈጠራ ውድድር ተመዝግበዋል ?",
       image: "/images/announcement-3.png",
-      slug: "news-title-three",
+      slug: "news-title-eleven",
       description: "ምዝገባው ታህሳስ 15 /December 24, 2024/ ይጠናቀቃል፡፡ የኢትዮጵያ ንግድ ባንክ የስያሜ ስፖንሰር የሆነበት ነጋድራስ የሥራ ፈጠራ ውድድር በየዙሩ 1.8 ሚልዮን ብር እንዲሁም ለአሸናፊዎች አሸናፊ 5 ሚሊዮን ብር ሽልማት፤..."
     }
   ];
