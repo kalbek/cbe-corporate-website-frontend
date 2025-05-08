@@ -89,7 +89,7 @@ export default function Branch() {
 
   return (
     <div className="bg-white">
-      <div className="min-h-screen relative">
+      <div className="relative">
         <img
           src="/images/hero.png"
           alt="Internet Banking Hero"
@@ -122,9 +122,9 @@ export default function Branch() {
           </div>
         </div>
       </div>
-      <div className="container mx-auto px-4 py-8">
-        <div className="bg-white rounded-lg shadow-lg p-6">
-          <h2 className="text-2xl font-bold !text-[#892890] mb-4">Network</h2>
+      <div className="container mx-auto px-4 py-2">
+        <div className="bg-white rounded-lg shadow-lg p-4">
+          <h2 className="text-2xl font-bold !text-[#892890] mb-2">Network</h2>
           <div className="flex items-center gap-4 mb-4">
             <div className="flex-1">
               <div className="flex gap-2">
