@@ -1,3 +1,4 @@
+import Hero from "@/components/hero";
 export default function CbeBirr() {
   const steps = [
     {
@@ -45,7 +46,12 @@ export default function CbeBirr() {
     "All Balance",
   ];
   return (
-    <div>
+    <div className="font-primary">
+      <Hero
+        header="CBE Birr (*847#)"
+        description="Internet banking allows a user to conduct financial transactions via the Internet offers almost every service traditionally available through a local branch including balance inquiry, transfers, Mini Statement, detailed transactions, and online bill payments. Itprovides easy, convenient, flexible and secure payment services for CBE customers."
+        cta={{ label: "Know More", href: "/" }}
+      />
       <section className="container mx-auto px-4 grid grid-cols-3 gap-10 py-15">
         <div className="col-span-2 pb-20 pr-5">
           <h2 className="text-accent text-[18px] font-bold mb-5 text-[#892890]">
@@ -86,24 +92,22 @@ export default function CbeBirr() {
           />
         </div>
       </section>
-      <div className="absolute w-[15.48%] aspect-square left-0 top-[35%] -translate-x-[70%]">
+      <div className="absolute w-[15.48%] aspect-square left-0 -bottom-65 -translate-x-[70%]">
         <img
           src="/icon-and-logos/logos-svg/mask-light-bg.svg"
           alt="Decorative mask"
           className="h-full object-fill"
         />
       </div>
-      <div className="container mx-auto py-4 bg-white flex flex-col items-center justify-center">
+      <div className="container mx-auto py-4 flex flex-col items-center justify-center">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
           {steps.map((step, index) => (
             <div
               key={index}
-              className="text-white px-10 py-7 text-center rounded-2xl bg-[#892890]"
+              className="px-10 py-7 text-center rounded-2xl bg-[#892890]"
             >
-              <h2 className="text-xl text-white font-bold mb-2">
-                {step.title}
-              </h2>
-              <p className="text-xl font-normal">{step.description}</p>
+              <h2 className="text-xl font-bold mb-2 card-content">{step.title}</h2>
+              <p className="text-xl font-normal card-content">{step.description}</p>
             </div>
           ))}
         </div>

@@ -48,7 +48,7 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-  
+  --font-primary: var(--font-pt-sans-caption);
 }
 
 /* @media (prefers-color-scheme: dark) {
@@ -413,4 +413,8 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+.card-content {
+  color: white;
+  font-size: 20px;
 }
