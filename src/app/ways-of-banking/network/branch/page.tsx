@@ -1,8 +1,11 @@
 'use client';
 
 import { useState } from "react";
+import { DataTable } from "@/components/ui/data-table";
+import { columns } from "./columns";
 
 interface BranchData {
+  id: string;
   branchName: string;
   district: string;
   branchGrade: string;
@@ -11,8 +14,9 @@ interface BranchData {
   telephone: string;
 }
 
-const sampleData: BranchData[] = [
+const data: BranchData[] = [
   {
+    id: "1",
     branchName: "Addis Ababa Main Branch",
     district: "Addis Ketema",
     branchGrade: "A",
@@ -21,6 +25,7 @@ const sampleData: BranchData[] = [
     telephone: "-"
   },
   {
+    id: "2",
     branchName: "Bole Branch",
     district: "Bole",
     branchGrade: "B",
@@ -29,6 +34,7 @@ const sampleData: BranchData[] = [
     telephone: "-"
   },
   {
+    id: "3",
     branchName: "Lideta Branch",
     district: "Lideta",
     branchGrade: "A",
@@ -37,6 +43,7 @@ const sampleData: BranchData[] = [
     telephone: "-"
   },
   {
+    id: "4",
     branchName: "Kality Branch",
     district: "Akaki",
     branchGrade: "B",
@@ -45,6 +52,7 @@ const sampleData: BranchData[] = [
     telephone: "-"
   },
   {
+    id: "5",
     branchName: "Addis Ababa Main Branch",
     district: "Addis Ketema",
     branchGrade: "A",
@@ -53,6 +61,7 @@ const sampleData: BranchData[] = [
     telephone: "-"
   },
   {
+    id: "6",
     branchName: "Bole Branch",
     district: "Bole",
     branchGrade: "B",
@@ -61,6 +70,7 @@ const sampleData: BranchData[] = [
     telephone: "-"
   },
   {
+    id: "7",
     branchName: "Lideta Branch",
     district: "Lideta",
     branchGrade: "A",
@@ -69,6 +79,43 @@ const sampleData: BranchData[] = [
     telephone: "-"
   },
   {
+    id: "8",
+    branchName: "Kality Branch",
+    district: "Akaki",
+    branchGrade: "B",
+    region: "Addis Ababa",
+    city: "-",
+    telephone: "-"
+  },
+  {
+    id: "9",
+    branchName: "Addis Ababa Main Branch",
+    district: "Addis Ketema",
+    branchGrade: "A",
+    region: "Addis Ababa",
+    city: "-",
+    telephone: "-"
+  },
+  {
+    id: "10",
+    branchName: "Bole Branch",
+    district: "Bole",
+    branchGrade: "B",
+    region: "Addis Ababa",
+    city: "-",
+    telephone: "-"
+  },
+  {
+    id: "11",
+    branchName: "Lideta Branch",
+    district: "Lideta",
+    branchGrade: "A",
+    region: "Addis Ababa",
+    city: "-",
+    telephone: "-"
+  },
+  {
+    id: "12",
     branchName: "Kality Branch",
     district: "Akaki",
     branchGrade: "B",
@@ -195,64 +242,7 @@ export default function Branch() {
 
         <div className="rounded-lg shadow overflow-hidden">
         <h4 className="text-2xl font-semibold text-black mb-4">Branch Network</h4>
-          <table className="min-w-full">
-            <thead>
-            <tr>
-                <td colSpan={6}>
-                  <hr className="border-b border-[#892890] w-full" />
-                </td>
-              </tr>
-              <tr className="bg-[--color-puple-800]">
-                <th className="px-6 py-3 text-left text-sm font-medium !text-[--color-puple-800] uppercase tracking-wider">
-                  Branch Name
-                </th>
-                <th className="px-6 py-3 text-left text-sm font-medium !text-[--color-puple-800] uppercase tracking-wider">
-                  District
-                </th>
-                <th className="px-6 py-3 text-left text-sm font-medium !text-[--color-puple-800] uppercase tracking-wider">
-                  Branch Grade
-                </th>
-                <th className="px-6 py-3 text-left text-sm font-medium !text-[--color-puple-800] uppercase tracking-wider">
-                  Region
-                </th>
-                <th className="px-6 py-3 text-left text-sm font-medium !text-[--color-puple-800] uppercase tracking-wider">
-                  City
-                </th>
-                <th className="px-6 py-3 text-left text-sm font-medium !text-[--color-puple-800] uppercase tracking-wider">
-                  Telephone
-                </th>
-              </tr>
-              <tr>
-                <td colSpan={6}>
-                  <hr className="border-b border-[#892890] w-full" />
-                </td>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-gray-200">
-              {sampleData.map((row, index) => (
-                <tr key={index} className="hover:bg-gray-50">
-                  <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                    {row.branchName}
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                    {row.district}
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                    {row.branchGrade}
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                    {row.region}
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                    {row.city}
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                    {row.telephone}
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+          <DataTable columns={columns} data={data} />
         </div>
 
         <div className="flex items-center justify-center mt-6">

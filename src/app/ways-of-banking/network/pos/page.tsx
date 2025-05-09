@@ -1,82 +1,87 @@
 'use client';
 
 import { Metadata } from "next";
+import { DataTable } from "@/components/ui/data-table";
 
-interface BranchData {
+interface PosData {
+  id: string;
   branchName: string;
   district: string;
-  branchGrade: string;
-  region: string;
-  city: string;
+  posMerchantOrBranchName: string;
   telephone: string;
 }
 
-const sampleData: BranchData[] = [
+const posData: PosData[] = [
   {
-    branchName: "Addis Ababa Main Branch",
-    district: "Addis Ketema",
-    branchGrade: "A",
-    region: "Addis Ababa",
-    city: "-",
+    id: "1",
+    branchName: "Saris Addisu Sefer",
+    district: "BOLE",
+    posMerchantOrBranchName: "SENTOZA TRADING PLC",
     telephone: "-"
   },
   {
-    branchName: "Bole Branch",
-    district: "Bole",
-    branchGrade: "B",
-    region: "Addis Ababa",
-    city: "-",
+    id: "2",
+    branchName: "ASGORI BRANCH",
+    district: "AMBO",
+    posMerchantOrBranchName: "ASGORI BRANCH",
     telephone: "-"
   },
   {
-    branchName: "Lideta Branch",
-    district: "Lideta",
-    branchGrade: "A",
-    region: "Addis Ababa",
-    city: "-",
+    id: "3",
+    branchName: "Sebategna",
+    district: "MERKATO",
+    posMerchantOrBranchName: "BIRHANHYUN SEBHAT HABTU",
     telephone: "-"
   },
   {
-    branchName: "Kality Branch",
-    district: "Akaki",
-    branchGrade: "B",
-    region: "Addis Ababa",
-    city: "-",
+    id: "4",
+    branchName: "Tabor",
+    district: "HAWASSA",
+    posMerchantOrBranchName: "TESHALE AWALE ETHIOPIA SUPERMA",
     telephone: "-"
   },
   {
-    branchName: "Addis Ababa Main Branch",
-    district: "Addis Ketema",
-    branchGrade: "A",
-    region: "Addis Ababa",
-    city: "-",
+    id: "5",
+    branchName: "Combolcha",
+    district: "DESSIE",
+    posMerchantOrBranchName: "COMBOLCHA POST OFFICE",
     telephone: "-"
   },
   {
-    branchName: "Bole Branch",
-    district: "Bole",
-    branchGrade: "B",
-    region: "Addis Ababa",
-    city: "-",
+    id: "6",
+    branchName: "Coca Mazoria",
+    district: "MERKATO",
+    posMerchantOrBranchName: "MEKA NISA KILATO",
     telephone: "-"
   },
   {
-    branchName: "Lideta Branch",
-    district: "Lideta",
-    branchGrade: "A",
-    region: "Addis Ababa",
-    city: "-",
+    id: "7",
+    branchName: "Addis Ababa",
+    district: "ARADA",
+    posMerchantOrBranchName: "ETHIOPIAN POSTAL SERVICE ENTER",
     telephone: "-"
   },
   {
-    branchName: "Kality Branch",
-    district: "Akaki",
-    branchGrade: "B",
-    region: "Addis Ababa",
-    city: "-",
+    id: "8",
+    branchName: "Addis Ababa",
+    district: "ARADA",
+    posMerchantOrBranchName: "ETHIOPIAN POSTAL SERVICE ENTER",
     telephone: "-"
-  }
-];
+  },
+  {
+    id: "9",
+    branchName: "KURFA BRANCH",
+    district: "ARADA",
+    posMerchantOrBranchName: "KURFA BRANCH",
+    telephone: "-"
+  },
+  {
+    id: "10",
+    branchName: "Addis Ababa",
+    district: "ARADA",
+    posMerchantOrBranchName: "ETHIOPIAN POSTAL SERVICE ENTER",
+    telephone: "-"
+  }];
 
 import { useState } from "react";
 
@@ -196,65 +201,35 @@ export default function Branch() {
         </div>
 
         <div className="rounded-lg shadow overflow-hidden">
-        <h4 className="text-2xl font-semibold text-black mb-4">Branch Network</h4>
-          <table className="min-w-full">
-            <thead>
-            <tr>
-                <td colSpan={6}>
-                  <hr className="border-b border-[#892890] w-full" />
-                </td>
-              </tr>
-              <tr className="bg-[--color-puple-800]">
-                <th className="px-6 py-3 text-left text-sm font-medium !text-[--color-puple-800] uppercase tracking-wider">
-                  Branch Name
-                </th>
-                <th className="px-6 py-3 text-left text-sm font-medium !text-[--color-puple-800] uppercase tracking-wider">
-                  District
-                </th>
-                <th className="px-6 py-3 text-left text-sm font-medium !text-[--color-puple-800] uppercase tracking-wider">
-                  Branch Grade
-                </th>
-                <th className="px-6 py-3 text-left text-sm font-medium !text-[--color-puple-800] uppercase tracking-wider">
-                  Region
-                </th>
-                <th className="px-6 py-3 text-left text-sm font-medium !text-[--color-puple-800] uppercase tracking-wider">
-                  City
-                </th>
-                <th className="px-6 py-3 text-left text-sm font-medium !text-[--color-puple-800] uppercase tracking-wider">
-                  Telephone
-                </th>
-              </tr>
-              <tr>
-                <td colSpan={6}>
-                  <hr className="border-b border-[#892890] w-full" />
-                </td>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-gray-200">
-              {sampleData.map((row, index) => (
-                <tr key={index} className="hover:bg-gray-50">
-                  <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                    {row.branchName}
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                    {row.district}
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                    {row.branchGrade}
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                    {row.region}
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                    {row.city}
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                    {row.telephone}
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+          <div className="p-4">
+            <h4 className="text-2xl font-semibold text-black mb-4">POS</h4>
+            <DataTable
+              columns={[
+                {
+                  accessorKey: "id",
+                  header: "ID"
+                },
+                {
+                  accessorKey: "branchName",
+                  header: "Branch Name"
+                },
+                {
+                  accessorKey: "district",
+                  header: "District"
+                },
+                {
+                  accessorKey: "posMerchantOrBranchName",
+                  header: "POS Merchant/Branch Name"
+                },
+                {
+                  accessorKey: "telephone",
+                  header: "Telephone"
+                }
+              ]}
+              data={posData}
+            />
+            </div>
+          </div>
         </div>
 
         <div className="flex items-center justify-center mt-6">
@@ -283,7 +258,6 @@ export default function Branch() {
           </button>
         </div>
       </div>
-    </div>
     </div>
   );
 }

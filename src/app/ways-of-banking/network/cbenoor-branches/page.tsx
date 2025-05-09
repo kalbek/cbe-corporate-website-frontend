@@ -1,86 +1,105 @@
 'use client';
 
 import { Metadata } from "next";
+import { DataTable } from "@/components/ui/data-table";
+import { columns, CbeNoorBranchData } from "./columns";
 
-interface BranchData {
-  branchName: string;
-  district: string;
-  branchGrade: string;
-  region: string;
-  city: string;
-  telephone: string;
-}
-
-const sampleData: BranchData[] = [
+const sampleData: CbeNoorBranchData[] = [
   {
-    branchName: "Addis Ababa Main Branch",
-    district: "Addis Ketema",
-    branchGrade: "A",
-    region: "Addis Ababa",
+    id: "1",
+    branchName: "ANSAR BRANCH",
+    district: "MEKELLE",
+    branchGrade: "-",
+    region: "-",
+    city: "Alamata",
+    telephone: "-"
+  },
+  {
+    id: "2",
+    branchName: "HASSEN HUSSEN MESJID",
+    district: "MERKATO",
+    branchGrade: "-",
+    region: "-",
+    city: "Addis Ababa",
+    telephone: "-"
+  },
+  {
+    id: "3",
+    branchName: "AMANAH BRANCH",
+    district: "KOLFE",
+    branchGrade: "-",
+    region: "-",
+    city: "Addis Ababa",
+    telephone: "-"
+  },
+  {
+    id: "4",
+    branchName: "BABU RAHEMA BRANCH",
+    district: "DIRE DAWA",
+    branchGrade: "-",
+    region: "-",
+    city: "Dire Dawa",
+    telephone: "-"
+  },
+  {
+    id: "5",
+    branchName: "SELAM MESJID BRANCH",
+    district: "KIRKOS",
+    branchGrade: "-",
+    region: "-",
+    city: "Addis Ababa",
+    telephone: "-"
+  },
+  {
+    id: "6",
+    branchName: "MUBAREK BRANCH",
+    district: "JIJIGA",
+    branchGrade: "-",
+    region: "-",
     city: "-",
     telephone: "-"
   },
   {
-    branchName: "Bole Branch",
-    district: "Bole",
-    branchGrade: "B",
-    region: "Addis Ababa",
-    city: "-",
+    id: "7",
+    branchName: "NESSIHA BRANCH",
+    district: "SHASHEMENE",
+    branchGrade: "-",
+    region: "-",
+    city: "Shashemene",
     telephone: "-"
   },
   {
-    branchName: "Lideta Branch",
-    district: "Lideta",
-    branchGrade: "A",
-    region: "Addis Ababa",
-    city: "-",
+    id: "8",
+    branchName: "Mecca",
+    district: "MEGENAGNA",
+    branchGrade: "-",
+    region: "-",
+    city: "Addis Ababa",
     telephone: "-"
   },
   {
-    branchName: "Kality Branch",
-    district: "Akaki",
-    branchGrade: "B",
-    region: "Addis Ababa",
-    city: "-",
+    id: "9",
+    branchName: "IKLAS BRANCH",
+    district: "ASSELA",
+    branchGrade: "-",
+    region: "-",
+    city: "Asassa",
     telephone: "-"
   },
   {
-    branchName: "Addis Ababa Main Branch",
-    district: "Addis Ketema",
-    branchGrade: "A",
-    region: "Addis Ababa",
-    city: "-",
-    telephone: "-"
-  },
-  {
-    branchName: "Bole Branch",
-    district: "Bole",
-    branchGrade: "B",
-    region: "Addis Ababa",
-    city: "-",
-    telephone: "-"
-  },
-  {
-    branchName: "Lideta Branch",
-    district: "Lideta",
-    branchGrade: "A",
-    region: "Addis Ababa",
-    city: "-",
-    telephone: "-"
-  },
-  {
-    branchName: "Kality Branch",
-    district: "Akaki",
-    branchGrade: "B",
-    region: "Addis Ababa",
-    city: "-",
+    id: "10",
+    branchName: "NASRI BRANCH",
+    district: "SHASHEMENE",
+    branchGrade: "-",
+    region: "-",
+    city: "Dodolla",
     telephone: "-"
   }
 ];
 
 import { useState } from "react";
 
-export default function Branch() {
+export default function CbeNoorBranches() {
   const [activeTab, setActiveTab] = useState('Cbe Noor Branches');
 
   const handleTabClick = (tab: string) => {
@@ -196,65 +215,9 @@ export default function Branch() {
         </div>
 
         <div className="rounded-lg shadow overflow-hidden">
-        <h4 className="text-2xl font-semibold text-black mb-4">Branch Network</h4>
-          <table className="min-w-full">
-            <thead>
-            <tr>
-                <td colSpan={6}>
-                  <hr className="border-b border-[#892890] w-full" />
-                </td>
-              </tr>
-              <tr className="bg-[--color-puple-800]">
-                <th className="px-6 py-3 text-left text-sm font-medium !text-[--color-puple-800] uppercase tracking-wider">
-                  Branch Name
-                </th>
-                <th className="px-6 py-3 text-left text-sm font-medium !text-[--color-puple-800] uppercase tracking-wider">
-                  District
-                </th>
-                <th className="px-6 py-3 text-left text-sm font-medium !text-[--color-puple-800] uppercase tracking-wider">
-                  Branch Grade
-                </th>
-                <th className="px-6 py-3 text-left text-sm font-medium !text-[--color-puple-800] uppercase tracking-wider">
-                  Region
-                </th>
-                <th className="px-6 py-3 text-left text-sm font-medium !text-[--color-puple-800] uppercase tracking-wider">
-                  City
-                </th>
-                <th className="px-6 py-3 text-left text-sm font-medium !text-[--color-puple-800] uppercase tracking-wider">
-                  Telephone
-                </th>
-              </tr>
-              <tr>
-                <td colSpan={6}>
-                  <hr className="border-b border-[#892890] w-full" />
-                </td>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-gray-200">
-              {sampleData.map((row, index) => (
-                <tr key={index} className="hover:bg-gray-50">
-                  <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                    {row.branchName}
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                    {row.district}
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                    {row.branchGrade}
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                    {row.region}
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                    {row.city}
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                    {row.telephone}
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+        <h4 className="text-2xl font-semibold text-black mb-4">CBE Noor Branches</h4>
+          <DataTable columns={columns} data={sampleData} />
+        </div>
         </div>
 
         <div className="flex items-center justify-center mt-6">
@@ -283,7 +246,6 @@ export default function Branch() {
           </button>
         </div>
       </div>
-    </div>
     </div>
   );
 }
