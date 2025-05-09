@@ -27,110 +27,114 @@ const newsItems = [
     }
   ];
 
-export default function News() {
+  export default function News() {
     const [activePage, setActivePage] = useState(1);
-    return <>
-    <div className="bg-[#ffffff] text-white w-[1440]">
-      {/* Hero Section */}
-      <div className="relative h-[549.14px] w-[1440]"> 
-        <Image
-          src="/images/announcement-img.png"    
-          alt="News Hero"
-          layout="fill"
-          objectFit="cover"
-          className="opacity-90"
-        />
-        <div className="relative w-[523px] h-[232px] top-[145px] left-[920px] gap-[20px]">
-          <div>
-            <h1 className="w-[523px] h-[60px] font-pt-sans-caption font-bold text-[48px] leading-[60px] tracking-[-0.02em]">Announcements</h1>
-            <p className="w-[523px] h-[84px] font-pt-sans-caption font-normal text-[18px] leading-[28px] tracking-[0%]">
-            Stay informed with the latest official updates, service notices, and important messages from the Commercial Bank of Ethiopia.
-            </p>
-            <button className="bg-gray-400 w-[139px] h-[48px] gap-[50px] pt-[12px] pr-[20px] pb-[12px] pl-[20px] rounded-[8px]">
-              
-              Know More
-            </button>
-          </div>
-        </div>
-          {/* Left Arrow */}
-            <div className="w-[40px] h-[40px] absolute top-[256.57px] left-[22px] cursor-pointer">
-                &lt;
-            </div>
-
-            {/* Right Arrow */}
-            <div className="w-[40px] h-[40px] absolute top-[256.57px] right-[22px] cursor-pointer">
-                &gt;
-            </div>
-      </div>
-
-      {/* News Section */}
-      <div className="w-full bg-[#ffffff]">
-        <div className="max-w-7xl mx-auto px-4 py-16">
-          <div className="w-[1440px] h-[138px] gap-[28px] pt-[60px] pr-[80px] pb-[40px] pl-[80px]">
-            <h2 className="text-[#892890] text-[30px] font-bold font-pt-sans-caption">Announcements</h2>
-          </div>
-
-          {/* News Grid Container */}
-          <div className="w-[1440px] h-[751.35px] gap-[80px] pr-[80px] pb-[100px] pl-[80px]">
-            {/* Grid */}
-            <div className="w-[1280px] h-[558.35px] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-              {newsItems.map((item) => (
-                <div key={item.id} className="bg-[#ffffff] rounded-lg transition w-[408px] h-[510.35px] gap-[20px]">
-                  <div className="relative w-[408px] h-[324.35px]">
-                    <Image
-                      src={item.image}
-                      alt={item.title}
-                      layout="fill"
-                      objectFit="cover"
-                    />
-                  </div>
-                  <div className="w-[408px] h-[166px] gap-[8px]">
-                    <h3 className="w-[408px] h-[48px] font-kefa font-bold text-base leading-6 tracking-normal text-black">{item.title}</h3>
-                    <p className="w-[408px] h-[72px] font-kefa font-normal text-sm leading-6 tracking-normal text-black">{item.description}</p>
-                    <Link href={`/news/${item.slug}`} className="w-[107px] h-[24px]">
-                      <button className="w-[107px] h-[24px] font-pt font-normal text-[16px] leading-[24px] tracking-[0] text-[#892890] cursor-pointer">
-                        <span className="w-[83px] h-[24px] font-pt-sans-caption font-normal text-base leading-6 tracking-normal text-[#892890]">Read More  </span>  
-                        <span className="w-[24px] h-[24px] rotate-90">&gt;</span>
-                      </button>
-                    </Link>
-                  </div>
+    
+    return (
+        <div className="bg-white text-white w-full">
+            {/* Hero Section */}
+            <div className="relative w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[549.14px]">
+                <Image
+                    src="/images/announcement-img.png"
+                    alt="News Hero"
+                    layout="fill"
+                    objectFit="cover"
+                    className="opacity-90"
+                />
+                <div className="absolute top-1/4 left-4 sm:left-8 md:left-12 lg:left-auto lg:right-12 w-full sm:w-3/4 md:w-2/3 lg:w-[523px] max-w-[523px] space-y-4 sm:space-y-5 p-4 sm:p-6">
+                    <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-[48px] font-pt-sans-caption font-bold leading-tight tracking-tight text-white">
+                        Announcements
+                    </h1>
+                    <p className="text-sm sm:text-base lg:text-[18px] font-pt-sans-caption font-normal leading-relaxed text-white">
+                        Stay informed with the latest official updates, service notices, and important messages from the Commercial Bank of Ethiopia.
+                    </p>
+                    <button className="bg-gray-400 hover:bg-gray-500 text-white text-sm sm:text-base px-4 sm:px-5 py-2 sm:py-3 rounded-lg transition-colors">
+                        Know More
+                    </button>
                 </div>
-              ))}
+                {/* Arrows */}
+                <div className="absolute left-4 sm:left-6 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-10 sm:h-10 text-white cursor-pointer">
+                    &lt;
+                </div>
+                <div className="absolute right-4 sm:right-6 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-10 sm:h-10 text-white cursor-pointer">
+                    &gt;
+                </div>
             </div>
-            {/* Pagination */}
-            <div className="flex w-[352px] h-[36px] gap-[6px] ml-auto ">
-              <button 
-                className="flex w-[77px] h-[36px] px-[12px] py-[8px] gap-[4px] border-1 border-purple-800 rounded-[4px] cursor-pointer"
-                onClick={() => setActivePage(prev => prev > 1 ? prev - 1 : 1)}
-                disabled={activePage === 1}
-              > 
-                <span className="w-[16px] h-[16px] text-[#892890]">&lt;</span>
-                 <span className="w-[33px] h-[20px] text-[#892890] font-inter font-normal text-sm leading-5 tracking-normal">Back</span>
-              </button>
-              {[1, 2, 3, 4, 5].map((page) => (
-                <button 
-                  key={page}
-                  className={`w-[31px] h-[36px] px-[12px] py-[8px] text-purple-800 bg-white border-1 cursor-pointer border-purple-800 rounded-[4px] hover:bg-purple-100 transition-colors ${
-                    activePage === page ? 'bg-purple-800 text-white' : ''
-                  }`}
-                  onClick={() => setActivePage(page)}
-                >
-                  {page}
-                </button>
-              ))}
-              <button 
-                className="flex w-[76px] h-[36px] px-[12px] py-[8px] gap-[4px] border-1 border-purple-800 rounded-[4px] cursor-pointer"
-                onClick={() => setActivePage(prev => prev < 5 ? prev + 1 : 5)}
-                disabled={activePage === 5}
-              >
-                <span className="w-[32px] h-[20px] text-[#892890] font-inter font-normal text-sm leading-5 tracking-normal">Next</span> 
-                <span className="w-[16px] h-[16px] text-[#892890]">&gt;</span>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>   
 
-    </>;
+            {/* News Section */}
+            <div className="w-full bg-white">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
+                    <div className="mb-8 sm:mb-10">
+                        <h2 className="text-[#892890] text-xl sm:text-2xl lg:text-[30px] font-bold font-pt-sans-caption">
+                            Announcements
+                        </h2>
+                    </div>
+
+                    {/* News Grid Container */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
+                        {newsItems.map((item) => (
+                            <div key={item.id} className="bg-white rounded-lg shadow-md hover:shadow-lg transition w-full">
+                                <div className="relative w-full aspect-[4/3]">
+                                    <Image
+                                        src={item.image}
+                                        alt={item.title}
+                                        layout="fill"
+                                        objectFit="cover"
+                                        className="rounded-t-lg"
+                                    />
+                                </div>
+                                <div className="p-4 sm:p-5 space-y-2 sm:space-y-3">
+                                    <h3 className="text-base sm:text-lg font-kefa font-bold leading-6 text-black line-clamp-2">
+                                        {item.title}
+                                    </h3>
+                                    <p className="text-sm sm:text-base font-kefa font-normal leading-6 text-black line-clamp-3">
+                                        {item.description}
+                                    </p>
+                                    <Link href={`/news/${item.slug}`}>
+                                        <button className="flex items-center gap-2 text-[#892890] font-pt-sans-caption font-normal text-sm sm:text-base hover:underline">
+                                            <span>Read More</span>
+                                            <span className="text-lg">&gt;</span>
+                                        </button>
+                                    </Link>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+
+                    {/* Pagination */}
+                    <div className="flex justify-center sm:justify-end mt-8 sm:mt-10 gap-2 sm:gap-3">
+                        <button
+                            className="flex items-center gap-1 sm:gap-2 px-3 sm:px-4 py-2 border border-purple-800 rounded-md text-[#892890] text-sm sm:text-base hover:bg-purple-100 disabled:opacity-50 disabled:cursor-not-allowed"
+                            onClick={() => setActivePage(prev => prev > 1 ? prev - 1 : 1)}
+                            disabled={activePage === 1}
+                        >
+                            <span>&lt;</span>
+                            <span>Back</span>
+                        </button>
+                        {[1, 2, 3, 4, 5].map((page) => (
+                            <button
+                                key={page}
+                                className={`px-3 sm:px-4 py-2 border border-purple-800 rounded-md text-sm sm:text-base ${
+                                    activePage === page
+                                        ? 'bg-purple-800 text-white'
+                                        : 'text-purple-800 hover:bg-purple-100'
+                                }`}
+                                onClick={() => setActivePage(page)}
+                            >
+                                {page}
+                            </button>
+                        ))}
+                        <button
+                            className="flex items-center gap-1 sm:gap-2 px-3 sm:px-4 py-2 border border-purple-800 rounded-md text-[#892890] text-sm sm:text-base hover:bg-purple-100 disabled:opacity-50 disabled:cursor-not-allowed"
+                            onClick={() => setActivePage(prev => prev < 5 ? prev + 1 : 5)}
+                            disabled={activePage === 5}
+                        >
+                            <span>Next</span>
+                            <span>&gt;</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
 }
