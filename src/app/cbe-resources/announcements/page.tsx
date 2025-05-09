@@ -41,14 +41,14 @@ const newsItems = [
                     objectFit="cover"
                     className="opacity-90"
                 />
-                <div className="absolute top-1/4 left-4 sm:left-8 md:left-[264px] lg:left-auto lg:right-12 w-full sm:w-3/4 md:w-2/3 lg:w-[523px] max-w-[523px] space-y-4 sm:space-y-5 p-4 sm:p-6 gap-[20px]">
+                <div className="absolute top-1/4 left-4 sm:left-8 md:left-[274px] lg:left-auto lg:right-12 w-full sm:w-3/4 md:w-2/3 lg:w-[523px] max-w-[523px] space-y-4 sm:space-y-5 p-4 sm:p-6 gap-[20px]">
                     <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-[48px] font-pt-sans-caption font-bold leading-tight tracking-tight text-white width-[523px] height-[60px] font-weight-700">
                         Announcements
                     </h1>
                     <p className="sm:text-base lg:text-[18px] font-pt-sans-caption font-normal leading-relaxed text-white width-[523px] height-[84px] font-weight-400">
                         Stay informed with the latest official updates, service notices, and important messages from the Commercial Bank of Ethiopia.
                     </p>
-                    <button className="bg-gray-400 hover:bg-gray-500 text-white sm:text-base px-4 sm:px-5 py-2 sm:py-3 rounded-lg transition-colors font-weight-700">
+                    <button className="bg-gray-400 hover:bg-gray-500 text-white sm:text-base px-4 sm:px-5 py-2 sm:py-3 rounded-lg transition-colors font-weight-700 cursor-pointer">
                         Know More
                     </button>
                 </div>
@@ -90,7 +90,7 @@ const newsItems = [
                                         {item.description}
                                     </p>
                                     <Link href={`/news/${item.slug}`}>
-                                        <button className="flex items-center gap-2 text-[#892890] font-pt-sans-caption font-normal sm:text-base mt-10">
+                                        <button className="flex items-center gap-2 text-[#892890] font-pt-sans-caption font-normal sm:text-base mt-10 cursor-pointer">
                                             <span>Read More</span>
                                             <span>&gt;</span>
                                         </button>
@@ -103,7 +103,7 @@ const newsItems = [
                     {/* Pagination */}
                     <div className="flex justify-center sm:justify-end mt-8 sm:mt-16 gap-[6px] w-[352] h-[36px]">
                         <button
-                            className="flex items-center w-[77px] h-[36px] rounded gap-1 sm:gap-2 px-3 sm:px-4 py-2 border border-gray-400 text-[#892890] sm:text-base hover:bg-purple-100 disabled:opacity-50 disabled:cursor-not-allowed"
+                            className="cursor-pointer flex items-center w-[77px] h-[36px] rounded gap-1 sm:gap-2 px-3 sm:px-4 py-2 border border-gray-400 text-[#892890] sm:text-base hover:bg-purple-100 disabled:opacity-50 disabled:cursor-not-allowed"
                             onClick={() => setActivePage(prev => prev > 1 ? prev - 1 : 1)}
                             disabled={activePage === 1}
                         >
@@ -113,7 +113,7 @@ const newsItems = [
                         {[1, 2, 3, 4, 5].map((page) => (
                             <button
                                 key={page}
-                                className={`border border-gray-400 rounded sm:text-base w-[31px] h-[36px] ${
+                                className={`border border-gray-400 rounded sm:text-base w-[31px] h-[36px] cursor-pointer ${
                                     activePage === page
                                         ? 'bg-purple-800 text-white'
                                         : 'text-purple-800 hover:bg-purple-100'
@@ -124,7 +124,7 @@ const newsItems = [
                             </button>
                         ))}
                         <button
-                            className="flex items-center w-[77px] h-[36px] rounded gap-1 sm:gap-2 px-3 sm:px-4 py-2 border border-gray-400 text-[#892890] sm:text-base hover:bg-purple-100 disabled:opacity-50 disabled:cursor-not-allowed"
+                            className="cursor-pointer flex items-center w-[77px] h-[36px] rounded gap-1 sm:gap-2 px-3 sm:px-4 py-2 border border-gray-400 text-[#892890] sm:text-base hover:bg-purple-100 disabled:opacity-50 disabled:cursor-not-allowed"
                             onClick={() => setActivePage(prev => prev < 5 ? prev + 1 : 5)}
                             disabled={activePage === 5}
                         >
