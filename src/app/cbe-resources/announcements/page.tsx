@@ -41,14 +41,14 @@ const newsItems = [
                     objectFit="cover"
                     className="opacity-90"
                 />
-                <div className="absolute top-1/4 left-4 sm:left-8 md:left-12 lg:left-auto lg:right-12 w-full sm:w-3/4 md:w-2/3 lg:w-[523px] max-w-[523px] space-y-4 sm:space-y-5 p-4 sm:p-6">
-                    <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-[48px] font-pt-sans-caption font-bold leading-tight tracking-tight text-white">
+                <div className="absolute top-1/4 left-4 sm:left-8 md:left-[264px] lg:left-auto lg:right-12 w-full sm:w-3/4 md:w-2/3 lg:w-[523px] max-w-[523px] space-y-4 sm:space-y-5 p-4 sm:p-6 gap-[20px]">
+                    <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-[48px] font-pt-sans-caption font-bold leading-tight tracking-tight text-white width-[523px] height-[60px] font-weight-700">
                         Announcements
                     </h1>
-                    <p className="text-sm sm:text-base lg:text-[18px] font-pt-sans-caption font-normal leading-relaxed text-white">
+                    <p className="sm:text-base lg:text-[18px] font-pt-sans-caption font-normal leading-relaxed text-white width-[523px] height-[84px] font-weight-400">
                         Stay informed with the latest official updates, service notices, and important messages from the Commercial Bank of Ethiopia.
                     </p>
-                    <button className="bg-gray-400 hover:bg-gray-500 text-white text-sm sm:text-base px-4 sm:px-5 py-2 sm:py-3 rounded-lg transition-colors">
+                    <button className="bg-gray-400 hover:bg-gray-500 text-white sm:text-base px-4 sm:px-5 py-2 sm:py-3 rounded-lg transition-colors font-weight-700">
                         Know More
                     </button>
                 </div>
@@ -64,8 +64,8 @@ const newsItems = [
             {/* News Section */}
             <div className="w-full bg-white">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
-                    <div className="mb-8 sm:mb-10">
-                        <h2 className="text-[#892890] text-xl sm:text-2xl lg:text-[30px] font-bold font-pt-sans-caption">
+                    <div className="mb-8 sm:mb-10 h-[38px]">
+                        <h2 className="text-purple-700 sm:text-2xl lg:text-[30px] font-bold font-pt-sans-caption font-weight-700">
                             Announcements
                         </h2>
                     </div>
@@ -73,27 +73,26 @@ const newsItems = [
                     {/* News Grid Container */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
                         {newsItems.map((item) => (
-                            <div key={item.id} className="bg-white rounded-lg shadow-md hover:shadow-lg transition w-full">
-                                <div className="relative w-full aspect-[4/3]">
+                            <div key={item.id} className="bg-white w-full">
+                                <div className="relative w-[408] h-[324.35px] ">
                                     <Image
                                         src={item.image}
                                         alt={item.title}
                                         layout="fill"
                                         objectFit="cover"
-                                        className="rounded-t-lg"
                                     />
                                 </div>
-                                <div className="p-4 sm:p-5 space-y-2 sm:space-y-3">
+                                <div className="w-full gap-[8px] mt-4">
                                     <h3 className="text-base sm:text-lg font-kefa font-bold leading-6 text-black line-clamp-2">
                                         {item.title}
                                     </h3>
-                                    <p className="text-sm sm:text-base font-kefa font-normal leading-6 text-black line-clamp-3">
+                                    <p className="text-sm sm:text-base font-kefa font-normal leading-6 text-black line-clamp-3 overflow-visible mt-2">
                                         {item.description}
                                     </p>
                                     <Link href={`/news/${item.slug}`}>
-                                        <button className="flex items-center gap-2 text-[#892890] font-pt-sans-caption font-normal text-sm sm:text-base hover:underline">
+                                        <button className="flex items-center gap-2 text-[#892890] font-pt-sans-caption font-normal sm:text-base mt-10">
                                             <span>Read More</span>
-                                            <span className="text-lg">&gt;</span>
+                                            <span>&gt;</span>
                                         </button>
                                     </Link>
                                 </div>
@@ -102,9 +101,9 @@ const newsItems = [
                     </div>
 
                     {/* Pagination */}
-                    <div className="flex justify-center sm:justify-end mt-8 sm:mt-10 gap-2 sm:gap-3">
+                    <div className="flex justify-center sm:justify-end mt-8 sm:mt-16 gap-[6px] w-[352] h-[36px]">
                         <button
-                            className="flex items-center gap-1 sm:gap-2 px-3 sm:px-4 py-2 border border-purple-800 rounded-md text-[#892890] text-sm sm:text-base hover:bg-purple-100 disabled:opacity-50 disabled:cursor-not-allowed"
+                            className="flex items-center w-[77px] h-[36px] rounded gap-1 sm:gap-2 px-3 sm:px-4 py-2 border border-gray-400 text-[#892890] sm:text-base hover:bg-purple-100 disabled:opacity-50 disabled:cursor-not-allowed"
                             onClick={() => setActivePage(prev => prev > 1 ? prev - 1 : 1)}
                             disabled={activePage === 1}
                         >
@@ -114,7 +113,7 @@ const newsItems = [
                         {[1, 2, 3, 4, 5].map((page) => (
                             <button
                                 key={page}
-                                className={`px-3 sm:px-4 py-2 border border-purple-800 rounded-md text-sm sm:text-base ${
+                                className={`border border-gray-400 rounded sm:text-base w-[31px] h-[36px] ${
                                     activePage === page
                                         ? 'bg-purple-800 text-white'
                                         : 'text-purple-800 hover:bg-purple-100'
@@ -125,7 +124,7 @@ const newsItems = [
                             </button>
                         ))}
                         <button
-                            className="flex items-center gap-1 sm:gap-2 px-3 sm:px-4 py-2 border border-purple-800 rounded-md text-[#892890] text-sm sm:text-base hover:bg-purple-100 disabled:opacity-50 disabled:cursor-not-allowed"
+                            className="flex items-center w-[77px] h-[36px] rounded gap-1 sm:gap-2 px-3 sm:px-4 py-2 border border-gray-400 text-[#892890] sm:text-base hover:bg-purple-100 disabled:opacity-50 disabled:cursor-not-allowed"
                             onClick={() => setActivePage(prev => prev < 5 ? prev + 1 : 5)}
                             disabled={activePage === 5}
                         >
