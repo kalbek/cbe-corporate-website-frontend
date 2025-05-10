@@ -1,14 +1,7 @@
-import PrimaryNavigation from "@/components/header/primary-nav";
-import SubNavigation from "@/components/header/sub-navigation";
-
 export default function Home() {
   return (
     <>
       <div className="flex flex-col w-full">
-        {/* sub navigation */}
-        <SubNavigation />
-        {/* primary navigation */}
-        <PrimaryNavigation />
         {/* hero section*/}
         <div className="brr h-[50vh] flex-cent-vh">hero section</div>
         {/* services section*/}

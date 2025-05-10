@@ -8,6 +8,8 @@ import {
 } from "next/font/google";
 import "./globals.css";
 import Footer from "../components/footer/footer";
+import SubNavigation from "@/components/header/sub-navigation";
+import PrimaryNavigation from "@/components/header/primary-nav";
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -51,6 +53,8 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${manrope.variable} ${ptSans.variable} ${manrope.variable} ${ptSansCaptions.variable}  antialiased`}
       >
+        <SubNavigation />
+        <PrimaryNavigation />
         {children}
         <Footer />
       </body>
