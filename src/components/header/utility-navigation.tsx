@@ -21,35 +21,64 @@ export default function SubNavigation() {
       setSocialOpen(false);
       setSubsidaryBranchesOpen(false);
       setAboutOpen(!aboutOpen);
+    } else {
+      setAboutOpen(true);
+      setLangOpen(false);
+      setSocialOpen(false);
+      setSubsidaryBranchesOpen(false);
     }
   };
+
+  // toggle social links section on click only for small screens
+  const toggleSocialLinks = () => {
+    setLangOpen(false);
+    setSubsidaryBranchesOpen(false);
+    setAboutOpen(false);
+    if (window.innerWidth < 1024) {
+      setSocialOpen(!socialOpen);
+    } else {
+      setSocialOpen(true);
+    }
+  };
+
+  // toggle languages section on click only for small screens
+  const toggleLanguageLinks = () => {
+    setSocialOpen(false);
+    setSubsidaryBranchesOpen(false);
+    setAboutOpen(false);
+    if (window.innerWidth < 1024) {
+      setLangOpen(!langOpen);
+    } else {
+      setLangOpen(true);
+    }
+  };
+
+  // toggle cbe group menus visibility
 
   return (
     <nav
       aria-label="Utility navigation"
       className="min-h-7 flex justify-between items-center bg-purple-800 p-2 md:px-[7.2%] -z-50"
     >
-      {/* left side navigation*/}
-      <ul className="flex flex-col md:flex-row items-start md:items-center text-white ">
+      {/* left side navigation (About CBE Group and Careers)*/}
+      <ul className="flex flex-col md:flex-row items-center text-white ">
         {/* About CBE Group */}
-        <ul className="flex-cent-vh relative">
-          <p
-            className="text-xs text-white md:text-base hover:cursor-default"
-            onMouseEnter={() => {
-              setAboutOpen(true);
-              setLangOpen(false);
-              setSocialOpen(false);
-              setSubsidaryBranchesOpen(false);
-            }}
+        <ul className="flex flex-col md:flex-row md:items-center  relative">
+          <button
+            onMouseEnter={toggleCbeGroup}
             onClick={toggleCbeGroup}
+            aria-expanded={aboutOpen}
+            aria-controls="about-cbe-menu"
           >
-            About CBE Group
-          </p>
+            <p className="text-xs text-white text-left w-full md:text-base hover:cursor-default">
+              About CBE Group
+            </p>
+          </button>
           {/* About CBE Group sub menu */}
           <ul
             className={`${
               aboutOpen ? `visible` : `hidden`
-            } absolute  bg-white top-[130%] left-0 md:top-[120%] lg:top-[145%] shadow rounded-lg`}
+            } absolute bg-white top-[130%] left-0 md:top-[120%] lg:top-[145%] shadow rounded-lg`}
           >
             {/* about cbe group menu */}
             <li
@@ -64,32 +93,54 @@ export default function SubNavigation() {
                 alt="a dimond icon for about cbe group tooltip"
               />
               {/* about cbe group sub menu items */}
-              <ul className="flex flex-col rounded-sm font-bold">
+              <ul
+                id="about-cbe-menu"
+                role="menu"
+                className="flex flex-col rounded-sm font-bold"
+              >
                 <Link href="/about-us/about-cbe" passHref>
-                  <li className="flex-cent-v pr-10 w-fit md:w-60 py-2 border-b border-b-[#e8a029] cursor-pointer text-sm text-black hover:text-[var(--color-puple-800)]">
+                  <li
+                    role="menuitem"
+                    className="flex-cent-v pr-10 w-fit md:w-60 py-2 border-b border-b-[#e8a029] cursor-pointer text-sm text-black hover:text-[var(--color-puple-800)]"
+                  >
                     About CBE
                   </li>
                 </Link>
                 <Link href="/about-us/board-of-directors" passHref>
-                  <li className="flex-cent-v pr-10 w-fit md:w-60 py-2 border-b border-b-[#e8a029] cursor-pointer text-sm text-black hover:text-[var(--color-puple-800)]">
+                  <li
+                    role="menuitem"
+                    className="flex-cent-v pr-10 w-fit md:w-60 py-2 border-b border-b-[#e8a029] cursor-pointer text-sm text-black hover:text-[var(--color-puple-800)]"
+                  >
                     Borad of Directors
                   </li>
                 </Link>
                 <Link href="/about-us/executive-management" passHref>
-                  <li className="flex-cent-v pr-10 w-fit md:w-60 py-2 border-b border-b-[#e8a029] cursor-pointer text-sm text-black hover:text-[var(--color-puple-800)]">
+                  <li
+                    role="menuitem"
+                    className="flex-cent-v pr-10 w-fit md:w-60 py-2 border-b border-b-[#e8a029] cursor-pointer text-sm text-black hover:text-[var(--color-puple-800)]"
+                  >
                     Executive Management
                   </li>
                 </Link>
               </ul>
               {/* second row */}
-              <ul className="flex flex-col rounded-sm  font-bold cursor-default">
+              <ul
+                role="menu"
+                className="flex flex-col rounded-sm  font-bold cursor-default"
+              >
                 <Link href="/about-us/OrganizationalStructure" passHref>
-                  <li className="flex-cent-v pr-10 w-fit md:w-60 py-2 border-b border-b-[#e8a029] cursor-pointer text-sm text-black hover:text-[var(--color-puple-800)]">
+                  <li
+                    role="menuitem"
+                    className="flex-cent-v pr-10 w-fit md:w-60 py-2 border-b border-b-[#e8a029] cursor-pointer text-sm text-black hover:text-[var(--color-puple-800)]"
+                  >
                     Organizational Structure
                   </li>
                 </Link>
                 <Link href="/about-us/csr" passHref>
-                  <li className="flex-cent-v pr-10 w-fit md:w-60 py-2 border-b border-b-[#e8a029] cursor-pointer text-sm text-black hover:text-[var(--color-puple-800)]">
+                  <li
+                    role="menuitem"
+                    className="flex-cent-v pr-10 w-fit md:w-60 py-2 border-b border-b-[#e8a029] cursor-pointer text-sm text-black hover:text-[var(--color-puple-800)]"
+                  >
                     CSR
                   </li>
                 </Link>
@@ -229,11 +280,7 @@ export default function SubNavigation() {
               className={`w-fit flex gap-1 text-xs text-white ${
                 !socialOpen ? `hover:cursor-pointer` : `cursor-default`
               } `}
-              onClick={() => {
-                setLangOpen(false);
-                setSubsidaryBranchesOpen(false);
-                setSocialOpen(!socialOpen);
-              }}
+              onClick={toggleSocialLinks}
             >
               <p>Social</p>
               <img
@@ -247,6 +294,7 @@ export default function SubNavigation() {
               className={`${
                 socialOpen ? `visible` : `hidden`
               } absolute    bg-white top-[200%] md:top-[160%] shadow rounded-sm flex-col gap-4 py-4  font-bold cursor-default`}
+              onMouseLeave={() => setSocialOpen(false)}
             >
               <li className="flex gap-1 flex-cent-v pl-4 pr-10 w-fit  mb-3.5">
                 <Link href="" className="flex gap-1">
@@ -316,11 +364,7 @@ export default function SubNavigation() {
             className={`w-fit flex gap-1 text-xs text-white  ${
               !langOpen ? `hover:cursor-pointer` : `cursor-default`
             }`}
-            onClick={() => {
-              setSocialOpen(false);
-              setSubsidaryBranchesOpen(false);
-              setLangOpen(!langOpen);
-            }}
+            onClick={toggleLanguageLinks}
           >
             <p>EN</p>
             <img
