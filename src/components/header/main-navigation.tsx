@@ -66,7 +66,7 @@ export default function PrimaryNavigation() {
     setServicesOpen(false);
     setWaysOfBankingOpen(false);
     setResourcesOpen(false);
-    setCbeNoorOpen(true);
+    setCbeNoorOpen(false);
   };
 
   return (
@@ -111,22 +111,23 @@ export default function PrimaryNavigation() {
                   className={`${
                     productsOpen ? `visible` : `hidden`
                   }  absolute top-[100%] w-48 py-5 `}
+                  onClick={resetMenuOpens}
                 >
                   <li className="py-2 border-b border-b-[#E6E6E6] hover:text-[var(--color-purple-800)]">
-                    <Link href="">
+                    <Link href="/products/deposit">
                       <p>Deposit Accounts</p>
                     </Link>
                   </li>
                   <li className="py-2 border-b border-b-[#E6E6E6] hover:text-[var(--color-purple-800)]">
-                    <Link href="">
+                    <Link href="/products/cards">
                       <p>CBE Cards</p>
                     </Link>
                   </li>
                   <li className="py-2 border-b border-b-[#E6E6E6] hover:text-[var(--color-purple-800)]">
-                    <Link href="">Loans</Link>
+                    <Link href="/products/loan">Loans</Link>
                   </li>
                   <li className="py-2 hover:text-[var(--color-purple-800)]">
-                    <Link href="">Trade Services</Link>
+                    <Link href="/products/trade-services">Trade Services</Link>
                   </li>
                 </ul>
               </li>
@@ -148,19 +149,20 @@ export default function PrimaryNavigation() {
                   className={`${
                     servicesOpen ? `visible` : `hidden`
                   } absolute top-[100%] w-48  py-5`}
+                  onClick={resetMenuOpens}
                 >
                   <li className="py-2 border-b border-b-[#E6E6E6] hover:text-[var(--color-purple-800)]">
-                    <Link href="">
+                    <Link href="/cbe-services/cbe-birr">
                       <p>CBE Birr Plus</p>
                     </Link>
                   </li>
                   <li className="py-2 border-b border-b-[#E6E6E6] hover:text-[var(--color-purple-800)]">
-                    <Link href="">
+                    <Link href="/cbe-services/cbe-ethio-direct">
                       <p>Ethio Direct</p>
                     </Link>
                   </li>
                   <li className="py-2 hover:text-[var(--color-purple-800)]">
-                    <Link href="">CBE Nedaj</Link>
+                    <Link href="/cbe-services/cbe-nedaj">CBE Nedaj</Link>
                   </li>
                 </ul>
               </li>
@@ -182,22 +184,25 @@ export default function PrimaryNavigation() {
                   className={`${
                     waysOfBankingOpen ? `visible` : `hidden`
                   } absolute top-[100%] w-48  py-5`}
+                  onClick={resetMenuOpens}
                 >
                   <li className="py-2 border-b border-b-[#E6E6E6] hover:text-[var(--color-purple-800)]">
-                    <Link href="">
+                    <Link href="/ways-of-banking/internet-banking">
                       <p>Internet Banking</p>
                     </Link>
                   </li>
                   <li className="py-2 border-b border-b-[#E6E6E6] hover:text-[var(--color-purple-800)]">
-                    <Link href="">
+                    <Link href="/ways-of-banking/mobile-banking">
                       <p> Mobile Banking</p>
                     </Link>
                   </li>
                   <li className="py-2 border-b border-b-[#E6E6E6] hover:text-[var(--color-purple-800)]">
-                    <Link href="">Branches</Link>
+                    <Link href="/ways-of-banking/network/branch">Branches</Link>
                   </li>
                   <li className="py-2 hover:text-[var(--color-purple-800)]">
-                    <Link href="">ATM Locator</Link>
+                    <Link href="/ways-of-banking/atm-branch-locator">
+                      ATM Locator
+                    </Link>
                   </li>
                 </ul>
               </li>
@@ -219,19 +224,20 @@ export default function PrimaryNavigation() {
                   className={`${
                     resourcesOpen ? `visible` : `hidden`
                   } absolute top-[100%] w-48  py-5`}
+                  onClick={resetMenuOpens}
                 >
                   <li className="py-2 border-b border-b-[#E6E6E6] hover:text-[var(--color-purple-800)]">
-                    <Link href="">
+                    <Link href="/cbe-resources/publications/annual-report">
                       <p>Publication</p>
                     </Link>
                   </li>
                   <li className="py-2 border-b border-b-[#E6E6E6] hover:text-[var(--color-purple-800)]">
-                    <Link href="">
+                    <Link href="/cbe-resources/media/programs">
                       <p> Media Programmes</p>
                     </Link>
                   </li>
                   <li className="py-2 hover:text-[var(--color-purple-800)]">
-                    <Link href="">Gallery</Link>
+                    <Link href="cbe-resources/media/gallary">Gallery</Link>
                   </li>
                 </ul>
               </li>
@@ -260,7 +266,7 @@ export default function PrimaryNavigation() {
                       : `cursor-default border-b-[var(--color-purple-800)] text-[var(--color-purple-800)]`
                   }`}
                 >
-                  <Link href="">
+                  <Link href="/products/cbe-noor">
                     <p>CBE Noor</p>
                   </Link>
                 </button>
