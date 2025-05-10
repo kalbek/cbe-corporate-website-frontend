@@ -11,19 +11,19 @@ type HeroProps = {
 
 const hero: React.FC<HeroProps> = ({ header, description, cta }) => {
   return (
-    <main className="font-primary bg-[url(/images/hero-image.png)] bg-cover bg-center bg-no-repeat grid grid-cols-2 items-center">
+    <main className="font-primary items-center bg-[url(/hero-image.png)] bg-cover bg-center grid sm:grid-cols-2">
       <Link href="/">
         <Image
-          src="/icon-and-logos/about-us/previous.svg"
+          src="/previous.svg"
           width={40}
           height={40}
           alt="previous"
-          className="ml-2"
+          className="hidden sm:flex ml-2"
         />
       </Link>
 
-      <div className="flex justify-between items-center gap-20">
-        <div className="text-foreground w-[523px] my-[160px]">
+      <div className="sm:flex justify-between items-center gap-20 p-4">
+        <div className="text-foreground  max-w-[523px] my-[160px]">
           <h1 className="text-5xl font-bold mb-5">{header}</h1>
           <p className="text-[18px] font-normal mb-7">{description}</p>
           <Link
@@ -36,11 +36,11 @@ const hero: React.FC<HeroProps> = ({ header, description, cta }) => {
 
         <Link href="/">
           <Image
-            src="/icon-and-logos/about-us/next.svg"
+            src="/next.svg"
             width={40}
             height={40}
             alt="next"
-            className="mr-2"
+            className="hidden sm:flex mr-2"
           />
         </Link>
       </div>

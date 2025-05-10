@@ -84,7 +84,7 @@ const page = () => {
         description="Our Board of Directors brings strategic vision, expertise, and leadership to drive CBE’s growth and success, ensuring excellence in banking and service delivery."
         cta={{ label: "Know More", href: "/" }}
       />
-      <section className="container mx-auto p-4 mb-16 font-primary">
+      <section className="page-container mb-16">
         <div className="my-[60px]">
           <h2 className="text-accent text-3xl font-bold mb-5">
             Board of Directors
@@ -93,12 +93,11 @@ const page = () => {
             Meet the Board of Directors Steering CBE’s Future
           </p>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-5 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8">
           {people.map((person, index) => (
             <div
               key={index}
-              onClick={() => handleItemClick(person)}
-              className="relative grid justify-between text-accent cursor-pointer"
+              className="relative grid justify-between text-accent"
             >
               <div>
                 <Image
@@ -108,10 +107,13 @@ const page = () => {
                   alt={person.name}
                   className="mb-3"
                 />
-                <p className="text-[18px] font-bold line">{person.name}</p>
-                <p className="text-[18px] font-normal text-">{person.role}</p>
+                <p className="text-[18px] font-bold max-w-[220px]">{person.name}</p>
+                <p className="text-[18px] font-normal">{person.role}</p>
               </div>
-              <Link className="flex items-center gap-4 mt-8" href="/">
+              <div
+                className="flex items-center gap-4 mt-8 cursor-pointer"
+                onClick={() => handleItemClick(person)}
+              >
                 <p>Know More</p>
                 <Image
                   src="/icon-and-logos/about-us/arrow-left.svg"
@@ -119,7 +121,7 @@ const page = () => {
                   height={10}
                   alt="arrow left"
                 />
-              </Link>
+              </div>
             </div>
           ))}
           <div className="absolute w-[15.48%] aspect-square left-0 -bottom-65 -translate-x-[70%]">

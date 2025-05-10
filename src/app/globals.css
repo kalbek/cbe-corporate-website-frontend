@@ -48,9 +48,9 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-accent: var(--accent);
+  --font-primary: var(--font-pt-sans-caption);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-  --font-primary: var(--font-pt-sans-caption);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -423,3 +423,6 @@ body {
   font-size: 20px;
 }
 
+.page-container {
+  @apply container mx-auto p-4;
+}
