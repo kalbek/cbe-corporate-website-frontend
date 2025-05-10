@@ -90,38 +90,33 @@ export default function News() {
   return (
     <div className="bg-[#ffffff] text-white w-full">
       {/* Hero Section */}
-      <div className="relative h-[549.14px] w-full">
-        <Image
-          src="/images/announcement-img.png"
-          alt="News Hero"
-          layout="fill"
-          objectFit="cover"
-          className="opacity-90"
-        />
-        <div className="relative top-[145px] w-full max-w-[523px] mx-auto px-4 sm:left-auto sm:ml-auto sm:mr-20">
-          <div className="flex flex-col gap-5">
-            <h1 className="w-full font-pt-sans-caption font-bold text-[clamp(32px,5vw,48px)] leading-[60px] tracking-[-0.02em]">
-              News
-            </h1>
-            <p className="w-full font-pt-sans-caption font-normal text-[clamp(16px,2vw,18px)] leading-[28px] tracking-[0%]">
-              Explore past announcements, updates, and media coverage from
-              CBE—your source for historical insights and institutional
-              milestones.
-            </p>
-            <button className="bg-gray-400 hover:bg-gray-500 transition-colors cursor-pointer w-[139px] h-[48px] pt-[12px] pr-[20px] pb-[12px] pl-[20px] rounded-[8px]">
-              Know More
-            </button>
-          </div>
-        </div>
-        {/* Left Arrow */}
-        <div className="w-10 h-10 absolute top-[256.57px] left-4 sm:left-6 cursor-pointer text-white">
-          &lt;
-        </div>
-        {/* Right Arrow */}
-        <div className="w-10 h-10 absolute top-[256.57px] right-4 sm:right-6 cursor-pointer text-white">
-          &gt;
-        </div>
-      </div>
+      <div className="relative w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[549.14px]">
+                      <Image
+                          src="/images/announcement-img.png"
+                          alt="News Hero"
+                          layout="fill"
+                          objectFit="cover"
+                          className="opacity-90"
+                      />
+                      <div className="absolute top-1/4 left-4 sm:left-8 md:left-[274px] lg:left-auto lg:right-12 w-full sm:w-3/4 md:w-2/3 lg:w-[523px] max-w-[523px] space-y-4 sm:space-y-5 p-4 sm:p-6 gap-[20px]">
+                          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-[48px] font-pt-sans-caption font-bold leading-tight tracking-tight text-white width-[523px] height-[60px] font-weight-700">
+                              News
+                          </h1>
+                          <p className="sm:text-base lg:text-[18px] font-pt-sans-caption font-normal leading-relaxed text-white width-[523px] height-[84px] font-weight-400">
+                              Explore past announcements, updates, and media coverage from CBE—your source for historical insights and institutional milestones.
+                          </p>
+                          <button className="bg-gray-400 hover:bg-gray-500 text-white sm:text-base px-4 sm:px-5 py-2 sm:py-3 rounded-lg transition-colors font-weight-700 cursor-pointer">
+                              Know More
+                          </button>
+                      </div>
+                      {/* Arrows */}
+                      <div className="absolute left-4 sm:left-6 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-10 sm:h-10 text-white cursor-pointer">
+                          &lt;
+                      </div>
+                      <div className="absolute right-4 sm:right-6 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-10 sm:h-10 text-white cursor-pointer">
+                          &gt;
+                      </div>
+                  </div>
 
       {/* News Section */}
       <div className="bg-[#ffffff]">
@@ -149,14 +144,14 @@ export default function News() {
                       objectFit="cover"
                     />
                   </div>
-                  <div className="w-full h-[312px] gap-[8px] p-4">
-                    <p className="w-full h-[18px] font-pt font-bold text-[12px] leading-[18px] tracking-[0] text-[#E8A029]">
+                <div className="w-full min-h-[312px] gap-[8px] flex flex-col">
+                    <p className="w-full h-[18px] font-pt font-bold text-[12px] leading-[18px] tracking-[0] text-[#E8A029] mt-2">
                       {item.date}
                     </p>
-                    <h3 className="w-full h-[72px] font-bold text-[20px] leading-[24px] tracking-[0] font-kefa text-black">
+                    <h3 className="w-full font-bold text-[20px] leading-[24px] tracking-[0] font-kefa text-black mt-2">
                       {item.title}
                     </h3>
-                    <p className="w-full h-[168px] font-normal text-[14px] leading-[24px] tracking-[0] text-black">
+                    <p className="w-full font-normal text-[14px] leading-[24px] tracking-[0] text-black mt-2">
                       {item.description}
                     </p>
                     <Link href={`/cbe-resources/news/${item.slug}`}>
@@ -164,7 +159,7 @@ export default function News() {
                         <span className="w-[83px] h-[24px] font-pt-sans-caption font-normal text-base leading-6 tracking-normal text-[#892890]">
                           Read More
                         </span>
-                        <span className="w-[24px] h-[24px]">&gt;</span>
+                        <span className="w-[24px] h-[24px]"> &gt; </span>
                       </button>
                     </Link>
                   </div>

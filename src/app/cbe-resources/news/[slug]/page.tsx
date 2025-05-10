@@ -94,9 +94,9 @@ export default function NewsArticle() {
   }
 
   return (
-    <div className="bg-white w-full min-h-[1107px] flex flex-col">
+    <div className="bg-white w-full flex flex-col">
       {/* Date and Title */}
-      <section className="w-full max-w-[1440px] mx-auto gap-[14px] pt-16 px-4 sm:px-8 lg:px-24">
+      <section className="w-full max-w-[1440px] mx-auto gap-[14px] pt-16 px-4 pb-16 sm:px-8 lg:px-24">
         <p className="w-full max-w-[1240px] mx-auto h-[24px] text-[#E9A029] font-pt-sans-caption font-bold text-[clamp(14px,2vw,18px)] leading-[24px] text-center">
           {newsItem.date}
         </p>
@@ -106,19 +106,20 @@ export default function NewsArticle() {
       </section>
 
       {/* Image and Paragraph */}
-      <div className="w-full max-w-[1440px] mx-auto gap-[57px] px-4 sm:px-8 lg:px-20 pb-[100px] pt-8">
+      <div className="w-full max-w-[1440px] mx-auto gap-[57px] px-4 sm:px-8 lg:px-20 pb-8 sm:pb-16 pt-8">
         <div className="flex justify-center">
           <Image
             src={newsItem.image}
             alt="CBE News"
+            layout="responsive"
             width={768}
             height={432}
-            className="w-full max-w-[768px] object-cover"
+            className="w-full max-w-[768px] h-auto object-cover"
           />
         </div>
 
         {/* Paragraph */}
-        <section className="justify-center flex pt-[40px]">
+        <section className="justify-center flex pt-[80px] pb-[100px]">
           <p className="w-full max-w-[732px] mx-auto text-[#000000] font-pt-sans-caption font-normal text-[clamp(14px,2vw,16px)] leading-[24px] tracking-[0] text-center">
             {newsItem.description}
           </p>
