@@ -191,7 +191,7 @@ export default function SubNavigation() {
             <ul
               className={`${
                 subsidaryBranchesOpen ? `visible` : `hidden`
-              } absolute left-2   bg-white top-[200%] md:top-[160%] shadow rounded-md  flex-col  py-[18px] gap-3.5 font-bold w-full md:w-44  `}
+              } absolute left-2   bg-white top-[200%] md:top-[160%] shadow rounded-md  flex-col  py-[18px] font-bold w-full md:w-44  `}
               onMouseLeave={() => setSubsidaryBranchesOpen(false)}
             >
               <li className="hover:cursor-pointer ml-5 mb-3.5 w-fit">
@@ -242,68 +242,73 @@ export default function SubNavigation() {
               />
             </button>
             {/* social links sub  menu */}
-            <section
+
+            <ul
               className={`${
                 socialOpen ? `visible` : `hidden`
-              } absolute    bg-white top-[140%] shadow`}
-              onMouseLeave={() => setSocialOpen(false)}
+              } absolute    bg-white top-[200%] md:top-[160%] shadow rounded-sm flex-col gap-4 py-4  font-bold cursor-default`}
             >
-              <ul
-                className={`${
-                  socialOpen ? `visible` : `hidden`
-                } absolute    bg-white top-[140%] shadow flex flex-col  gap-4 py-4 rounded-sm  font-bold cursor-default`}
-                // className=""
-              >
-                <li className="flex gap-1 flex-cent-v pl-4 pr-10 w-fit">
+              <li className="flex gap-1 flex-cent-v pl-4 pr-10 w-fit  mb-3.5">
+                <Link href="" className="flex gap-1">
                   <img
                     src="/icon-and-logos/social-icons/telegram-icon-black.svg"
                     alt=""
                     className="w-4 h-4"
                   />
                   <p className="text-xs text-black">Telegram</p>
-                </li>
-                <li className="flex gap-1 pl-4 pr-10 w-fit">
+                </Link>
+              </li>
+              <li className="flex gap-1 pl-4 pr-10 w-fit  mb-3.5">
+                <Link href="" className="flex gap-1">
                   <img
                     src="/icon-and-logos/social-icons/facebook-icon-black.svg"
                     alt=""
                     className="w-4 h-4"
                   />
                   <p className="text-xs text-black">Facebook</p>
-                </li>
-                <li className="flex gap-1 pl-4 pr-10 w-fit">
+                </Link>
+              </li>
+              <li className="flex gap-1 pl-4 pr-10 w-fit  mb-3.5">
+                <Link href="" className="flex gap-1">
                   <img
                     src="/icon-and-logos/social-icons/x-icon-black.svg"
                     alt=""
                     className="w-4 h-4"
                   />
                   <p className="text-xs text-black">X</p>
-                </li>
-                <li className="flex gap-1 pl-4 pr-10 w-fit">
+                </Link>
+              </li>
+              <li className="flex gap-1 pl-4 pr-10 w-fit  mb-3.5">
+                <Link href="" className="flex gap-1">
                   <img
                     src="/icon-and-logos/social-icons/instagram-icon-black.svg"
                     alt=""
                     className="w-4 h-4"
                   />
                   <p className="text-xs text-black">Instagram</p>
-                </li>
-                <li className="flex gap-1 pl-4 pr-10 w-fit">
+                </Link>
+              </li>
+              <li className="flex gap-1 pl-4 pr-10 w-fit  mb-3.5">
+                <Link href="" className="flex gap-1">
                   <img
                     src="/icon-and-logos/social-icons/youtube-icon-black.svg"
                     alt=""
                     className="w-4 h-4"
                   />
                   <p className="text-xs text-black">Youtube</p>
-                </li>
-                <li className="flex gap-1 pl-4 pr-10 w-fit">
+                </Link>
+              </li>
+              <li className="flex gap-1 pl-4 pr-10 w-fit">
+                <Link href="" className="flex gap-1">
                   <img
                     src="/icon-and-logos/social-icons/linkedin-icon-black.svg"
                     alt=""
                     className="w-4 h-4"
                   />
                   <p className="text-xs text-black">Linkedin</p>
-                </li>
-              </ul>
-            </section>
+                </Link>
+              </li>
+            </ul>
           </li>
 
           {/* lang section  */}
@@ -323,27 +328,25 @@ export default function SubNavigation() {
               alt=""
             />
             {/* languages sub menu */}
-            <section
+            <ul
               className={`${
                 langOpen ? `visible` : `hidden`
-              } absolute left-0 md:left-[65%]  bg-white top-[140%] shadow`}
+              } absolute left-0 md:left-[65%]  bg-white  top-[200%] md:top-[160%] shadow rounded-sm flex flex-col py-4   font-bold`}
               onMouseLeave={() => setLangOpen(false)}
             >
-              <ul className="flex flex-col gap-4 py-4 rounded-sm  font-bold">
-                <li className="flex gap-1 flex-cent-v pl-4 pr-10 w-fit cursor-default">
-                  <p className="text-xs text-black">English</p>
-                </li>
-                <li className="flex gap-1 pl-4 pr-10 w-fit cursor-pointer">
-                  <a
-                    target="_"
-                    href="https://www.google.com/"
-                    className="text-xs text-black"
-                  >
-                    Amharic
-                  </a>
-                </li>
-              </ul>
-            </section>
+              <li className="flex gap-1 flex-cent-v pl-4 pr-10 w-fit cursor-default mb-3.5">
+                <p className="text-xs text-black">English</p>
+              </li>
+              <li className="flex gap-1 pl-4 pr-10 w-fit cursor-pointer">
+                <a
+                  target="_"
+                  href="https://www.google.com/"
+                  className="text-xs text-black"
+                >
+                  Amharic
+                </a>
+              </li>
+            </ul>
           </li>
         </ul>
       </ul>
