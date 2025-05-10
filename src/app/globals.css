@@ -113,6 +113,14 @@ body {
   background-color: var(--color-puple-800);
 }
 
+.color-purple-800 {
+  color: var(--color-puple-800);
+}
+
+.color-gold-400 {
+  color: var(--color-gold-400);
+}
+
 /* HEADLINE */
 .headline {
   font-family: var(--font-manrope);
@@ -302,7 +310,7 @@ body {
   font-size: 16px;
   line-height: 24px;
   letter-spacing: 0%;
-  color: var(--color-gray-neutral-900);
+  /* color: var(--color-gray-neutral-900); */
 }
 
 .text-md-bold {
@@ -320,7 +328,7 @@ body {
   font-size: 14px;
   line-height: 20px;
   letter-spacing: 0%;
-  color: var(--color-gray-neutral-900);
+  /* color: var(--color-gray-neutral-900); */
 }
 
 .text-sm-bold {
@@ -338,7 +346,7 @@ body {
   font-size: 12px;
   line-height: 18px;
   letter-spacing: 0%;
-  color: var(--color-gray-neutral-900);
+  /* color: var(--color-gray-neutral-900); */
 }
 
 .text-xs-bold {
@@ -412,4 +420,13 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+/* utilities */
+.hidden {
+  display: hidden;
+}
+
+.visible {
+  display: block;
 }
