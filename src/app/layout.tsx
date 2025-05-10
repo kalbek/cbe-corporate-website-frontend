@@ -8,8 +8,8 @@ import {
 } from "next/font/google";
 import "./globals.css";
 import Footer from "../components/footer/footer";
-import SubNavigation from "@/components/header/sub-navigation";
-import PrimaryNavigation from "@/components/header/primary-nav";
+import SubNavigation from "@/components/header/utility-navigation";
+import PrimaryNavigation from "@/components/header/main-navigation";
 
 const manrope = Manrope({
   subsets: ["latin"],
