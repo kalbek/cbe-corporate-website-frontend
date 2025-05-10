@@ -24,7 +24,7 @@ export default function SubNavigation() {
             <span className="hidden md:inline-block md:ml-[14px]">|</span>
 
             <a
-              href="#Careers"
+              href="/misalliance/careers"
               className="md:ml-[14px] text-xs text-white md:text-base hover:cursor-pointer"
             >
               Careers
@@ -51,17 +51,22 @@ export default function SubNavigation() {
               <ul className="flex flex-col    rounded-sm  font-bold cursor-default">
                 <li className="flex-cent-v  pr-10 w-fit md:w-60 py-2  border-b border-b-[#e8a029] ">
                   <p className="text-sm text-black hover:cursor-pointer hover:text-[var(--color-puple-800)]">
-                    About CBE
+                    <a href="/about-us/about-cbe">About CBE</a>
                   </p>
                 </li>
                 <li className="w-fit md:w-60 py-2  border-b border-b-[#e8a029] ">
                   <p className="text-sm text-black hover:cursor-pointer hover:text-[var(--color-puple-800)]">
-                    Borad of Directors
+                    <a href="/about-us/board-of-directors">
+                      {" "}
+                      Borad of Directors
+                    </a>
                   </p>
                 </li>
                 <li className="w-fit md:w-60 py-2  border-b border-b-[#e8a029] ">
                   <p className="text-sm text-black hover:cursor-pointer hover:text-[var(--color-puple-800)]">
-                    Executive Management
+                    <a href="/about-us/executive-management">
+                      Executive Management
+                    </a>
                   </p>
                 </li>
               </ul>
@@ -69,7 +74,9 @@ export default function SubNavigation() {
               <ul className="flex flex-col     rounded-sm  font-bold cursor-default">
                 <li className="flex-cent-v w-fit md:w-60 py-2 pr-10 border-b border-b-[#e8a029] ">
                   <p className="text-sm text-black hover:cursor-pointer hover:text-[var(--color-puple-800)]">
-                    Organizational Structure
+                    <a href="/about-us/OrganizationalStructure">
+                      Organizational Structure
+                    </a>
                   </p>
                 </li>
                 <li className="pr-10 w-fit md:w-60 py-2  not-visited border-b border-b-[#e8a029] ">
@@ -98,7 +105,12 @@ export default function SubNavigation() {
               } flex items-center gap-1 w-fit px-2  relative`}
             >
               <img src="\icon-and-logos\icons-svg\location-icon.svg" alt="" />
-              <p className="text-xs text-white">ATM & Branches</p>
+              <a
+                href="/ways-of-banking/atm-branch-locator"
+                className="text-xs text-white"
+              >
+                ATM & Branches
+              </a>
             </div>
 
             {/* subsidary branch */}
@@ -128,14 +140,24 @@ export default function SubNavigation() {
                       src="icon-and-logos/home-page/svg-icons/subsidary-icon.svg"
                       alt=""
                     />
-                    <p className="text-xs text-black">Djibouti Branch</p>
+                    <a
+                      href="/djibouti-branch/home"
+                      className="text-xs text-black"
+                    >
+                      Djibouti Branch
+                    </a>
                   </li>
                   <li className="flex gap-1   w-fit hover:cursor-pointer">
                     <img
                       src="icon-and-logos/home-page/svg-icons/subsidary-icon.svg"
                       alt=""
                     />
-                    <p className="text-xs text-black">South Sudan Branch</p>
+                    <a
+                      href="/south-sudan-branch/home"
+                      className="text-xs text-black"
+                    >
+                      South Sudan Branch
+                    </a>
                   </li>
                 </ul>
               </div>
