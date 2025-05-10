@@ -5,56 +5,83 @@ import Hero from "@/components/hero";
 const page = () => {
   const people = [
     {
-      name: "H.E Ato Ahmed Shide",
-      role: "Chairperson",
-      photo: "/icon-and-logos/about-us/ahmed.png",
+      name: "Ato Dereje Fufa",
+      role: "Executive VP–Retail and Branch Banking",
+      photo: "/icon-and-logos/about-us/dereje.png",
     },
     {
-      name: "Woy. Aynalem Nigussie",
-      role: "Member",
-      photo: "/icon-and-logos/about-us/aynalem.png",
+      name: "Ato Fikreselassie Zewdu ",
+      role: "VP - Credit",
+      photo: "/icon-and-logos/about-us/fikresilassie.png",
     },
     {
-      name: "Ato Wondimagegn Negera",
-      role: "Member",
-      photo: "/icon-and-logos/about-us/wondimagegn.png",
+      name: "Ato Amare Assefa",
+      role: "VP – Information System",
+      photo: "/icon-and-logos/about-us/amare.png",
     },
     {
-      name: "W/ro. Tigist Hamid",
-      role: "Member",
-      photo: "/icon-and-logos/about-us/tigist.png",
+      name: "Ato Haileyesus Bekele",
+      role: "VP–Customer Experience",
+      photo: "/icon-and-logos/about-us/haileyesus.png",
     },
     {
-      name: "Ato Bereket Fesehatsion Tesfamariam",
-      role: "Member",
-      photo: "/icon-and-logos/about-us/bereket.png",
+      name: "Ato Ephrem Mekuria",
+      role: "VP – Human Resource",
+      photo: "/icon-and-logos/about-us/ephrem.png",
     },
     {
-      name: "Ato Olani Sekata Duressa",
+      name: "Woy. Makeda Oumer",
       role: "Member",
-      photo: "/icon-and-logos/about-us/olani.png",
+      photo: "/icon-and-logos/about-us/makida.png",
     },
     {
-      name: "H.E Ato Moges Balcha Gebremedhin",
-      role: "Member",
-      photo: "/icon-and-logos/about-us/moges.png",
+      name: "Ato Yonas Lidetu",
+      role: "VP – Finance",
+      photo: "/icon-and-logos/about-us/yonas.png",
     },
     {
-      name: "Woy. Mahlet Kasa Woldesenbet",
-      role: "Member",
-      photo: "/icon-and-logos/about-us/mahlet.png",
+      name: "Ato Nuri Hussein",
+      role: "VP - CBE Noor",
+      photo: "/icon-and-logos/about-us/nuri.png",
     },
     {
-      name: "Ato Henok Assefa",
-      role: "Member",
-      photo: "/icon-and-logos/about-us/henok.png",
+      name: "Ato Wegayehu Gebremariam",
+      role: "VP – Digital Banking",
+      photo: "/icon-and-logos/about-us/wegayehu.png",
     },
     {
-      name: "Ambassador Henok Teferra Shawl",
-      role: "Member",
-      photo: "/icon-and-logos/about-us/amb-henok.png",
+      name: "Wzo. Sosina Alemayehu",
+      role: "VP – Legal Service",
+      photo: "/icon-and-logos/about-us/sosina.png",
+    },
+    {
+      name: "Ato Surra Saketa",
+      role: "VP - Facilities Management",
+      photo: "/icon-and-logos/about-us/sura.png",
+    },
+    {
+      name: "Ato Mulugeta Sarko",
+      role: "VP - Internal Audit",
+      photo: "/icon-and-logos/about-us/mulugeta.png",
+    },
+    {
+      name: "Ato Boku Begna",
+      role: "VP- Wholesale Banking",
+      photo: "/icon-and-logos/about-us/boku.png",
+    },
+    {
+      name: "Ato Firew Gebreselassie",
+      role: "VP – Risk Management and Compliance",
+      photo: "/icon-and-logos/about-us/frew.png",
+    },
+    {
+      name: "Dr. Eskinder Asfaw",
+      role: "VP – Strategy, Planning and Transformation Office",
+      photo: "/icon-and-logos/about-us/eskinder.png",
     },
   ];
+
+  
   return (
     <div>
       <Hero
@@ -75,27 +102,35 @@ const page = () => {
           </p>
         </div>
 
-        <div className="mb-12">
-          <Image src="" width={250} height={290} alt="" className="mb-3" />
-          <p className="text-2xl font-bold line">H.E Ato Ahmed Shide</p>
-          <p className="text-2xl font-normal text-">President</p>
+        <div className="inline-block text-center mb-12">
+          <Image
+            src="/icon-and-logos/about-us/abie.png"
+            width={250}
+            height={290}
+            alt=""
+            className="mb-3"
+          />
+          <p className="text-2xl font-bold text-[#E8A029]">H.E Ato Abie Sano</p>
+          <p className="text-2xl">President</p>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 gap-8">
           {people.map((person, index) => (
             <div
               key={index}
+              className=""
               // className="relative grid justify-center items-center" {index === 2 ? 'text-red-500 font-bold' : 'text-black'}
             >
-              <div className="text-center">
+              <div className="relative inline-block text-center h-[290px] w-[250] mb-3">
                 <Image
                   src={person.photo}
                   width={250}
                   height={290}
+                  // fill={true}
+                  // objectFit="contain"
                   alt={person.name}
-                  className="mb-3 mx-aut"
                 />
-                <p className="text-xl font-bold line">{person.name}</p>
+                <p className="w-[250px] text-xl accent mt-3">{person.name}</p>
                 <p className="text-sm font-normal text-">{person.role}</p>
               </div>
             </div>

@@ -426,3 +426,7 @@ body {
 .page-container {
   @apply container mx-auto p-4;
 }
+
+.accent {
+  @apply text-accent font-bold;
+}

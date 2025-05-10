@@ -16,7 +16,7 @@ const newsItems = [
   },
   {
     id: "2",
-    uniqueId: "news_one",
+    uniqueId: "news_two",
     title: "የኢትዮጵያ ንግድ ባንክ የዳይሬክተሮች ቦርድ አባላት፣...",
     date: "09 Aug 2021",
     image: "/icon-and-logos/about-us/news-two.png",
@@ -25,7 +25,7 @@ const newsItems = [
   },
   {
     id: "3",
-    uniqueId: "news_one",
+    uniqueId: "news_three",
     title: "በጎልፍ ክለብ የመጫወቻ ሜዳ 3 ሺህ ችግኞች ተተክለዋል፡፡",
     date: "03 Jul 2021",
     image: "/icon-and-logos/about-us/news-three.png",
@@ -34,7 +34,7 @@ const newsItems = [
   },
   {
     id: "4",
-    uniqueId: "news_one",
+    uniqueId: "news_four",
     title: "CBE donates 10 million birr for the effort in...",
     date: "06 May 2021",
     image: "/icon-and-logos/about-us/news-four.png",
@@ -43,7 +43,7 @@ const newsItems = [
   },
   {
     id: "5",
-    uniqueId: "news_one",
+    uniqueId: "news_five",
     title: "CBE Board of Directors, Management and Employees...",
     date: "06 May 2021",
     image: "/icon-and-logos/about-us/news-five.png",
@@ -52,7 +52,7 @@ const newsItems = [
   },
   {
     id: "6",
-    uniqueId: "news_one",
+    uniqueId: "news_six",
     title: "CBE donates Blood",
     date: "04 May 2021",
     image: "/icon-and-logos/about-us/news-six.png",
@@ -81,7 +81,7 @@ export default function News() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
           {newsItems.map((item) => (
             <div key={item.id} className="">
-              <div className="relative h-[270px] mb-5 rounded-2xl">
+              <div className="relative h-[270px] mb-5">
                 <Image
                   src={item.image}
                   alt={item.title}
