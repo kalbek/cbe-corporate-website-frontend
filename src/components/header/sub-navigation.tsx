@@ -5,6 +5,7 @@ export default function SubNavigation() {
   const [socialOpen, setSocialOpen] = useState(false);
   const [langOpen, setLangOpen] = useState(false);
   const [aboutOpen, setAboutOpen] = useState(false);
+  const [subsidaryBranchesOpen, setSubsidaryBranchesOpen] = useState(false);
 
   return (
     <>
@@ -91,15 +92,53 @@ export default function SubNavigation() {
               </p>
             </div>
             {/* atm and branches */}
-            <div className="flex items-center gap-1 w-fit px-2 ">
+            <div
+              className={`${
+                !subsidaryBranchesOpen ? `hover:cursor-pointer` : ``
+              } flex items-center gap-1 w-fit px-2  relative`}
+            >
               <img src="\icon-and-logos\icons-svg\location-icon.svg" alt="" />
               <p className="text-xs text-white">ATM & Branches</p>
             </div>
 
             {/* subsidary branch */}
-            <div className="flex items-center gap-1 w-fit px-2 ">
-              <img src="\icon-and-logos\icons-svg\location-icon.svg" alt="" />
-              <p className="text-xs text-white">Subsidary Branch</p>
+            <div
+              className="flex items-center gap-1 w-fit px-2 relative "
+              onClick={() => setSubsidaryBranchesOpen(!subsidaryBranchesOpen)}
+            >
+              <img
+                src="\icon-and-logos\icons-svg\location-icon.svg"
+                alt=""
+                className="hover:cursor-pointer"
+              />
+              <p className="text-xs text-white hover:cursor-pointer">
+                Subsidary Branch
+              </p>
+
+              {/* subsidary branch menu */}
+              <div
+                className={`${
+                  subsidaryBranchesOpen ? `visible` : `hidden`
+                } absolute left-2   bg-white top-[200%] md:top-[160%] shadow rounded-md `}
+                onMouseLeave={() => setSubsidaryBranchesOpen(false)}
+              >
+                <ul className="flex flex-col px-5  py-[18px] gap-3.5 font-bold w-fit md:w-44 ">
+                  <li className="flex gap-1  w-fit hover:cursor-pointer">
+                    <img
+                      src="icon-and-logos/home-page/svg-icons/subsidary-icon.svg"
+                      alt=""
+                    />
+                    <p className="text-xs text-black">Djibouti Branch</p>
+                  </li>
+                  <li className="flex gap-1   w-fit hover:cursor-pointer">
+                    <img
+                      src="icon-and-logos/home-page/svg-icons/subsidary-icon.svg"
+                      alt=""
+                    />
+                    <p className="text-xs text-black">South Sudan Branch</p>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
           {/* social and lang section  */}
@@ -108,6 +147,7 @@ export default function SubNavigation() {
             <div
               className="w-fit flex gap-1 text-xs text-white hover:cursor-pointer"
               onClick={() => setSocialOpen(!socialOpen)}
+              onMouseEnter={() => setSocialOpen(false)}
             >
               <p>Social</p>
               <img
@@ -120,6 +160,7 @@ export default function SubNavigation() {
               className={`${
                 socialOpen ? `visible` : `hidden`
               } absolute    bg-white top-[140%] shadow`}
+              onMouseLeave={() => setSocialOpen(false)}
             >
               <ul className="flex flex-col gap-4 py-4 rounded-sm  font-bold cursor-default">
                 <li className="flex gap-1 flex-cent-v pl-4 pr-10 w-fit">
@@ -188,6 +229,7 @@ export default function SubNavigation() {
               className={`${
                 langOpen ? `visible` : `hidden`
               } absolute left-0 md:left-[65%]  bg-white top-[140%] shadow`}
+              onMouseLeave={() => setLangOpen(false)}
             >
               <ul className="flex flex-col gap-4 py-4 rounded-sm  font-bold">
                 <li className="flex gap-1 flex-cent-v pl-4 pr-10 w-fit">
