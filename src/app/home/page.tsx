@@ -3,7 +3,7 @@ export default function Home() {
     <>
       <div className="flex flex-col w-full">
         {/* hero section*/}
-        <div className="brr h-[50vh] flex-cent-vh">hero section</div>
+        <div className=" h-[50vh] flex-cent-vh  ">hero section</div>
         {/* services section*/}
         <div className="brr h-48 flex-cent-vh">services section</div>
         {/* digital banking section */}
