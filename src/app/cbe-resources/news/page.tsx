@@ -134,7 +134,7 @@ export default function News() {
               {newsItems.map((item) => (
                 <div
                   key={item.id}
-                  className="bg-[#ffffff] rounded-lg overflow-hidden transition w-full max-w-[299px] mx-auto h-[569.69px] gap-[20px]"
+                  className="bg-[#ffffff] overflow-hidden transition w-full max-w-[299px] mx-auto h-[569.69px] gap-[20px]"
                 >
                   <div className="relative w-full h-[237.69px]">
                     <Image
