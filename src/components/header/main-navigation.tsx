@@ -401,7 +401,7 @@ export default function PrimaryNavigation() {
         ></ul>
       )}
       {/* cbe logo */}
-      <ul className="z-80 -ml-2 md:-ml-4 ">
+      <ul className={`z-80  ${isSmallScreen ? `-ml-2 md:-ml-4` : `ml-0`}`}>
         <li>
           <Link href={"/home"}>
             <img
