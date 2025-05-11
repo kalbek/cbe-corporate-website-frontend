@@ -311,7 +311,7 @@ export default function PrimaryNavigation() {
           </li>
         </ul>
         {/* resourses menu items */}
-        <ul className="h-full">
+        <ul className="h-full w-fit">
           <li className={`${isSmallScreen ? `` : `px-2.5`}  text-sm h-full`}>
             <button
               onClick={toogleResources}
@@ -323,51 +323,72 @@ export default function PrimaryNavigation() {
             >
               <p>Resources</p>
             </button>
-            <ul
-              className={`${resourcesOpen ? `block` : `hidden`} ${
-                isSmallScreen
-                  ? "relative  ml-4 mt-2 -mb-2"
-                  : "absolute top-[100%] w-48 py-5"
-              } z-50`}
-              onClick={resetMenuOpens}
-            >
-              <li className="py-2 border-b border-b-[#E6E6E6] hover:text-[var(--color-purple-800)]">
-                <Link href="/cbe-resources/publications/annual-report">
-                  <p onClick={() => setMobileMenuOpen(false)}>Publication</p>
-                </Link>
-              </li>
-              <li className="py-2 border-b border-b-[#E6E6E6] hover:text-[var(--color-purple-800)]">
-                <Link href="/cbe-resources/media/programs">
-                  <p onClick={() => setMobileMenuOpen(false)}>
-                    {" "}
-                    Media Programmes
-                  </p>
-                </Link>
-              </li>
+            <ul className={`${isSmallScreen ? `relative` : `absolute`}`}>
               <li
-                className={` ${
-                  isSmallScreen ? `border-b border-b-[#E6E6E6]` : ``
-                } py-2 hover:text-[var(--color-purple-800)]`}
+                className={`${
+                  isSmallScreen ? `flex flex-col items-start` : `flex gap-2`
+                }  h-full relative `}
               >
-                <Link href="cbe-resources/media/gallary">
-                  <p onClick={() => setMobileMenuOpen(false)}>Gallery</p>
-                </Link>
+                <ul
+                  className={`${resourcesOpen ? `block` : `hidden`} ${
+                    isSmallScreen
+                      ? "relative  ml-4 mt-2 -mb-2"
+                      : "  top-[100%] w-48 py-5"
+                  } z-50`}
+                  onClick={resetMenuOpens}
+                >
+                  <li className="py-2 border-b border-b-[#E6E6E6] hover:text-[var(--color-purple-800)]">
+                    <Link href="/cbe-resources/publications/annual-report">
+                      <p onClick={() => setMobileMenuOpen(false)}>
+                        Publication
+                      </p>
+                    </Link>
+                  </li>
+                  <li className="py-2 border-b border-b-[#E6E6E6] hover:text-[var(--color-purple-800)]">
+                    <Link href="/cbe-resources/media/programs">
+                      <p onClick={() => setMobileMenuOpen(false)}>
+                        {" "}
+                        Media Programmes
+                      </p>
+                    </Link>
+                  </li>
+                  <li
+                    className={` ${
+                      isSmallScreen ? `border-b border-b-[#E6E6E6]` : ``
+                    } py-2 hover:text-[var(--color-purple-800)]`}
+                  >
+                    <Link href="/cbe-resources/media/gallary">
+                      <p onClick={() => setMobileMenuOpen(false)}>Gallery</p>
+                    </Link>
+                  </li>
+                </ul>
+                {/* second column of resources menu */}
+                <ul
+                  className={`${resourcesOpen ? `block` : `hidden`} ${
+                    isSmallScreen
+                      ? "relative  ml-4 mt-2 -mb-2"
+                      : "  top-[100%] right-0 w-48 py-5"
+                  } z-50`}
+                  onClick={resetMenuOpens}
+                >
+                  {/* 2ndst column */}
+                  <li className="py-2 border-b border-b-[#E6E6E6] hover:text-[var(--color-purple-800)]">
+                    <Link href="/cbe-resources/news">
+                      <p onClick={() => setMobileMenuOpen(false)}>News</p>
+                    </Link>
+                  </li>
+                  <li className="py-2 border-b border-b-[#E6E6E6] hover:text-[var(--color-purple-800)]">
+                    <Link href="/cbe-resources/announcements">
+                      <p onClick={() => setMobileMenuOpen(false)}>
+                        {" "}
+                        Announcements
+                      </p>
+                    </Link>
+                  </li>
+                </ul>
               </li>
             </ul>
           </li>
-          <ul className="hidden">
-            {/* 2ndst column */}
-            <li>
-              <Link href="">
-                <p onClick={() => setMobileMenuOpen(false)}>News</p>
-              </Link>
-            </li>
-            <li>
-              <Link href="">
-                <p onClick={() => setMobileMenuOpen(false)}> Announcements</p>
-              </Link>
-            </li>
-          </ul>
         </ul>
         {/* CBE Noor menu */}
         <ul className="h-full">
@@ -397,7 +418,7 @@ export default function PrimaryNavigation() {
       {menuOpen && (
         <ul
           role="presentation  "
-          className="hidden lg:block absolute min-h-52 w-[100vw] top-[100%]  left-0 bg-white border-t-2 border-t-[#E6E6E6] z-30"
+          className=" lg:block absolute min-h-52 w-[100vw] top-[100%]  left-0 bg-white border-t-2 border-t-[#E6E6E6] z-30"
           onMouseLeave={resetMenuOpens}
         ></ul>
       )}
@@ -440,7 +461,7 @@ export default function PrimaryNavigation() {
       {/* {mobileMenuOpen && isSmallScreen && ( */}
       {mobileMenuOpen && isSmallScreen && (
         <section
-          className={`absolute top-[64px] left-0 w-full  h-[calc(100vh-64px)] bg-white border-t-2 border-t-[#E6E6E6] pl-4  pt-6 px-2 md:px-18 lg:px-24`}
+          className={`absolute top-[64px] left-0 w-full  h-[calc(100vh-64px)] bg-white border-t-2 border-t-[#E6E6E6] pl-4  pt-6 px-2 md:px-18 lg:px-24 z-80`}
         >
           <MenuItems />
 

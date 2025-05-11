@@ -251,7 +251,7 @@ export default function SubNavigation() {
                   className="flex-cent-vh gap-1"
                 >
                   <img
-                    src="icon-and-logos/home-page/svg-icons/subsidary-icon.svg"
+                    src="/icon-and-logos/home-page/svg-icons/subsidary-icon.svg"
                     alt=""
                   />
                   <p className="text-xs text-black">Djibouti Branch</p>
@@ -263,7 +263,7 @@ export default function SubNavigation() {
                   className="flex-cent-vh gap-1"
                 >
                   <img
-                    src="icon-and-logos/home-page/svg-icons/subsidary-icon.svg"
+                    src="/icon-and-logos/home-page/svg-icons/subsidary-icon.svg"
                     alt=""
                   />
                   <p className="text-xs text-black">South Sudan Branch</p>
