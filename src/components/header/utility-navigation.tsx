@@ -58,12 +58,12 @@ export default function SubNavigation() {
   return (
     <nav
       aria-label="Utility navigation"
-      className="min-h-7 flex justify-between items-center bg-purple-800 p-2 md:px-[7.2%] -z-50"
+      className="min-h-7 flex justify-between items-center bg-purple-800 p-2 md:px-[7.2%]"
     >
       {/* left side navigation (About CBE Group and Careers)*/}
-      <ul className="flex flex-col md:flex-row items-center text-white ">
+      <ul className="flex flex-col md:flex-row items-center text-white">
         {/* About CBE Group */}
-        <ul className="flex flex-col md:flex-row md:items-center  relative">
+        <ul className="flex flex-col md:flex-row md:items-center relative">
           <button
             onMouseEnter={toggleCbeGroup}
             onClick={toggleCbeGroup}
@@ -78,11 +78,11 @@ export default function SubNavigation() {
           <ul
             className={`${
               aboutOpen ? `visible` : `hidden`
-            } absolute bg-white top-[130%] left-0 md:top-[120%] lg:top-[145%] shadow rounded-lg`}
+            } absolute bg-white top-[130%] left-0 md:top-[120%] lg:top-[145%] shadow rounded-lg z-90`}
           >
             {/* about cbe group menu */}
             <li
-              className="flex flex-col md:flex-row   p-5 gap-0 md:gap-8  relative"
+              className="flex flex-col md:flex-row   p-5 gap-0 md:gap-8 relative"
               onMouseLeave={() => setAboutOpen(false)}
               onClick={() => setAboutOpen(false)}
             >
@@ -213,7 +213,7 @@ export default function SubNavigation() {
             )}
           </li>
           {/* subsidary branch */}
-          <li className="flex items-center gap-1 w-fit px-2 relative ">
+          <li className="flex items-center gap-1 w-fit px-2 relative z-90 ">
             <button
               className="flex-cent-vh gap-1"
               onClick={() => {
@@ -274,7 +274,7 @@ export default function SubNavigation() {
         </ul>
 
         {/* social and lang section  */}
-        <ul className="flex items-center gap-5 w-fit relative ">
+        <ul className="flex items-center gap-5 w-fit relative z-90">
           <li>
             <button
               className={`w-fit flex gap-1 text-xs text-white ${

@@ -3,7 +3,14 @@ export default function Home() {
     <>
       <div className="flex flex-col w-full">
         {/* hero section*/}
-        <div className=" h-[50vh] flex-cent-vh  ">hero section</div>
+        <div className="w-full aspect-[1440/519]">
+          <img
+            src="/images/hero-home-img.png"
+            className="w-full h-full object-cover"
+            alt=""
+          />
+        </div>
+
         {/* services section*/}
         <div className="brr h-48 flex-cent-vh">services section</div>
         {/* digital banking section */}
