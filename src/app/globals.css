@@ -115,6 +115,10 @@ body {
   color: var(--color-gold-400);
 }
 
+.bg-gold-400 {
+  background-color: var(--color-gold-400);
+}
+
 /* HEADLINE */
 .headline {
   font-family: var(--font-manrope);
@@ -351,8 +355,6 @@ body {
   letter-spacing: 0%;
   color: var(--color-gray-neutral-900);
 }
-
-/* ================= */
 
 /* Supporting Text Styles */
 .headline-2xl-regular {

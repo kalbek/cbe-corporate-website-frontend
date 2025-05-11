@@ -186,19 +186,19 @@ export default function PrimaryNavigation() {
               <li
                 className={`py-2 border-b border-b-[#E6E6E6] hover:text-[var(--color-purple-800)]`}
               >
-                <Link href="/products/deposit">
+                <Link href="/products/deposit" passHref>
                   <p onClick={() => setMobileMenuOpen(false)}>
                     Deposit Accounts
                   </p>
                 </Link>
               </li>
               <li className="py-2 border-b border-b-[#E6E6E6] hover:text-[var(--color-purple-800)]">
-                <Link href="/products/cards">
+                <Link href="/products/cards" passHref>
                   <p onClick={() => setMobileMenuOpen(false)}>CBE Cards</p>
                 </Link>
               </li>
               <li className="py-2 border-b border-b-[#E6E6E6] hover:text-[var(--color-purple-800)]">
-                <Link href="/products/loan">
+                <Link href="/products/loan" passHref>
                   <p onClick={() => setMobileMenuOpen(false)}>Loans</p>
                 </Link>
               </li>
@@ -207,7 +207,7 @@ export default function PrimaryNavigation() {
                   isSmallScreen ? `border-b border-b-[#E6E6E6]` : ``
                 } py-2 hover:text-[var(--color-purple-800)]`}
               >
-                <Link href="/products/trade-services">
+                <Link href="/products/trade-services" passHref>
                   <p onClick={() => setMobileMenuOpen(false)}>Trade Services</p>
                 </Link>
               </li>
@@ -236,12 +236,12 @@ export default function PrimaryNavigation() {
               onClick={resetMenuOpens}
             >
               <li className="py-2 border-b border-b-[#E6E6E6] hover:text-[var(--color-purple-800)]">
-                <Link href="/cbe-services/cbe-birr">
+                <Link href="/cbe-services/cbe-birr" passHref>
                   <p onClick={() => setMobileMenuOpen(false)}>CBE Birr Plus</p>
                 </Link>
               </li>
               <li className="py-2 border-b border-b-[#E6E6E6] hover:text-[var(--color-purple-800)]">
-                <Link href="/cbe-services/cbe-ethio-direct">
+                <Link href="/cbe-services/cbe-ethio-direct " passHref>
                   <p onClick={() => setMobileMenuOpen(false)}>Ethio Direct</p>
                 </Link>
               </li>
@@ -250,7 +250,7 @@ export default function PrimaryNavigation() {
                   isSmallScreen ? `border-b border-b-[#E6E6E6]` : ``
                 } py-2 hover:text-[var(--color-purple-800)]`}
               >
-                <Link href="/cbe-services/cbe-nedaj">
+                <Link href="/cbe-services/cbe-nedaj" passHref>
                   <p onClick={() => setMobileMenuOpen(false)}>CBE Nedaj</p>
                 </Link>
               </li>
@@ -279,14 +279,14 @@ export default function PrimaryNavigation() {
               onClick={resetMenuOpens}
             >
               <li className="py-2 border-b border-b-[#E6E6E6] hover:text-[var(--color-purple-800)]">
-                <Link href="/ways-of-banking/internet-banking">
+                <Link href="/ways-of-banking/internet-banking" passHref>
                   <p onClick={() => setMobileMenuOpen(false)}>
                     Internet Banking
                   </p>
                 </Link>
               </li>
               <li className="py-2 border-b border-b-[#E6E6E6] hover:text-[var(--color-purple-800)]">
-                <Link href="/ways-of-banking/mobile-banking">
+                <Link href="/ways-of-banking/mobile-banking" passHref>
                   <p onClick={() => setMobileMenuOpen(false)}>
                     {" "}
                     Mobile Banking
@@ -294,7 +294,7 @@ export default function PrimaryNavigation() {
                 </Link>
               </li>
               <li className="py-2 border-b border-b-[#E6E6E6] hover:text-[var(--color-purple-800)]">
-                <Link href="/ways-of-banking/network/branch">
+                <Link href="/ways-of-banking/network/branch" passHref>
                   <p onClick={() => setMobileMenuOpen(false)}>Branches</p>
                 </Link>
               </li>
@@ -303,7 +303,7 @@ export default function PrimaryNavigation() {
                   isSmallScreen ? `border-b border-b-[#E6E6E6]` : ``
                 } py-2 hover:text-[var(--color-purple-800)]`}
               >
-                <Link href="/ways-of-banking/atm-branch-locator">
+                <Link href="/ways-of-banking/atm-branch-locator"  passHref>
                   <p onClick={() => setMobileMenuOpen(false)}>ATM Locator</p>
                 </Link>
               </li>
@@ -326,7 +326,7 @@ export default function PrimaryNavigation() {
             <ul className={`${isSmallScreen ? `relative` : `absolute`}`}>
               <li
                 className={`${
-                  isSmallScreen ? `flex flex-col items-start` : `flex gap-2`
+                  isSmallScreen ? `flex flex-col items-start` : `flex gap-20`
                 }  h-full relative `}
               >
                 <ul
@@ -338,14 +338,14 @@ export default function PrimaryNavigation() {
                   onClick={resetMenuOpens}
                 >
                   <li className="py-2 border-b border-b-[#E6E6E6] hover:text-[var(--color-purple-800)]">
-                    <Link href="/cbe-resources/publications/annual-report">
+                    <Link href="/cbe-resources/publications/annual-report" passHref>
                       <p onClick={() => setMobileMenuOpen(false)}>
                         Publication
                       </p>
                     </Link>
                   </li>
                   <li className="py-2 border-b border-b-[#E6E6E6] hover:text-[var(--color-purple-800)]">
-                    <Link href="/cbe-resources/media/programs">
+                    <Link href="/cbe-resources/media/programs" passHref>
                       <p onClick={() => setMobileMenuOpen(false)}>
                         {" "}
                         Media Programmes
@@ -357,7 +357,7 @@ export default function PrimaryNavigation() {
                       isSmallScreen ? `border-b border-b-[#E6E6E6]` : ``
                     } py-2 hover:text-[var(--color-purple-800)]`}
                   >
-                    <Link href="/cbe-resources/media/gallary">
+                    <Link href="/cbe-resources/media/gallary" passHref>
                       <p onClick={() => setMobileMenuOpen(false)}>Gallery</p>
                     </Link>
                   </li>
@@ -373,12 +373,12 @@ export default function PrimaryNavigation() {
                 >
                   {/* 2ndst column */}
                   <li className="py-2 border-b border-b-[#E6E6E6] hover:text-[var(--color-purple-800)]">
-                    <Link href="/cbe-resources/news">
+                    <Link href="/cbe-resources/news" passHref>
                       <p onClick={() => setMobileMenuOpen(false)}>News</p>
                     </Link>
                   </li>
                   <li className="py-2 border-b border-b-[#E6E6E6] hover:text-[var(--color-purple-800)]">
-                    <Link href="/cbe-resources/announcements">
+                    <Link href="/cbe-resources/announcements" passHref>
                       <p onClick={() => setMobileMenuOpen(false)}>
                         {" "}
                         Announcements
