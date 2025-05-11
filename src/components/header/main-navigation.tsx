@@ -150,6 +150,7 @@ export default function PrimaryNavigation() {
     //   console.log("Now in small screen mode (≤1014px)");
     // }
     setMobileMenuOpen(false);
+    resetMenuOpens();
   }, [isSmallScreen]);
 
   // menu items
