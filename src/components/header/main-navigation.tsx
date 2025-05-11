@@ -152,6 +152,243 @@ export default function PrimaryNavigation() {
     setMobileMenuOpen(false);
   }, [isSmallScreen]);
 
+  // menu items
+  const MenuItems = () => (
+    <li className={`hiddendd lg:block list-none relative z-80`}>
+      <ul
+        className={` ${
+          isSmallScreen
+            ? `flex flex-col gap-4 w-fit`
+            : `flex justify-between flex-wrap h-16`
+        }     min-w-[43vw] items-start relative z-90  `}
+      >
+        <ul className={`h-full`}>
+          <li className={`${isSmallScreen ? `` : `px-2.5`}  text-sm h-full`}>
+            <button
+              onClick={toogleProducts}
+              className={`h-[100%] border-b-4 hover:border-b-[var(--color-purple-800)] hover:text-[var(--color-purple-800)] ${
+                !productsOpen
+                  ? `hover:cursor-pointer border-b-4  border-b-white`
+                  : `cursor-default border-b-[var(--color-purple-800)] text-[var(--color-purple-800)]`
+              }`}
+            >
+              <p>Products</p>
+            </button>
+            <ul
+              className={`${productsOpen ? `block` : `hidden`} ${
+                isSmallScreen
+                  ? "relative  ml-4 mt-2 -mb-2"
+                  : "absolute top-[100%] w-48 py-5"
+              } z-50`}
+              onClick={resetMenuOpens}
+            >
+              <li
+                className={`py-2 border-b border-b-[#E6E6E6] hover:text-[var(--color-purple-800)]`}
+              >
+                <Link href="/products/deposit">
+                  <p onClick={() => setMobileMenuOpen(false)}>
+                    Deposit Accounts
+                  </p>
+                </Link>
+              </li>
+              <li className="py-2 border-b border-b-[#E6E6E6] hover:text-[var(--color-purple-800)]">
+                <Link href="/products/cards">
+                  <p onClick={() => setMobileMenuOpen(false)}>CBE Cards</p>
+                </Link>
+              </li>
+              <li className="py-2 border-b border-b-[#E6E6E6] hover:text-[var(--color-purple-800)]">
+                <Link href="/products/loan">
+                  <p onClick={() => setMobileMenuOpen(false)}>Loans</p>
+                </Link>
+              </li>
+              <li
+                className={` ${
+                  isSmallScreen ? `border-b border-b-[#E6E6E6]` : ``
+                } py-2 hover:text-[var(--color-purple-800)]`}
+              >
+                <Link href="/products/trade-services">
+                  <p onClick={() => setMobileMenuOpen(false)}>Trade Services</p>
+                </Link>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        {/* services menu items */}
+        <ul className="h-full">
+          <li className={`${isSmallScreen ? `` : `px-2.5`}  text-sm h-full`}>
+            <button
+              onClick={toogleServices}
+              className={`h-[100%] border-b-4 hover:border-b-[var(--color-purple-800)] hover:text-[var(--color-purple-800)] ${
+                !servicesOpen
+                  ? `hover:cursor-pointer border-b-4  border-b-white`
+                  : `cursor-default border-b-[var(--color-purple-800)] text-[var(--color-purple-800)]`
+              }`}
+            >
+              <p>Services</p>
+            </button>
+            <ul
+              className={`${servicesOpen ? `block` : `hidden`} ${
+                isSmallScreen
+                  ? "relative  ml-4 mt-2 -mb-2"
+                  : "absolute top-[100%] w-48 py-5"
+              } z-50`}
+              onClick={resetMenuOpens}
+            >
+              <li className="py-2 border-b border-b-[#E6E6E6] hover:text-[var(--color-purple-800)]">
+                <Link href="/cbe-services/cbe-birr">
+                  <p onClick={() => setMobileMenuOpen(false)}>CBE Birr Plus</p>
+                </Link>
+              </li>
+              <li className="py-2 border-b border-b-[#E6E6E6] hover:text-[var(--color-purple-800)]">
+                <Link href="/cbe-services/cbe-ethio-direct">
+                  <p onClick={() => setMobileMenuOpen(false)}>Ethio Direct</p>
+                </Link>
+              </li>
+              <li
+                className={` ${
+                  isSmallScreen ? `border-b border-b-[#E6E6E6]` : ``
+                } py-2 hover:text-[var(--color-purple-800)]`}
+              >
+                <Link href="/cbe-services/cbe-nedaj">
+                  <p onClick={() => setMobileMenuOpen(false)}>CBE Nedaj</p>
+                </Link>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        {/* ways of banking menu items */}
+        <ul className="h-full">
+          <li className={`${isSmallScreen ? `` : `px-2.5`}  text-sm h-full`}>
+            <button
+              onClick={toogleWaysOfBanking}
+              className={`h-[100%] border-b-4 hover:border-b-[var(--color-purple-800)] hover:text-[var(--color-purple-800)] ${
+                !waysOfBankingOpen
+                  ? `hover:cursor-pointer border-b-4  border-b-white`
+                  : `cursor-default border-b-[var(--color-purple-800)] text-[var(--color-purple-800)]`
+              }`}
+            >
+              <p>Ways of Banking</p>
+            </button>
+            <ul
+              className={`${waysOfBankingOpen ? `block` : `hidden`} ${
+                isSmallScreen
+                  ? "relative  ml-4 mt-2 -mb-2"
+                  : "absolute top-[100%] w-48 py-5"
+              } z-50`}
+              onClick={resetMenuOpens}
+            >
+              <li className="py-2 border-b border-b-[#E6E6E6] hover:text-[var(--color-purple-800)]">
+                <Link href="/ways-of-banking/internet-banking">
+                  <p onClick={() => setMobileMenuOpen(false)}>
+                    Internet Banking
+                  </p>
+                </Link>
+              </li>
+              <li className="py-2 border-b border-b-[#E6E6E6] hover:text-[var(--color-purple-800)]">
+                <Link href="/ways-of-banking/mobile-banking">
+                  <p onClick={() => setMobileMenuOpen(false)}>
+                    {" "}
+                    Mobile Banking
+                  </p>
+                </Link>
+              </li>
+              <li className="py-2 border-b border-b-[#E6E6E6] hover:text-[var(--color-purple-800)]">
+                <Link href="/ways-of-banking/network/branch">
+                  <p onClick={() => setMobileMenuOpen(false)}>Branches</p>
+                </Link>
+              </li>
+              <li
+                className={` ${
+                  isSmallScreen ? `border-b border-b-[#E6E6E6]` : ``
+                } py-2 hover:text-[var(--color-purple-800)]`}
+              >
+                <Link href="/ways-of-banking/atm-branch-locator">
+                  <p onClick={() => setMobileMenuOpen(false)}>ATM Locator</p>
+                </Link>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        {/* resourses menu items */}
+        <ul className="h-full">
+          <li className={`${isSmallScreen ? `` : `px-2.5`}  text-sm h-full`}>
+            <button
+              onClick={toogleResources}
+              className={`h-[100%] border-b-4 hover:border-b-[var(--color-purple-800)] hover:text-[var(--color-purple-800)] ${
+                !resourcesOpen
+                  ? `hover:cursor-pointer border-b-4  border-b-white`
+                  : `cursor-default border-b-[var(--color-purple-800)] text-[var(--color-purple-800)]`
+              }`}
+            >
+              <p>Resources</p>
+            </button>
+            <ul
+              className={`${resourcesOpen ? `block` : `hidden`} ${
+                isSmallScreen
+                  ? "relative  ml-4 mt-2 -mb-2"
+                  : "absolute top-[100%] w-48 py-5"
+              } z-50`}
+              onClick={resetMenuOpens}
+            >
+              <li className="py-2 border-b border-b-[#E6E6E6] hover:text-[var(--color-purple-800)]">
+                <Link href="/cbe-resources/publications/annual-report">
+                  <p onClick={() => setMobileMenuOpen(false)}>Publication</p>
+                </Link>
+              </li>
+              <li className="py-2 border-b border-b-[#E6E6E6] hover:text-[var(--color-purple-800)]">
+                <Link href="/cbe-resources/media/programs">
+                  <p onClick={() => setMobileMenuOpen(false)}>
+                    {" "}
+                    Media Programmes
+                  </p>
+                </Link>
+              </li>
+              <li
+                className={` ${
+                  isSmallScreen ? `border-b border-b-[#E6E6E6]` : ``
+                } py-2 hover:text-[var(--color-purple-800)]`}
+              >
+                <Link href="cbe-resources/media/gallary">
+                  <p onClick={() => setMobileMenuOpen(false)}>Gallery</p>
+                </Link>
+              </li>
+            </ul>
+          </li>
+          <ul className="hidden">
+            {/* 2ndst column */}
+            <li>
+              <Link href="">
+                <p onClick={() => setMobileMenuOpen(false)}>News</p>
+              </Link>
+            </li>
+            <li>
+              <Link href="">
+                <p onClick={() => setMobileMenuOpen(false)}> Announcements</p>
+              </Link>
+            </li>
+          </ul>
+        </ul>
+        {/* CBE Noor menu */}
+        <ul className="h-full">
+          <li className={`${isSmallScreen ? `` : `px-2.5`}  text-sm h-full`}>
+            <Link href="/products/cbe-noor">
+              <button
+                onClick={toogleCbeNoor}
+                className={`h-[100%] border-b-4 hover:border-b-[var(--color-purple-800)] hover:text-[var(--color-purple-800)] ${
+                  !cbeNoorOpen
+                    ? `hover:cursor-pointer border-b-4  border-b-white`
+                    : `cursor-default border-b-[var(--color-purple-800)] text-[var(--color-purple-800)]`
+                }`}
+              >
+                <p onClick={() => setMobileMenuOpen(false)}>CBE Noor</p>
+              </button>
+            </Link>
+          </li>
+        </ul>
+      </ul>
+    </li>
+  );
+
   return (
     <nav className="h-16 flex gap-4 items-center justify-between px-2 md:px-18 lg:px-24 relative ">
       {/* absolute bg for menu */}
@@ -159,12 +396,12 @@ export default function PrimaryNavigation() {
       {menuOpen && (
         <ul
           role="presentation  "
-          className="hidden lg:block absolute min-h-52 w-[100vw]   top-[100%] left-0 bg-white border-t-2 border-t-[#E6E6E6] z-30"
+          className="hidden lg:block absolute min-h-52 w-[100vw] top-[100%]  left-0 bg-white border-t-2 border-t-[#E6E6E6] z-30"
           onMouseLeave={resetMenuOpens}
         ></ul>
       )}
       {/* cbe logo */}
-      <ul className=" z-80">
+      <ul className="z-80 -ml-2 md:-ml-4 ">
         <li>
           <Link href={"/home"}>
             <img
@@ -177,187 +414,8 @@ export default function PrimaryNavigation() {
       </ul>
       {/* main nav items */}
       <ul className="flex gap-10 justify-center items-center w-fit  h-[100%]">
-        <li className=" hidden lg:block">
-          <ul className="flex justify-between flex-wrap   min-w-[43vw] h-16 items-center relative z-">
-            <ul className="h-full">
-              <li className="px-2.5 text-sm h-full ">
-                <button
-                  onClick={toogleProducts}
-                  className={`h-[100%] border-b-4 hover:border-b-[var(--color-purple-800)] hover:text-[var(--color-purple-800)] ${
-                    !productsOpen
-                      ? `hover:cursor-pointer border-b-4  border-b-white`
-                      : `cursor-default border-b-[var(--color-purple-800)] text-[var(--color-purple-800)]`
-                  }`}
-                >
-                  <p>Products</p>
-                </button>
-                <ul
-                  className={`${
-                    productsOpen ? `visible` : `hidden`
-                  }  absolute top-[100%] w-48 py-5 z-50`}
-                  onClick={resetMenuOpens}
-                >
-                  <li className="py-2 border-b border-b-[#E6E6E6] hover:text-[var(--color-purple-800)]">
-                    <Link href="/products/deposit">
-                      <p>Deposit Accounts</p>
-                    </Link>
-                  </li>
-                  <li className="py-2 border-b border-b-[#E6E6E6] hover:text-[var(--color-purple-800)]">
-                    <Link href="/products/cards">
-                      <p>CBE Cards</p>
-                    </Link>
-                  </li>
-                  <li className="py-2 border-b border-b-[#E6E6E6] hover:text-[var(--color-purple-800)]">
-                    <Link href="/products/loan">Loans</Link>
-                  </li>
-                  <li className="py-2 hover:text-[var(--color-purple-800)]">
-                    <Link href="/products/trade-services">Trade Services</Link>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-            {/* services menu items */}
-            <ul className="h-full">
-              <li className="px-2.5 text-sm h-full ">
-                <button
-                  onClick={toogleServices}
-                  className={`h-[100%] border-b-4 hover:border-b-[var(--color-purple-800)] hover:text-[var(--color-purple-800)] ${
-                    !servicesOpen
-                      ? `hover:cursor-pointer border-b-4  border-b-white`
-                      : `cursor-default border-b-[var(--color-purple-800)] text-[var(--color-purple-800)]`
-                  }`}
-                >
-                  <p>Services</p>
-                </button>
-                <ul
-                  className={`${
-                    servicesOpen ? `visible` : `hidden`
-                  } absolute top-[100%] w-48  py-5 z-50`}
-                  onClick={resetMenuOpens}
-                >
-                  <li className="py-2 border-b border-b-[#E6E6E6] hover:text-[var(--color-purple-800)]">
-                    <Link href="/cbe-services/cbe-birr">
-                      <p>CBE Birr Plus</p>
-                    </Link>
-                  </li>
-                  <li className="py-2 border-b border-b-[#E6E6E6] hover:text-[var(--color-purple-800)]">
-                    <Link href="/cbe-services/cbe-ethio-direct">
-                      <p>Ethio Direct</p>
-                    </Link>
-                  </li>
-                  <li className="py-2 hover:text-[var(--color-purple-800)]">
-                    <Link href="/cbe-services/cbe-nedaj">CBE Nedaj</Link>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-            {/* ways of banking menu items */}
-            <ul className="h-full">
-              <li className="px-2.5 text-sm h-full ">
-                <button
-                  onClick={toogleWaysOfBanking}
-                  className={`h-[100%] border-b-4 hover:border-b-[var(--color-purple-800)] hover:text-[var(--color-purple-800)] ${
-                    !waysOfBankingOpen
-                      ? `hover:cursor-pointer border-b-4  border-b-white`
-                      : `cursor-default border-b-[var(--color-purple-800)] text-[var(--color-purple-800)]`
-                  }`}
-                >
-                  <p>Ways of Banking</p>
-                </button>
-                <ul
-                  className={`${
-                    waysOfBankingOpen ? `visible` : `hidden`
-                  } absolute top-[100%] w-48  py-5 z-50`}
-                  onClick={resetMenuOpens}
-                >
-                  <li className="py-2 border-b border-b-[#E6E6E6] hover:text-[var(--color-purple-800)]">
-                    <Link href="/ways-of-banking/internet-banking">
-                      <p>Internet Banking</p>
-                    </Link>
-                  </li>
-                  <li className="py-2 border-b border-b-[#E6E6E6] hover:text-[var(--color-purple-800)]">
-                    <Link href="/ways-of-banking/mobile-banking">
-                      <p> Mobile Banking</p>
-                    </Link>
-                  </li>
-                  <li className="py-2 border-b border-b-[#E6E6E6] hover:text-[var(--color-purple-800)]">
-                    <Link href="/ways-of-banking/network/branch">Branches</Link>
-                  </li>
-                  <li className="py-2 hover:text-[var(--color-purple-800)]">
-                    <Link href="/ways-of-banking/atm-branch-locator">
-                      ATM Locator
-                    </Link>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-            {/* resourses menu items */}
-            <ul className="h-full">
-              <li className="px-2.5 text-sm h-full ">
-                <button
-                  onClick={toogleResources}
-                  className={`h-[100%] border-b-4 hover:border-b-[var(--color-purple-800)] hover:text-[var(--color-purple-800)] ${
-                    !resourcesOpen
-                      ? `hover:cursor-pointer border-b-4  border-b-white`
-                      : `cursor-default border-b-[var(--color-purple-800)] text-[var(--color-purple-800)]`
-                  }`}
-                >
-                  <p>Resources</p>
-                </button>
-                <ul
-                  className={`${
-                    resourcesOpen ? `visible` : `hidden`
-                  } absolute top-[100%] w-48  py-5 z-50`}
-                  onClick={resetMenuOpens}
-                >
-                  <li className="py-2 border-b border-b-[#E6E6E6] hover:text-[var(--color-purple-800)]">
-                    <Link href="/cbe-resources/publications/annual-report">
-                      <p>Publication</p>
-                    </Link>
-                  </li>
-                  <li className="py-2 border-b border-b-[#E6E6E6] hover:text-[var(--color-purple-800)]">
-                    <Link href="/cbe-resources/media/programs">
-                      <p> Media Programmes</p>
-                    </Link>
-                  </li>
-                  <li className="py-2 hover:text-[var(--color-purple-800)]">
-                    <Link href="cbe-resources/media/gallary">Gallery</Link>
-                  </li>
-                </ul>
-              </li>
-              <ul className="hidden">
-                {/* 2ndst column */}
-                <li>
-                  <Link href="">
-                    <p>News</p>
-                  </Link>
-                </li>
-                <li>
-                  <Link href="">
-                    <p> Announcements</p>
-                  </Link>
-                </li>
-              </ul>
-            </ul>
-            {/* CBE Noor menu */}
-            <ul className="h-full">
-              <li className="px-2.5 text-sm h-full">
-                <Link href="/products/cbe-noor">
-                  <button
-                    onClick={toogleCbeNoor}
-                    className={`h-[100%] border-b-4 hover:border-b-[var(--color-purple-800)] hover:text-[var(--color-purple-800)] ${
-                      !cbeNoorOpen
-                        ? `hover:cursor-pointer border-b-4  border-b-white`
-                        : `cursor-default border-b-[var(--color-purple-800)] text-[var(--color-purple-800)]`
-                    }`}
-                  >
-                    <p>CBE Noor</p>
-                  </button>
-                </Link>
-              </li>
-            </ul>
-          </ul>
-        </li>
+        {/* menu items goes here  for bigger screens*/}
+        {!isSmallScreen && <MenuItems />}
 
         <li className="w-fit  items-end hidden lg:block">
           <button className=" bg-[var(--color-gold-500)] w-fit px-4 py-2.5 rounded-sm cursor-default hover:cursor-default hover:bg-[var(--color-purple-800)] flex ">
@@ -367,7 +425,7 @@ export default function PrimaryNavigation() {
           </button>
         </li>
 
-        <li className="lg:hidden">
+        <li className="lg:hidden mt-2 mr-2">
           <button
             className=""
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -378,21 +436,18 @@ export default function PrimaryNavigation() {
       </ul>
       {/* mobile main nav */}
 
-      {mobileMenuOpen && (
+      {/* {mobileMenuOpen && isSmallScreen && ( */}
+      {mobileMenuOpen && isSmallScreen && (
         <section
-          className={` absolute top-[64px] left-0 w-full  h-[calc(100vh-64px)] bg-red-400 z-50 overflow-hidden transition-transform duration-300 `}
+          className={`absolute top-[64px] left-0 w-full  h-[calc(100vh-64px)] bg-white border-t-2 border-t-[#E6E6E6] pl-4  pt-6 px-2 md:px-18 lg:px-24`}
         >
-          <ul>
-            <li></li>
-            <li></li>
-            <ul>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-            </ul>
-          </ul>
+          <MenuItems />
+
+          <button className="absolute bottom-30 bg-[var(--color-gold-500)] w-fit px-4 py-2.5 rounded-sm cursor-default hover:cursor-default hover:bg-[var(--color-purple-800)] flex ">
+            <Link href={""} className="hover:cursor-default ">
+              <p className="text-white text-sm">INTERNET BANKING</p>
+            </Link>
+          </button>
         </section>
       )}
     </nav>
