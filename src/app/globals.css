@@ -290,7 +290,7 @@ body {
   font-size: 18px;
   line-height: 28px;
   letter-spacing: 0%;
-  color: var(--color-gray-neutral-900);
+  /* color: var(--color-gray-neutral-900); */
 }
 
 .text-lg-bold {
@@ -299,7 +299,7 @@ body {
   font-size: 18px;
   line-height: 28px;
   letter-spacing: 0%;
-  color: var(--color-gray-neutral-900);
+  /* color: var(--color-gray-neutral-900); */
 }
 
 .text-md {

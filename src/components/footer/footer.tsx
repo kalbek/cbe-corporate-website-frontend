@@ -5,7 +5,7 @@ export default function Footer() {
   return (
     // h - [59.44vh] sm:h-[70vh] lg:h-[59.44vh]
     <footer className="relative flex min-h-[612px]  flex-col">
-      <div className="relative min-h-[612px]   overflow-hidden flex flex-col items-baseline brr-white ">
+      <div className="relative min-h-[612px]   overflow-hidden flex flex-col items-baseline  ">
         {/* decorative left circle container - the background */}
         <div className="h-full w-[117.5%] -blue right-[12.92%] absolute  z-0">
           <div className="absolute left-0 top-0 w-full h-[117.5vw] rounded-full bg-purple-800"></div>
@@ -23,7 +23,7 @@ export default function Footer() {
           />
         </div>
         {/* footer content */}
-        <nav className="absolute h-[69.78%] bg-purple-800 brr-white  bottom-0  w-full z-10">
+        <nav className="absolute h-[69.78%] bg-purple-800   bottom-0  w-full z-10">
           {/* footer content container */}
           <ul className="mx-[6.94%] h-full -white flex flex-col relative">
             {/* footer links container */}
@@ -32,7 +32,10 @@ export default function Footer() {
                 <li>
                   <ul className="flex flex-col md:flex-row  justify-between  gap-15">
                     <li className="w-fit -blue flex flex-col items-start gap-[18px]">
-                      <h1 className="text-white text-md underline" role="menu">
+                      <h1
+                        className="text-lg-bold text-white underline"
+                        role="menu"
+                      >
                         About Us
                       </h1>
                       <ul className="flex flex-col gap-2">
@@ -67,7 +70,10 @@ export default function Footer() {
                       </ul>
                     </li>
                     <li className="w-fit -blue flex flex-col items-start gap-[18px]">
-                      <h1 className="text-white text-md underline" role="menu">
+                      <h1
+                        className="text-lg-bold text-white underline"
+                        role="menu"
+                      >
                         Deposit Accounts
                       </h1>
                       <ul className="flex flex-col gap-2">
@@ -94,7 +100,10 @@ export default function Footer() {
                       </ul>
                     </li>
                     <li className="w-fit -blue flex flex-col items-start gap-[18px]">
-                      <h1 className="text-white text-md underline" role="menu">
+                      <h1
+                        className="text-lg-bold text-white underline"
+                        role="menu"
+                      >
                         Services
                       </h1>
                       <ul className="flex flex-col gap-2">
@@ -116,7 +125,10 @@ export default function Footer() {
                       </ul>
                     </li>
                     <li className="w-fit -blue flex flex-col items-start gap-[18px]">
-                      <h1 className="text-white text-md underline" role="menu">
+                      <h1
+                        className="text-lg-bold text-white underline"
+                        role="menu"
+                      >
                         Ways of Banking
                       </h1>
                       <ul className="flex flex-col gap-2">
@@ -144,7 +156,10 @@ export default function Footer() {
                       </ul>
                     </li>
                     <li className="w-fit -blue flex flex-col items-start gap-[18px]">
-                      <h1 className="text-white text-md underline" role="menu">
+                      <h1
+                        className="text-lg-bold text-white underline"
+                        role="menu"
+                      >
                         Resources
                       </h1>
                       <ul className="flex flex-col gap-2">
@@ -179,9 +194,14 @@ export default function Footer() {
                       </ul>
                     </li>
                     <li className="w-fit -blue flex flex-col items-start gap-[18px]">
-                      <h1 className="text-white text-md underline" role="menu">
-                        Contact Us
-                      </h1>
+                      <button>
+                        <h1
+                          className="text-lg-bold text-white underline"
+                          role="menu"
+                        >
+                          Contact Us
+                        </h1>
+                      </button>
                       <ul className="flex flex-col gap-2">
                         <li className="text-white text-xs">
                           <Link
@@ -257,7 +277,7 @@ export default function Footer() {
                 {/* footer social links */}
                 <div className="absolute h-fit -white">
                   <div className="flex-cent-vh gap-3.5">
-                    <p className="text-white "> Follow Us</p>
+                    <p className="text-lg-bold  text-white "> Follow Us</p>
                     <div className="flex-cent-vh w-fit flex justify-between gap-5">
                       {/* telegram icon */}
                       <a
@@ -333,15 +353,15 @@ export default function Footer() {
                   <div className="flex justify-between items-baseline w-full h-full ">
                     {/* footer support info */}
                     <div className="relative w-fit h-full flex-cent-vh rounded-[50px] border-[1.5px] border-white ">
-                      <div className=" flex-cent-vhb h-full w-full gap-5 -white px-8">
+                      <div className=" flex-cent-vhb h-full w-full gap-5 px-8">
                         <div className="flex-cent-vh gap-2">
                           <img
                             src="/icon-and-logos/icons-svg/phone-icon.svg"
                             alt="phone-icon"
                           />
-                          <p className="text-white "> Support:</p>
+                          <p className="text-lg-bold text-white "> Support:</p>
                         </div>
-                        <p className="text-white "> +251951</p>
+                        <p className="text-lg-bold text-white "> +251951</p>
                       </div>
                     </div>
                     {/* app store links */}
@@ -366,7 +386,7 @@ export default function Footer() {
         {/* footer bottom */}
         <div className="absolute w-full h-[10%] bottom-0 flex-cent-vh -white z-80"></div>
         {/* right footer decorative */}
-        <div className="absolute w-[70.34%] aspect-square top-["></div>
+        <div className="absolute w-[70.34%] aspect-square"></div>
       </div>
       {/* decorative right mask  component to hide the right mask overflow => width is arbitrary value*/}
       <div className="absolute img h-[70.345%] w-[6.5%] -blue right-0 -top-[11%] z-80">
