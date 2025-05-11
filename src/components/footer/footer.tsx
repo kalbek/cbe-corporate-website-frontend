@@ -4,8 +4,8 @@ import Link from "next/link";
 export default function Footer() {
   return (
     // h - [59.44vh] sm:h-[70vh] lg:h-[59.44vh]
-    <footer className="relative flex flex-col">
-      <div className="w-full h-full   min-h-[612px]  relative overflow-hidden ">
+    <footer className="relative flex min-h-[612px]  flex-col">
+      <div className="relative min-h-[612px]   overflow-hidden flex flex-col items-baseline brr-white ">
         {/* decorative left circle container - the background */}
         <div className="h-full w-[117.5%] -blue right-[12.92%] absolute  z-0">
           <div className="absolute left-0 top-0 w-full h-[117.5vw] rounded-full bg-purple-800"></div>
@@ -15,7 +15,7 @@ export default function Footer() {
           <div className="left-0 top-0 w-full  h-[117.5vw] rounded-full bg-purple-800"></div>
         </div>
         {/* decorative left mask */}
-        <div className="absolute w-[18.48%] aspect-square left-0 -white -bottom-4 -translate-x-[70%]  z-80">
+        <div className="absolute w-[18.48%] aspect-square left-0   -bottom-4 -translate-x-[70%]  z-80">
           <img
             src="/icon-and-logos/logos-svg/mask-light-bg.svg"
             alt="Decorative mask"
@@ -23,7 +23,7 @@ export default function Footer() {
           />
         </div>
         {/* footer content */}
-        <nav className="absolute h-[69.78%] bg-purple-800  bottom-[6%]  w-full z-10">
+        <nav className="absolute h-[69.78%] bg-purple-800 brr-white  bottom-0  w-full z-10">
           {/* footer content container */}
           <ul className="mx-[6.94%] h-full -white flex flex-col relative">
             {/* footer links container */}
@@ -363,13 +363,6 @@ export default function Footer() {
             </li>
           </ul>
         </nav>
-        <section className="absolute bottom-0  w-full min-h-11 bg-gold-400 z-70">
-          <div className="flex flex-col">
-            <div className="w-4">fasdfad</div>
-            <div className="w-4">fasdfad</div>
-            <div className="w-4">fasdfad</div>
-          </div>
-        </section>
         {/* footer bottom */}
         <div className="absolute w-full h-[10%] bottom-0 flex-cent-vh -white z-80"></div>
         {/* right footer decorative */}
@@ -383,6 +376,46 @@ export default function Footer() {
           className="object-left h-full w-auto object-cover"
         />
       </div>
+      <nav className="relative flex justify-center items-center bottom-0 min-h-11 bg-gold-400 z-70 w-full">
+        <ul className="flex flex-col md:flex-row justify-between   w-full h-full  px-8 md:px-25 items-start">
+          <li>
+            <p className="text-sm text-purple-800 text-wrap">
+              © 2025 Comercial Bank of Ethiopia. All right reserved
+            </p>
+          </li>
+          <ul className="flex gap-1 md:gap-5 flex-col md:flex-row justify-between items-start">
+            <li>
+              <Link href="/misalliance/faq" passHref>
+                <p className="text-sm text-purple-800 text-wrap">FAQ</p>
+              </Link>
+            </li>
+            <li role="presentation">
+              <p className="text-sm text-purple-800 hidden md:block">|</p>
+            </li>
+            <li>
+              <Link href="/misalliance/privacy-policy">
+                <p className="text-sm text-purple-800">Privacy Policy</p>
+              </Link>
+            </li>
+            <li role="presentation">
+              <p className="text-sm text-purple-800 hidden md:block">|</p>
+            </li>
+            <Link href="/misalliance/terms-and-tarrif" passHref>
+              <li>
+                <p className="text-sm text-purple-800">Terms and Tarrif</p>
+              </li>
+            </Link>
+            <li role="presentation">
+              <p className="text-sm text-purple-800 hidden md:block">|</p>
+            </li>
+            <li>
+              <p className="text-sm text-purple-800">
+                Vulnerability Disclosure Standard Procedure
+              </p>
+            </li>
+          </ul>
+        </ul>
+      </nav>
     </footer>
   );
 }

@@ -7,6 +7,7 @@ export default function TermsAndTarrif
         <a href="/misalliance/tenders"></a>
         <a href="/misalliance/faq"></a>
         <a href="/misalliance/careers"></a>
+        <a href="/misalliance/privacy-policy"></a>
       </>
     )
   }
