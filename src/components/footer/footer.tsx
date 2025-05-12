@@ -186,7 +186,7 @@ export default function Footer() {
                       <ul
                         className={`${
                           servicesOpen ? `flex` : `hidden  `
-                        } md:flex flex-col gap-2 ml-2 md:ml-0 -mt-3 md:mt-0 `}
+                        } md:flex flex-col gap-2 ml-2 md:ml-0 -mt-3 md:mt-0  `}
                       >
                         <li className="text-white text-xs">
                           <Link href="/cbe-services/cbe-birr" passHref>
