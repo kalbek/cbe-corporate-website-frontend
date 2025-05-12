@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Image from "next/image";
-
 type HeroProps = {
   header: string;
   description: string;
@@ -12,24 +11,24 @@ type HeroProps = {
 
 const hero: React.FC<HeroProps> = ({ header, description, cta }) => {
   return (
-    <main className="font-primary bg-[url(/images/hero-image.png)] bg-cover bg-center bg-no-repeat grid grid-cols-2 items-center">
+    <main className="font-primary items-center bg-[url(/images/hero-image.png)] bg-cover bg-center grid sm:grid-cols-2">
       <Link href="/">
         <Image
-          src="/Previous.svg"
+          src="/previous.svg"
           width={40}
           height={40}
           alt="previous"
-          className="ml-2"
+          className="hidden sm:flex ml-2"
         />
       </Link>
 
-      <div className="flex justify-between items-center gap-20">
-        <div className="text-white w-[523px] my-[160px]">
+      <div className="sm:flex justify-between items-center gap-20 p-4">
+        <div className="text-foreground  max-w-[523px] my-[160px]">
           <h1 className="text-5xl font-bold mb-5">{header}</h1>
           <p className="text-[18px] font-normal mb-7">{description}</p>
           <Link
             href={cta.href}
-            className="bg-white/30 text-white py-3 px-5 rounded-[8px] cursor-pointer"
+            className="bg-foreground/40 py-3 px-5 rounded-[8px] cursor-pointer"
           >
             {cta.label}
           </Link>
@@ -37,11 +36,11 @@ const hero: React.FC<HeroProps> = ({ header, description, cta }) => {
 
         <Link href="/">
           <Image
-            src="/Next.svg"
+            src="/next.svg"
             width={40}
             height={40}
             alt="next"
-            className="mr-2"
+            className="hidden sm:flex mr-2"
           />
         </Link>
       </div>
@@ -50,4 +49,3 @@ const hero: React.FC<HeroProps> = ({ header, description, cta }) => {
 };
 
 export default hero;
-
