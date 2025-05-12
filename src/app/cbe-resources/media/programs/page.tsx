@@ -6,83 +6,99 @@ const newsItems = [
     {
       id: 1,
       image: "/images/media-img1.png",
-      description: "Week 184"
+      description: "Week 184",
+      video: "/images/video.mp4"
     },
     {
       id: 2,
       image: "/images/media-img2.png",
-      description: "Week 184"
+      description: "Week 184",
+      video: "/images/video.mp4"
     },
     {
       id: 3,
       image: "/images/media-img3.png",
-      description: "Week 184"
+      description: "Week 184",
+      video: "/images/video.mp4"
     },
         {
       id: 4,
       image: "/images/media-img4.png",
-      description: "Week 184"
+      description: "Week 184",
+      video: "/images/video.mp4"
     },
     {
       id: 5,
       image: "/images/media-img5.png",
-      description: "Week 184"
+      description: "Week 184",
+      video: "/images/video.mp4"
     },
     {
       id: 6,
       image: "/images/media-img6.png",
-      description: "Week 184"
+      description: "Week 184",
+      video: "/images/video.mp4"
     },
         {
       id: 7,
       image: "/images/media-img7.png",
-      description: "Week 184"
+      description: "Week 184",
+      video: "/images/video.mp4"
     },
     {
       id: 8,
       image: "/images/media-img8.png",
-      description: "Week 184"
+      description: "Week 184",
+      video: "/images/video.mp4"
     },
     {
       id: 9,
       image: "/images/media-img9.png",
-      description: "Week 184"
+      description: "Week 184",
+      video: "/images/video.mp4"
     },
         {
       id: 10,
       image: "/images/media-img10.png",
-      description: "Week 184"
+      description: "Week 184",
+      video: "/images/video.mp4"
     },
     {
       id: 11,
       image: "/images/media-img11.png",
-      description: "Week 184"
+      description: "Week 184",
+      video: "/images/video.mp4"
     },
     {
       id: 12,
       image: "/images/media-img12.png",
-      description: "Week 184"
+      description: "Week 184",
+      video: "/images/video.mp4"
     },
         {
       id: 13,
       image: "/images/media-img13.png",
-      description: "Week 184"
+      description: "Week 184",
+      video: "/images/video.mp4"
     },
     {
       id: 14,
       image: "/images/media-img14.png",
-      description: "Week 184"
+      description: "Week 184",
+      video: "/images/video.mp4"
     },
     {
       id: 15,
       image: "/images/media-img15.png",
-      description: "Week 184"
+      description: "Week 184",
+      video: "/images/video.mp4"
     }
 
   ];
 
   export default function Gallary() {
     const [activePage, setActivePage] = useState(1);
+    const [activeVideo, setActiveVideo] = useState<string | null>(null);
     
     return (
         <div className="bg-white text-white w-full">
@@ -147,10 +163,10 @@ const newsItems = [
                                 <span className="flex items-center justify-center ">&gt;</span>
                             </button>
                                  </div>
-                                <h3 className="h-[30px] text-[#000000] text-[20px] leading-[30px] tracking-normal text-lg font-bold font-weight-700 font-pt-sans-caption mt-4 self-start">
-                                    Amharic TV Programms
-                                </h3>
                         </div>
+                         <h1 className="h-[30px] text-[#000000] text-[20px] leading-[30px] tracking-normal font-bold font-weight-700 font-pt-sans-caption mt-2 ml-4 self-start">
+                              Amharic TV Programms
+                         </h1>
                     
                     {/* News Grid Container */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10 mt-4">
@@ -163,7 +179,50 @@ const newsItems = [
                                         layout="fill"
                                         objectFit="cover"
                                     />
+                                    <button
+                                        className="absolute text-[#ffffff] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[67.49px] h-[47.8px] bg-[#CE1312] rounded flex items-center justify-center shadow-lg cursor-pointer"
+                                        onClick={() =>item.video && setActiveVideo(item.video)} disabled={!item.video}>
+                                             ▶
+                                        </button>
                                 </div>
+
+                                {/* modal */}
+                                {activeVideo && (
+                                    <div
+                                        className="fixed inset-0 bg-opacity-25 flex items-center justify-center z-50"
+                                        onClick={() => setActiveVideo(null)} // Close when clicking outside
+                                    >
+                                        <div
+                                        className="bg-white h-[716px] w-[1043px] rounded-b-[8px] pb-[40px] pl-[40px] pr-[40px] gap-[40px]"
+                                        onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside the modal
+                                        >
+                                        {/* Top Bar */}
+                                        <div className="rounded-t-[8px] border-b border-b-[1px] border-gray-300 justify-between p-[20px] flex h-[70px]">
+                                            <span className="w-[107px] h-[30px] font-pt-sans-caption font-bold text-[20px] leading-[30px] tracking-[0] text-[#000000]">Video Title</span>
+                                            <button
+                                            className="w-[62px] h-[20px] text-[#000000] font-pt-sans-caption font-normal text-[14px] leading-[20px] tracking-[-0.01em] cursor-pointer"
+                                            onClick={() => setActiveVideo(null)}
+                                            >
+                                            ✕ Close
+                                            </button>
+                                        </div>
+
+                                        {/* Video Section */}
+                                        <div className="relative w-[1043px] h-[646px] rounded-b-[8px] p-[40px] gap-[40px] flex flex-col mt-12">
+                                            <iframe
+                                            src={activeVideo}
+                                            title="YouTube video"
+                                            className="absolute inset-0 w-[967.3px] h-[546px]"
+                                            frameBorder="0"
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                            allowFullScreen
+                                            ></iframe>
+                                        </div>
+                                        </div>
+                                    </div>
+                                    )}
+
+
                                 <div className="w-full h-[30px] mt-4">
                                     <p className="text-[#892890] font-pt-sans-caption font-bold text-[20px] leading-[30px] tracking-normal mt-2">
                                         {item.description}
