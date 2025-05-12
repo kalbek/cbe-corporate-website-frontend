@@ -1,8 +1,7 @@
-"use client";
-import Link from "next/link";
-import Image from "next/image";
-import { useState } from "react";
-import Hero from "@/components/hero";
+'use client'
+
+import Image from 'next/image'
+import { useParams } from 'next/navigation'
 
 const newsItems = [
   {
@@ -43,7 +42,7 @@ const newsItems = [
   },
   {
     id: "5",
-    uniqueId: "news_five",
+    uniqueId: "news_fiv",
     title: "CBE Board of Directors, Management and Employees...",
     date: "06 May 2021",
     image: "/icon-and-logos/about-us/news-five.png",
@@ -61,66 +60,44 @@ const newsItems = [
   },
 ];
 
-export default function News() {
-  const [activePage, setActivePage] = useState(1);
-  return (
-    <div className="font-primary">
-      <Hero
-        header="Corporate Social Responsibility"
-        description="At CBE, our responsibility goes beyond banking. We invest in people, uplift communities, and support sustainable development to build a better future for all."
-        cta={{ label: "Know More", href: "/" }}
-      />
-      <section className="page-container mb-16">
-        <div className="my-[60px]">
-          <h2 className="text-accent text-3xl font-bold mb-5">
-            Corporate Social Responsibility
-          </h2>
-          <p className="mb-5">Banking with Purpose, Impacting Lives</p>
-        </div>
+export default function NewsArticle() {
+  const {uniqueId} = useParams();
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-          {newsItems.map((item) => (
-            <div key={item.id} className="">
-              <div className="relative h-[270px] mb-5">
-                <Image
-                  src={item.image}
-                  alt={item.title}
-                  // width={278}
-                  // height={221}
-                  fill={true}
-                  objectFit="cover"
-                  className="rounded-sm"
-                />
-              </div>
-              <div className="">
-                <div>
-                  <p className="text-[12px] font-bold leading-[18px] text-[#E8A029] mb-3">
-                    {item.date}
-                  </p>
-                  <h3 className="font-bold text-[20px] leading-[24px] font-kefa text-black mb-4">
-                    {item.title}
-                  </h3>
-                  <p className="font-normal text-[14px] leading-[24px] text-black mb-3">
-                    {item.description}
-                  </p>
-                </div>
-                <Link
-                  href={`/about-us/csr/${item.uniqueId}`}
-                  className="text-accent flex items-center justify-baseline gap-3"
-                >
-                  <p>Know More</p>
-                  <Image
-                    src="/icon-and-logos/about-us/arrow-left.svg"
-                    width={17}
-                    height={10}
-                    alt="arrow left"
-                  />
-                </Link>
-              </div>
-            </div>
-          ))}
-        </div>
+  const newsItem = newsItems.find((item) => item.uniqueId === uniqueId);
+
+  if(!newsItem){
+    return <div> News not found </div>
+  }
+
+  return (
+    <div className="bg-white w-[1440] h-[1107px]">
+      {/* Date and Title */}
+      <section className="w-[1440] h-[318px] gap-[14px] pt-[100px] pr-[100px] pl-[100px]">
+        <p className="w-[1240] h-[24px] text-[#E9A029] font-pt-sans-caption font-bold text-[18px] leading-[24px] text-center">{newsItem.date}</p>
+        <h1 className=" text-purple-800 w-[1240] h-[120px] font-pt-sans-caption font-normal text-[48px] leading-[60px] tracking-[-0.02em] text-center">
+        {newsItem.title}
+        </h1>
       </section>
+
+      {/* Image */}
+      <div className='w-[1440] h-[789px] gap-[57px] pr-[80px] pb-[100px] pl-[80px]'>
+      <div className="flex justify-center">
+        <Image
+          src={newsItem.image}
+          alt="CBE News"
+          width={768}
+          height={512}
+          className="w-[768px] h-[432px]"
+        />
+      </div>
+
+      {/* Paragraph */}
+      <section className='justify-center flex pt-[40px]'>
+        <p className='w-[732px] h-[120px] text-[#000000] font-pt-sans-caption font-normal text-[16px] leading-[24px] tracking-[0] text-center'>
+        {newsItem.description}
+        </p>
+      </section>
+      </div>
     </div>
-  );
+  )
 }
