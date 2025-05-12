@@ -1,5 +1,3 @@
 export default function Vacancy() {
-    return (
-      <> vacancy</>
-    )
-  }
+  return <> vacancy</>
+}

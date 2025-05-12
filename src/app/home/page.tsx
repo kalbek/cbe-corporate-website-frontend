@@ -2,12 +2,15 @@ export default function Home() {
   return (
     <>
       <div className="flex flex-col w-full">
-        {/* sub navigation */}
-        <div className="brr h-7 flex-cent-h ">sub navigation</div>
-        {/* primary navigation */}
-        <div className="brr h-16 flex-cent-vh">primary navigation</div>
         {/* hero section*/}
-        <div className="brr h-[50vh] flex-cent-vh">hero section</div>
+        <div className="w-full aspect-[1440/519]">
+          <img
+            src="/images/hero-home-img.png"
+            className="w-full h-full object-cover"
+            alt=""
+          />
+        </div>
+
         {/* services section*/}
         <div className="brr h-48 flex-cent-vh">services section</div>
         {/* digital banking section */}
@@ -17,10 +20,10 @@ export default function Home() {
           statistics and social responsibilities section
         </div>
         {/* news section  */}
-        <div className="flex-cent-vh h-[114.44vh] sm:h-[130vh] lg brr">
+        <div className="flex-cent-vh h-[101.44vh] sm:h-[130vh] lg brr">
           news section
         </div>
       </div>
     </>
-  );
+  )
 }

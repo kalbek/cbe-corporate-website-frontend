@@ -1,3 +1,3 @@
 export default function CbenoorBranches() {
-  return <>network-pos</>;
+  return <>network-pos</>
 }

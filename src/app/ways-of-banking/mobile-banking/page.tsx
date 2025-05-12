@@ -1,6 +1,3 @@
-export default function MobileBanking
-() {
-    return (
-      <>mobile banking</>
-    )
-  }
+export default function MobileBanking() {
+  return <>mobile banking</>
+}

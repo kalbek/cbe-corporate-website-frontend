@@ -1,6 +1,3 @@
-export default function Careers
-() {
-    return (
-      <>careers</>
-    )
-  }
+export default function Careers() {
+  return <>careers</>
+}

@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react'
 
 export default function Footer() {
   return (
@@ -62,6 +62,7 @@ export default function Footer() {
                         href="https://telegram.com"
                         target="_blank"
                         className="focus:outline-none"
+                        rel="noreferrer"
                       >
                         <img
                           src="/icon-and-logos/social-icons/telegram-icon.svg"
@@ -73,6 +74,7 @@ export default function Footer() {
                         href="https://facebook.com"
                         target="_blank"
                         className="focus:outline-none"
+                        rel="noreferrer"
                       >
                         <img
                           src="/icon-and-logos/social-icons/facebook-icon.svg"
@@ -84,6 +86,7 @@ export default function Footer() {
                         href="https://x.com"
                         target="_blank"
                         className="focus:outline-none"
+                        rel="noreferrer"
                       >
                         <img
                           src="/icon-and-logos/social-icons/x-icon.svg"
@@ -95,6 +98,7 @@ export default function Footer() {
                         href="https://instagram.com"
                         target="_blank"
                         className="focus:outline-none"
+                        rel="noreferrer"
                       >
                         <img
                           src="/icon-and-logos/social-icons/instagram-icon.svg"
@@ -106,6 +110,7 @@ export default function Footer() {
                         href="https://youtube.com"
                         target="_blank"
                         className="focus:outline-none"
+                        rel="noreferrer"
                       >
                         <img
                           src="/icon-and-logos/social-icons/youtube-icon.svg"
@@ -117,6 +122,7 @@ export default function Footer() {
                         href="https://linkedin.com"
                         target="_blank"
                         className="focus:outline-none"
+                        rel="noreferrer"
                       >
                         <img
                           src="/icon-and-logos/social-icons/linkedin-icon.svg"
@@ -175,5 +181,5 @@ export default function Footer() {
         />
       </div>
     </footer>
-  );
+  )
 }

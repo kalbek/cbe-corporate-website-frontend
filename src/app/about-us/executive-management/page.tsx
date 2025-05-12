@@ -1,5 +1,3 @@
 export default function ExecutiveManagement() {
-    return (
-      <>executive management</>
-    )
-  }
+  return <>executive management</>
+}

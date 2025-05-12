@@ -1,5 +1,3 @@
 export default function AboutCbe() {
-  return  (
-    <>About Cbe</>
-  )
+  return <>About Cbe</>
 }

@@ -1,6 +1,3 @@
-export default function Deposit
-() {
-    return (
-      <>deposit</>
-    )
-  }
+export default function Deposit() {
+  return <>deposit</>
+}
