@@ -1,0 +1,35 @@
+name: Lint
+
+on:
+  pull_request:
+    branches:
+      - main # You can change this to match your protected branch
+  push:
+    branches:
+      - main # Same here for pushes to the protected branch
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16' # Use your desired Node.js version
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run ESLint
+        run: npm run lint # This will use your "lint" script in package.json
+
+      - name: Fail the build if linting fails
+        run: |
+          if [ $? -ne 0 ]; then
+            echo "ESLint failed. Please fix linting errors.";
+            exit 1;
+          fi
