@@ -1,3 +1,3 @@
 export default function CbeEthioDirect() {
-  return <>Cbe Ethio Direct</>;
+  return <>Cbe Ethio Direct</>
 }

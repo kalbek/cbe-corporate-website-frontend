@@ -1,3 +1,3 @@
 export default function CbeNedaj() {
-  return <>Cbe Nedaj</>;
+  return <>Cbe Nedaj</>
 }

@@ -1,65 +1,65 @@
-"use client";
-import React from "react";
-import Link from "next/link";
-import { useState } from "react";
+'use client'
+import React from 'react'
+import Link from 'next/link'
+import { useState } from 'react'
 
 export default function Footer() {
-  const [aboutUsOpen, setAboutUsOpen] = useState(true);
-  const [depositAccountsOpen, setDepositAccountsOpen] = useState(false);
-  const [servicesOpen, setServicesOpen] = useState(false);
-  const [waysOfBankingOpen, setWaysOfBankingOpen] = useState(false);
-  const [resourcesOpen, setResourcesOpen] = useState(false);
-  const [contactUsOpen, setContactUsOpen] = useState(false);
+  const [aboutUsOpen, setAboutUsOpen] = useState(true)
+  const [depositAccountsOpen, setDepositAccountsOpen] = useState(false)
+  const [servicesOpen, setServicesOpen] = useState(false)
+  const [waysOfBankingOpen, setWaysOfBankingOpen] = useState(false)
+  const [resourcesOpen, setResourcesOpen] = useState(false)
+  const [contactUsOpen, setContactUsOpen] = useState(false)
 
   const toggleAboutUs = () => {
-    setDepositAccountsOpen(false);
-    setServicesOpen(false);
-    setWaysOfBankingOpen(false);
-    setResourcesOpen(false);
-    setContactUsOpen(false);
-    setAboutUsOpen(true);
-  };
+    setDepositAccountsOpen(false)
+    setServicesOpen(false)
+    setWaysOfBankingOpen(false)
+    setResourcesOpen(false)
+    setContactUsOpen(false)
+    setAboutUsOpen(true)
+  }
 
   const toggleDepositAccounts = () => {
-    setServicesOpen(false);
-    setWaysOfBankingOpen(false);
-    setResourcesOpen(false);
-    setContactUsOpen(false);
-    setAboutUsOpen(false);
-    setDepositAccountsOpen(true);
-  };
+    setServicesOpen(false)
+    setWaysOfBankingOpen(false)
+    setResourcesOpen(false)
+    setContactUsOpen(false)
+    setAboutUsOpen(false)
+    setDepositAccountsOpen(true)
+  }
   const toggleServices = () => {
-    setDepositAccountsOpen(false);
-    setWaysOfBankingOpen(false);
-    setResourcesOpen(false);
-    setContactUsOpen(false);
-    setAboutUsOpen(false);
-    setServicesOpen(true);
-  };
+    setDepositAccountsOpen(false)
+    setWaysOfBankingOpen(false)
+    setResourcesOpen(false)
+    setContactUsOpen(false)
+    setAboutUsOpen(false)
+    setServicesOpen(true)
+  }
   const toggleWaysOfBanking = () => {
-    setDepositAccountsOpen(false);
-    setServicesOpen(false);
-    setResourcesOpen(false);
-    setContactUsOpen(false);
-    setAboutUsOpen(false);
-    setWaysOfBankingOpen(true);
-  };
+    setDepositAccountsOpen(false)
+    setServicesOpen(false)
+    setResourcesOpen(false)
+    setContactUsOpen(false)
+    setAboutUsOpen(false)
+    setWaysOfBankingOpen(true)
+  }
   const toggleResources = () => {
-    setDepositAccountsOpen(false);
-    setServicesOpen(false);
-    setWaysOfBankingOpen(false);
-    setContactUsOpen(false);
-    setAboutUsOpen(false);
-    setResourcesOpen(true);
-  };
+    setDepositAccountsOpen(false)
+    setServicesOpen(false)
+    setWaysOfBankingOpen(false)
+    setContactUsOpen(false)
+    setAboutUsOpen(false)
+    setResourcesOpen(true)
+  }
   const toggleContactUs = () => {
-    setDepositAccountsOpen(false);
-    setServicesOpen(false);
-    setWaysOfBankingOpen(false);
-    setResourcesOpen(false);
-    setAboutUsOpen(false);
-    setContactUsOpen(true);
-  };
+    setDepositAccountsOpen(false)
+    setServicesOpen(false)
+    setWaysOfBankingOpen(false)
+    setResourcesOpen(false)
+    setAboutUsOpen(false)
+    setContactUsOpen(true)
+  }
 
   return (
     // h - [59.44vh] sm:h-[70vh] lg:h-[59.44vh]
@@ -111,7 +111,7 @@ export default function Footer() {
                         <li className="text-white text-xs">
                           <Link href="/about-us/about-cbe" passHref>
                             <p>About Cbe</p>
-                          </Link>{" "}
+                          </Link>{' '}
                         </li>
                         <li className="text-white text-xs">
                           <Link href="/about-us/board-of-directors" passHref>
@@ -358,7 +358,7 @@ export default function Footer() {
                     </Link>
                     <Link href="">
                       <p className="text-white text-xs">
-                        SWIFT Code: CBETETAA{" "}
+                        SWIFT Code: CBETETAA{' '}
                       </p>
                     </Link>
                     <Link href="">
@@ -384,6 +384,7 @@ export default function Footer() {
                       href="https://telegram.com"
                       target="_blank"
                       className="focus:outline-none"
+                      rel="noreferrer"
                     >
                       <img
                         src="/icon-and-logos/social-icons/telegram-icon.svg"
@@ -395,6 +396,7 @@ export default function Footer() {
                       href="https://facebook.com"
                       target="_blank"
                       className="focus:outline-none"
+                      rel="noreferrer"
                     >
                       <img
                         src="/icon-and-logos/social-icons/facebook-icon.svg"
@@ -406,6 +408,7 @@ export default function Footer() {
                       href="https://x.com"
                       target="_blank"
                       className="focus:outline-none"
+                      rel="noreferrer"
                     >
                       <img
                         src="/icon-and-logos/social-icons/x-icon.svg"
@@ -417,6 +420,7 @@ export default function Footer() {
                       href="https://instagram.com"
                       target="_blank"
                       className="focus:outline-none"
+                      rel="noreferrer"
                     >
                       <img
                         src="/icon-and-logos/social-icons/instagram-icon.svg"
@@ -428,6 +432,7 @@ export default function Footer() {
                       href="https://youtube.com"
                       target="_blank"
                       className="focus:outline-none"
+                      rel="noreferrer"
                     >
                       <img
                         src="/icon-and-logos/social-icons/youtube-icon.svg"
@@ -439,6 +444,7 @@ export default function Footer() {
                       href="https://linkedin.com"
                       target="_blank"
                       className="focus:outline-none"
+                      rel="noreferrer"
                     >
                       <img
                         src="/icon-and-logos/social-icons/linkedin-icon.svg"
@@ -537,5 +543,5 @@ export default function Footer() {
         </ul>
       </nav>
     </footer>
-  );
+  )
 }

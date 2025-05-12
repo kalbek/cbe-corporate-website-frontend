@@ -1,3 +1,3 @@
 export default function Pos() {
-  return <>network-pos</>;
+  return <>network-pos</>
 }

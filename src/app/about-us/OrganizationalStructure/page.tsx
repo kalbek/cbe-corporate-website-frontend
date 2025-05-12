@@ -1,3 +1,3 @@
 export default function OrganizationalStructure() {
-  return <>OrganizationalStructure</>;
+  return <>OrganizationalStructure</>
 }

@@ -1,57 +1,57 @@
-"use client";
-import { useState } from "react";
-import { usePathname } from "next/navigation";
-import Link from "next/link";
+'use client'
+import { useState } from 'react'
+import { usePathname } from 'next/navigation'
+import Link from 'next/link'
 
 export default function SubNavigation() {
-  const pathname = usePathname();
-  const [socialOpen, setSocialOpen] = useState(false);
-  const [langOpen, setLangOpen] = useState(false);
-  const [aboutOpen, setAboutOpen] = useState(false);
-  const [subsidaryBranchesOpen, setSubsidaryBranchesOpen] = useState(false);
+  const pathname = usePathname()
+  const [socialOpen, setSocialOpen] = useState(false)
+  const [langOpen, setLangOpen] = useState(false)
+  const [aboutOpen, setAboutOpen] = useState(false)
+  const [subsidaryBranchesOpen, setSubsidaryBranchesOpen] = useState(false)
 
   //   pathnames for each pages
-  const carrersActive = pathname === "/misalliance/careers";
-  const atmBranchesActive = pathname === "/ways-of-banking/atm-branch-locator";
+  const carrersActive = pathname === '/misalliance/careers'
+  const atmBranchesActive = pathname === '/ways-of-banking/atm-branch-locator'
 
   //   toggle with click about cbe group menu for md and sm screens only
   const toggleCbeGroup = () => {
     if (window.innerWidth < 1024) {
-      setLangOpen(false);
-      setSocialOpen(false);
-      setSubsidaryBranchesOpen(false);
-      setAboutOpen(!aboutOpen);
+      setLangOpen(false)
+      setSocialOpen(false)
+      setSubsidaryBranchesOpen(false)
+      setAboutOpen(!aboutOpen)
     } else {
-      setAboutOpen(true);
-      setLangOpen(false);
-      setSocialOpen(false);
-      setSubsidaryBranchesOpen(false);
+      setAboutOpen(true)
+      setLangOpen(false)
+      setSocialOpen(false)
+      setSubsidaryBranchesOpen(false)
     }
-  };
+  }
 
   // toggle social links section on click only for small screens
   const toggleSocialLinks = () => {
-    setLangOpen(false);
-    setSubsidaryBranchesOpen(false);
-    setAboutOpen(false);
+    setLangOpen(false)
+    setSubsidaryBranchesOpen(false)
+    setAboutOpen(false)
     if (window.innerWidth < 1024) {
-      setSocialOpen(!socialOpen);
+      setSocialOpen(!socialOpen)
     } else {
-      setSocialOpen(true);
+      setSocialOpen(true)
     }
-  };
+  }
 
   // toggle languages section on click only for small screens
   const toggleLanguageLinks = () => {
-    setSocialOpen(false);
-    setSubsidaryBranchesOpen(false);
-    setAboutOpen(false);
+    setSocialOpen(false)
+    setSubsidaryBranchesOpen(false)
+    setAboutOpen(false)
     if (window.innerWidth < 1024) {
-      setLangOpen(!langOpen);
+      setLangOpen(!langOpen)
     } else {
-      setLangOpen(true);
+      setLangOpen(true)
     }
-  };
+  }
 
   // toggle cbe group menus visibility
 
@@ -217,9 +217,9 @@ export default function SubNavigation() {
             <button
               className="flex-cent-vh gap-1"
               onClick={() => {
-                setSocialOpen(false);
-                setLangOpen(false);
-                setSubsidaryBranchesOpen(!subsidaryBranchesOpen);
+                setSocialOpen(false)
+                setLangOpen(false)
+                setSubsidaryBranchesOpen(!subsidaryBranchesOpen)
               }}
             >
               <img
@@ -395,5 +395,5 @@ export default function SubNavigation() {
         </ul>
       </ul>
     </nav>
-  );
+  )
 }

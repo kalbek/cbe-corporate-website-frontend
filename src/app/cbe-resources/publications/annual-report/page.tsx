@@ -1,3 +1,3 @@
 export default function AnnualReport() {
-    return <>Annual Report</>;
+  return <>Annual Report</>
 }

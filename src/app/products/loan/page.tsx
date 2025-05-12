@@ -1,6 +1,3 @@
-export default function Loan
-() {
-    return (
-      <>loan</>
-    )
-  }
+export default function Loan() {
+  return <>loan</>
+}

@@ -1,3 +1,3 @@
 export default function MudayeNeway() {
-    return <>Mudaye Neway</>;
+  return <>Mudaye Neway</>
 }

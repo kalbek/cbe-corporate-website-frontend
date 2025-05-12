@@ -1,87 +1,86 @@
-"use client";
-import { useState, useEffect } from "react";
-import { usePathname } from "next/navigation";
-import Link from "next/link";
+'use client'
+import { useState, useEffect } from 'react'
+import Link from 'next/link'
 
 export default function PrimaryNavigation() {
-  const [productsOpen, setProductsOpen] = useState(false);
-  const [servicesOpen, setServicesOpen] = useState(false);
-  const [waysOfBankingOpen, setWaysOfBankingOpen] = useState(false);
-  const [resourcesOpen, setResourcesOpen] = useState(false);
-  const [cbeNoorOpen, setCbeNoorOpen] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [productsOpen, setProductsOpen] = useState(false)
+  const [servicesOpen, setServicesOpen] = useState(false)
+  const [waysOfBankingOpen, setWaysOfBankingOpen] = useState(false)
+  const [resourcesOpen, setResourcesOpen] = useState(false)
+  const [cbeNoorOpen, setCbeNoorOpen] = useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const menuOpen =
     productsOpen ||
     servicesOpen ||
     waysOfBankingOpen ||
     resourcesOpen ||
-    cbeNoorOpen;
+    cbeNoorOpen
 
   const resetMenuOpens = () => {
-    setProductsOpen(false);
-    setServicesOpen(false);
-    setWaysOfBankingOpen(false);
-    setResourcesOpen(false);
-    setCbeNoorOpen(false);
-  };
+    setProductsOpen(false)
+    setServicesOpen(false)
+    setWaysOfBankingOpen(false)
+    setResourcesOpen(false)
+    setCbeNoorOpen(false)
+  }
 
   // toggle products menu
   const toogleProducts = () => {
-    setProductsOpen(true);
-    setServicesOpen(false);
-    setWaysOfBankingOpen(false);
-    setResourcesOpen(false);
-    setCbeNoorOpen(false);
-  };
+    setProductsOpen(true)
+    setServicesOpen(false)
+    setWaysOfBankingOpen(false)
+    setResourcesOpen(false)
+    setCbeNoorOpen(false)
+  }
 
   // toggle products menu
   const toogleServices = () => {
-    setProductsOpen(false);
-    setServicesOpen(true);
-    setWaysOfBankingOpen(false);
-    setResourcesOpen(false);
-    setCbeNoorOpen(false);
-  };
+    setProductsOpen(false)
+    setServicesOpen(true)
+    setWaysOfBankingOpen(false)
+    setResourcesOpen(false)
+    setCbeNoorOpen(false)
+  }
 
   // toggle products menu
   const toogleWaysOfBanking = () => {
-    setProductsOpen(false);
-    setServicesOpen(false);
-    setWaysOfBankingOpen(true);
-    setResourcesOpen(false);
-    setCbeNoorOpen(false);
-  };
+    setProductsOpen(false)
+    setServicesOpen(false)
+    setWaysOfBankingOpen(true)
+    setResourcesOpen(false)
+    setCbeNoorOpen(false)
+  }
 
   // toggle products menu
   const toogleResources = () => {
-    setProductsOpen(false);
-    setServicesOpen(false);
-    setWaysOfBankingOpen(false);
-    setResourcesOpen(true);
-    setCbeNoorOpen(false);
-  };
+    setProductsOpen(false)
+    setServicesOpen(false)
+    setWaysOfBankingOpen(false)
+    setResourcesOpen(true)
+    setCbeNoorOpen(false)
+  }
 
   // toggle products menu
   const toogleCbeNoor = () => {
-    setProductsOpen(false);
-    setServicesOpen(false);
-    setWaysOfBankingOpen(false);
-    setResourcesOpen(false);
-    setCbeNoorOpen(false);
-  };
+    setProductsOpen(false)
+    setServicesOpen(false)
+    setWaysOfBankingOpen(false)
+    setResourcesOpen(false)
+    setCbeNoorOpen(false)
+  }
 
   // disable scroll when menu is open
   useEffect(() => {
     if (mobileMenuOpen) {
-      document.body.style.overflow = "hidden";
+      document.body.style.overflow = 'hidden'
     } else {
-      document.body.style.overflow = "";
+      document.body.style.overflow = ''
     }
 
     return () => {
-      document.body.style.overflow = "";
-    };
-  }, [mobileMenuOpen]);
+      document.body.style.overflow = ''
+    }
+  }, [mobileMenuOpen])
 
   // define close and menu svg icons
   const Close = () => (
@@ -100,7 +99,7 @@ export default function PrimaryNavigation() {
       <line x1="18" y1="6" x2="6" y2="18" />
       <line x1="6" y1="6" x2="18" y2="18" />
     </svg>
-  );
+  )
 
   const Menu = () => (
     <svg
@@ -119,39 +118,39 @@ export default function PrimaryNavigation() {
       <line x1="3" y1="12" x2="21" y2="12" />
       <line x1="3" y1="18" x2="21" y2="18" />
     </svg>
-  );
+  )
 
   // reset mobile menu when the screen size exeedds 1024px
-  const [isSmallScreen, setIsSmallScreen] = useState(false);
+  const [isSmallScreen, setIsSmallScreen] = useState(false)
 
   useEffect(() => {
-    const mediaQuery = window.matchMedia("(max-width: 1024px)");
+    const mediaQuery = window.matchMedia('(max-width: 1024px)')
 
     // Handler to call on change
     const handleChange = (e: MediaQueryListEvent) => {
-      setIsSmallScreen(e.matches);
-    };
+      setIsSmallScreen(e.matches)
+    }
 
     // Set initial value
-    setIsSmallScreen(mediaQuery.matches);
+    setIsSmallScreen(mediaQuery.matches)
 
     // Listen for changes
-    mediaQuery.addEventListener("change", handleChange);
+    mediaQuery.addEventListener('change', handleChange)
 
     // Cleanup
     return () => {
-      mediaQuery.removeEventListener("change", handleChange);
-    };
-  }, []);
+      mediaQuery.removeEventListener('change', handleChange)
+    }
+  }, [])
 
   // ✅ Use it in JSX or logic
   useEffect(() => {
     // if (isSmallScreen) {
     //   console.log("Now in small screen mode (≤1014px)");
     // }
-    setMobileMenuOpen(false);
-    resetMenuOpens();
-  }, [isSmallScreen]);
+    setMobileMenuOpen(false)
+    resetMenuOpens()
+  }, [isSmallScreen])
 
   // menu items
   const MenuItems = () => (
@@ -178,8 +177,8 @@ export default function PrimaryNavigation() {
             <ul
               className={`${productsOpen ? `block` : `hidden`} ${
                 isSmallScreen
-                  ? "relative  ml-4 mt-2 -mb-2"
-                  : "absolute top-[100%] w-48 py-5"
+                  ? 'relative  ml-4 mt-2 -mb-2'
+                  : 'absolute top-[100%] w-48 py-5'
               } z-50`}
               onClick={resetMenuOpens}
             >
@@ -230,8 +229,8 @@ export default function PrimaryNavigation() {
             <ul
               className={`${servicesOpen ? `block` : `hidden`} ${
                 isSmallScreen
-                  ? "relative  ml-4 mt-2 -mb-2"
-                  : "absolute top-[100%] w-48 py-5"
+                  ? 'relative  ml-4 mt-2 -mb-2'
+                  : 'absolute top-[100%] w-48 py-5'
               } z-50`}
               onClick={resetMenuOpens}
             >
@@ -273,8 +272,8 @@ export default function PrimaryNavigation() {
             <ul
               className={`${waysOfBankingOpen ? `block` : `hidden`} ${
                 isSmallScreen
-                  ? "relative  ml-4 mt-2 -mb-2"
-                  : "absolute top-[100%] w-48 py-5"
+                  ? 'relative  ml-4 mt-2 -mb-2'
+                  : 'absolute top-[100%] w-48 py-5'
               } z-50`}
               onClick={resetMenuOpens}
             >
@@ -288,7 +287,7 @@ export default function PrimaryNavigation() {
               <li className="py-2 border-b border-b-[#E6E6E6] hover:text-[var(--color-purple-800)]">
                 <Link href="/ways-of-banking/mobile-banking" passHref>
                   <p onClick={() => setMobileMenuOpen(false)}>
-                    {" "}
+                    {' '}
                     Mobile Banking
                   </p>
                 </Link>
@@ -303,7 +302,7 @@ export default function PrimaryNavigation() {
                   isSmallScreen ? `border-b border-b-[#E6E6E6]` : ``
                 } py-2 hover:text-[var(--color-purple-800)]`}
               >
-                <Link href="/ways-of-banking/atm-branch-locator"  passHref>
+                <Link href="/ways-of-banking/atm-branch-locator" passHref>
                   <p onClick={() => setMobileMenuOpen(false)}>ATM Locator</p>
                 </Link>
               </li>
@@ -332,13 +331,16 @@ export default function PrimaryNavigation() {
                 <ul
                   className={`${resourcesOpen ? `block` : `hidden`} ${
                     isSmallScreen
-                      ? "relative  ml-4 mt-2 -mb-2"
-                      : "  top-[100%] w-48 py-5"
+                      ? 'relative  ml-4 mt-2 -mb-2'
+                      : '  top-[100%] w-48 py-5'
                   } z-50`}
                   onClick={resetMenuOpens}
                 >
                   <li className="py-2 border-b border-b-[#E6E6E6] hover:text-[var(--color-purple-800)]">
-                    <Link href="/cbe-resources/publications/annual-report" passHref>
+                    <Link
+                      href="/cbe-resources/publications/annual-report"
+                      passHref
+                    >
                       <p onClick={() => setMobileMenuOpen(false)}>
                         Publication
                       </p>
@@ -347,7 +349,7 @@ export default function PrimaryNavigation() {
                   <li className="py-2 border-b border-b-[#E6E6E6] hover:text-[var(--color-purple-800)]">
                     <Link href="/cbe-resources/media/programs" passHref>
                       <p onClick={() => setMobileMenuOpen(false)}>
-                        {" "}
+                        {' '}
                         Media Programmes
                       </p>
                     </Link>
@@ -366,8 +368,8 @@ export default function PrimaryNavigation() {
                 <ul
                   className={`${resourcesOpen ? `block` : `hidden`} ${
                     isSmallScreen
-                      ? "relative  ml-4 mt-2 -mb-2"
-                      : "  top-[100%] right-0 w-48 py-5"
+                      ? 'relative  ml-4 mt-2 -mb-2'
+                      : '  top-[100%] right-0 w-48 py-5'
                   } z-50`}
                   onClick={resetMenuOpens}
                 >
@@ -380,7 +382,7 @@ export default function PrimaryNavigation() {
                   <li className="py-2 border-b border-b-[#E6E6E6] hover:text-[var(--color-purple-800)]">
                     <Link href="/cbe-resources/announcements" passHref>
                       <p onClick={() => setMobileMenuOpen(false)}>
-                        {" "}
+                        {' '}
                         Announcements
                       </p>
                     </Link>
@@ -409,7 +411,7 @@ export default function PrimaryNavigation() {
         </ul>
       </ul>
     </li>
-  );
+  )
 
   return (
     <nav className="h-16 flex gap-4 items-center justify-between px-2 md:px-18 lg:px-24 relative ">
@@ -425,7 +427,7 @@ export default function PrimaryNavigation() {
       {/* cbe logo */}
       <ul className={`z-80  ${isSmallScreen ? `-ml-2 md:-ml-4` : `ml-0`}`}>
         <li>
-          <Link href={"/home"}>
+          <Link href={'/home'}>
             <img
               src="/icon-and-logos/logos-svg/logo-cbe-w-text.svg"
               className="max-w-30 max-h-25"
@@ -441,7 +443,7 @@ export default function PrimaryNavigation() {
 
         <li className="w-fit  items-end hidden lg:block">
           <button className=" bg-[var(--color-gold-500)] w-fit px-4 py-2.5 rounded-sm cursor-default hover:cursor-default hover:bg-[var(--color-purple-800)] flex ">
-            <Link href={""} className="hover:cursor-default ">
+            <Link href={''} className="hover:cursor-default ">
               <p className="text-white text-sm">INTERNET BANKING</p>
             </Link>
           </button>
@@ -466,12 +468,12 @@ export default function PrimaryNavigation() {
           <MenuItems />
 
           <button className="absolute bottom-30 bg-[var(--color-gold-500)] w-fit px-4 py-2.5 rounded-sm cursor-default hover:cursor-default hover:bg-[var(--color-purple-800)] flex ">
-            <Link href={""} className="hover:cursor-default ">
+            <Link href={''} className="hover:cursor-default ">
               <p className="text-white text-sm">INTERNET BANKING</p>
             </Link>
           </button>
         </section>
       )}
     </nav>
-  );
+  )
 }

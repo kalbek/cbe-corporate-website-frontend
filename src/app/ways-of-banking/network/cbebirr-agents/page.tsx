@@ -1,3 +1,3 @@
 export default function CbebirrAgents() {
-  return <>cbebirr agents</>;
+  return <>cbebirr agents</>
 }
