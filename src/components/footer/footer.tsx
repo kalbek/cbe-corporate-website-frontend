@@ -1,7 +1,66 @@
+"use client";
 import React from "react";
 import Link from "next/link";
+import { useState } from "react";
 
 export default function Footer() {
+  const [aboutUsOpen, setAboutUsOpen] = useState(true);
+  const [depositAccountsOpen, setDepositAccountsOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
+  const [waysOfBankingOpen, setWaysOfBankingOpen] = useState(false);
+  const [resourcesOpen, setResourcesOpen] = useState(false);
+  const [contactUsOpen, setContactUsOpen] = useState(false);
+
+  const toggleAboutUs = () => {
+    setDepositAccountsOpen(false);
+    setServicesOpen(false);
+    setWaysOfBankingOpen(false);
+    setResourcesOpen(false);
+    setContactUsOpen(false);
+    setAboutUsOpen(true);
+  };
+
+  const toggleDepositAccounts = () => {
+    setServicesOpen(false);
+    setWaysOfBankingOpen(false);
+    setResourcesOpen(false);
+    setContactUsOpen(false);
+    setAboutUsOpen(false);
+    setDepositAccountsOpen(true);
+  };
+  const toggleServices = () => {
+    setDepositAccountsOpen(false);
+    setWaysOfBankingOpen(false);
+    setResourcesOpen(false);
+    setContactUsOpen(false);
+    setAboutUsOpen(false);
+    setServicesOpen(true);
+  };
+  const toggleWaysOfBanking = () => {
+    setDepositAccountsOpen(false);
+    setServicesOpen(false);
+    setResourcesOpen(false);
+    setContactUsOpen(false);
+    setAboutUsOpen(false);
+    setWaysOfBankingOpen(true);
+  };
+  const toggleResources = () => {
+    setDepositAccountsOpen(false);
+    setServicesOpen(false);
+    setWaysOfBankingOpen(false);
+    setContactUsOpen(false);
+    setAboutUsOpen(false);
+    setResourcesOpen(true);
+  };
+  const toggleContactUs = () => {
+    setDepositAccountsOpen(false);
+    setServicesOpen(false);
+    setWaysOfBankingOpen(false);
+    setResourcesOpen(false);
+    setAboutUsOpen(false);
+    setContactUsOpen(true);
+  };
+
   return (
     // h - [59.44vh] sm:h-[70vh] lg:h-[59.44vh]
     <footer className="relative flex min-h-[612px]  flex-col">
@@ -11,7 +70,7 @@ export default function Footer() {
           <div className="absolute left-0 top-0 w-full h-[117.5vw] rounded-full bg-purple-800"></div>
         </div>
         {/* decorative right circle container - the background */}
-        <div className="h-full w-[117.5%]  -blue absolute left-[13.47%] top-12 z-0">
+        <div className="h-full w-[117.5%] absolute left-[13.47%] top-12 z-0">
           <div className="left-0 top-0 w-full  h-[117.5vw] rounded-full bg-purple-800"></div>
         </div>
         {/* decorative left mask */}
@@ -23,22 +82,29 @@ export default function Footer() {
           />
         </div>
         {/* footer content */}
-        <nav className="absolute h-[69.78%] bg-purple-800   bottom-0  w-full z-10">
+        <nav className="absolute h-[69.78%] bg-purple-800 bottom-0  w-full z-10 ">
           {/* footer content container */}
-          <ul className="mx-[6.94%] h-full -white flex flex-col relative">
+          <ul className="mx-[6.94%] h-full  flex flex-col relative">
             {/* footer links container */}
-            <li className="absolute h-fit   top-0 flex justify-center w-full  -blue">
-              <ul className="flex flex-col md:flex-row justify-between w-full">
-                <li>
-                  <ul className="flex flex-col md:flex-row  justify-between  gap-15">
-                    <li className="w-fit -blue flex flex-col items-start gap-[18px]">
-                      <h1
-                        className="text-lg-bold text-white underline"
-                        role="menu"
+            <li className="absolute  h-auto top-0 md:h-fit w-fit md:mt-0 flex justify-center md:w-full ">
+              {/* <li className="  "> */}
+              <ul className={`flex flex-row   md:gap-0 justify-between w-full relative   md:mt-0 z-30  gap-10 `} >
+                <li className="relative w-fit md:w-[75.4%]  ">
+                  <ul className="flex flex-col md:flex-row  md:justify-between items-start text-left">
+                    <li className="w-fit flex flex-col items-start gap-[18px]">
+                      <button onClick={toggleAboutUs}>
+                        <h1
+                          className="text-md-bold md:text-lg-bold w-full text-white underline text-left"
+                          role="menu"
+                        >
+                          About Us
+                        </h1>
+                      </button>
+                      <ul
+                        className={`${
+                          aboutUsOpen ? `flex` : `hidden  `
+                        } md:flex flex-col gap-2 ml-2 md:ml-0 -mt-3 md:mt-0 `}
                       >
-                        About Us
-                      </h1>
-                      <ul className="flex flex-col gap-2">
                         <li className="text-white text-xs">
                           <Link href="/about-us/about-cbe" passHref>
                             <p>About Cbe</p>
@@ -69,14 +135,20 @@ export default function Footer() {
                         </li>
                       </ul>
                     </li>
-                    <li className="w-fit -blue flex flex-col items-start gap-[18px]">
-                      <h1
-                        className="text-lg-bold text-white underline"
-                        role="menu"
+                    <li className="w-fit flex flex-col items-start gap-[18px]">
+                      <button onClick={toggleDepositAccounts}>
+                        <h1
+                          className="text-md-bold md:text-lg-bold text-white underline w-full text-left"
+                          role="menu"
+                        >
+                          Deposit Accounts
+                        </h1>
+                      </button>
+                      <ul
+                        className={`${
+                          depositAccountsOpen ? `flex` : `hidden  `
+                        } md:flex flex-col gap-2 ml-2 md:ml-0 -mt-3 md:mt-0 `}
                       >
-                        Deposit Accounts
-                      </h1>
-                      <ul className="flex flex-col gap-2">
                         <li className="text-white text-xs">
                           <Link href="/products/deposit" passHref>
                             <p>Deposit Accounts</p>
@@ -99,14 +171,20 @@ export default function Footer() {
                         </li>
                       </ul>
                     </li>
-                    <li className="w-fit -blue flex flex-col items-start gap-[18px]">
-                      <h1
-                        className="text-lg-bold text-white underline"
-                        role="menu"
+                    <li className="w-fit flex flex-col items-start gap-[18px]">
+                      <button onClick={toggleServices}>
+                        <h1
+                          className="text-md-bold md:text-lg-bold text-white underline"
+                          role="menu"
+                        >
+                          Services
+                        </h1>
+                      </button>
+                      <ul
+                        className={`${
+                          servicesOpen ? `flex` : `hidden  `
+                        } md:flex flex-col gap-2 ml-2 md:ml-0 -mt-3 md:mt-0 `}
                       >
-                        Services
-                      </h1>
-                      <ul className="flex flex-col gap-2">
                         <li className="text-white text-xs">
                           <Link href="/cbe-services/cbe-birr" passHref>
                             <p>CBE Birr Plus</p>
@@ -125,13 +203,19 @@ export default function Footer() {
                       </ul>
                     </li>
                     <li className="w-fit -blue flex flex-col items-start gap-[18px]">
-                      <h1
-                        className="text-lg-bold text-white underline"
-                        role="menu"
+                      <button onClick={toggleWaysOfBanking}>
+                        <h1
+                          className="text-md-bold md:text-lg-bold w-full text-white underline text-left"
+                          role="menu"
+                        >
+                          Ways of Banking
+                        </h1>
+                      </button>
+                      <ul
+                        className={`${
+                          waysOfBankingOpen ? `flex` : `hidden  `
+                        } md:flex flex-col gap-2 ml-2 md:ml-0 -mt-3 md:mt-0 `}
                       >
-                        Ways of Banking
-                      </h1>
-                      <ul className="flex flex-col gap-2">
                         <li className="text-white text-xs">
                           <Link
                             href="/ways-of-banking/internet-banking"
@@ -155,14 +239,20 @@ export default function Footer() {
                         </li>
                       </ul>
                     </li>
-                    <li className="w-fit -blue flex flex-col items-start gap-[18px]">
-                      <h1
-                        className="text-lg-bold text-white underline"
-                        role="menu"
+                    <li className="w-fit flex flex-col items-start gap-[18px]">
+                      <button onClick={toggleResources}>
+                        <h1
+                          className="text-md-bold md:text-lg-bold text-white underline"
+                          role="menu"
+                        >
+                          Resources
+                        </h1>
+                      </button>
+                      <ul
+                        className={`${
+                          resourcesOpen ? `flex` : `hidden  `
+                        } md:flex flex-col gap-2 ml-2 md:ml-0 -mt-3 md:mt-0 `}
                       >
-                        Resources
-                      </h1>
-                      <ul className="flex flex-col gap-2">
                         <li className="text-white text-xs">
                           <Link
                             href="/cbe-resources/publications/annual-report"
@@ -194,15 +284,19 @@ export default function Footer() {
                       </ul>
                     </li>
                     <li className="w-fit -blue flex flex-col items-start gap-[18px]">
-                      <button>
+                      <button onClick={toggleContactUs}>
                         <h1
-                          className="text-lg-bold text-white underline"
+                          className="text-md-bold md:text-lg-bold text-white underline w-full text-left"
                           role="menu"
                         >
                           Contact Us
                         </h1>
                       </button>
-                      <ul className="flex flex-col gap-2">
+                      <ul
+                        className={`${
+                          contactUsOpen ? `flex` : `hidden  `
+                        } md:flex flex-col gap-2 ml-2 md:ml-0 -mt-3 md:mt-0 `}
+                      >
                         <li className="text-white text-xs">
                           <Link
                             href="/ways-of-banking/atm-branch-locator"
@@ -241,8 +335,10 @@ export default function Footer() {
                   </ul>
                 </li>
 
-                <ul className="flex items-end justify-start h-full w-auto -blue">
-                  <li className="flex flex-col items-baseline gap-2">
+                <ul className="flex items-end justify-start h-fit md:h-[100%] w-auto -blue ">
+                  <li
+                    className={`flex flex-col items-baseline gap-0 md:gap-2 `}
+                  >
                     <Link href="">
                       <p className="text-white text-xs">Ras Desta Damtew St,</p>
                     </Link>
@@ -272,100 +368,100 @@ export default function Footer() {
               </ul>
             </li>
             {/* footer social container */}
-            <li className="absolute flex justify-between w-full -blue h-[25%] bottom-[9%]">
-              <div className="relative w-full h-full">
+            <li className=" absolute flex justify-between w-full  h-[25%]  bottom-[100%] md:bottom-[9%]">
+              <div className="relative w-full h-fit md:h-full flex flex-col ">
                 {/* footer social links */}
-                <div className="absolute h-fit -white">
-                  <div className="flex-cent-vh gap-3.5">
-                    <p className="text-lg-bold  text-white "> Follow Us</p>
-                    <div className="flex-cent-vh w-fit flex justify-between gap-5">
-                      {/* telegram icon */}
-                      <a
-                        href="https://telegram.com"
-                        target="_blank"
-                        className="focus:outline-none"
-                      >
-                        <img
-                          src="/icon-and-logos/social-icons/telegram-icon.svg"
-                          alt="telegram-icon"
-                        />
-                      </a>
-                      {/* facebook-link */}
-                      <a
-                        href="https://facebook.com"
-                        target="_blank"
-                        className="focus:outline-none"
-                      >
-                        <img
-                          src="/icon-and-logos/social-icons/facebook-icon.svg"
-                          alt="facebook-icon"
-                        />
-                      </a>
-                      {/* twitter-link */}
-                      <a
-                        href="https://x.com"
-                        target="_blank"
-                        className="focus:outline-none"
-                      >
-                        <img
-                          src="/icon-and-logos/social-icons/x-icon.svg"
-                          alt="twitter-icon"
-                        />
-                      </a>
-                      {/* instagram-link */}
-                      <a
-                        href="https://instagram.com"
-                        target="_blank"
-                        className="focus:outline-none"
-                      >
-                        <img
-                          src="/icon-and-logos/social-icons/instagram-icon.svg"
-                          alt="instagram-icon"
-                        />
-                      </a>
-                      {/* youtube-link */}
-                      <a
-                        href="https://youtube.com"
-                        target="_blank"
-                        className="focus:outline-none"
-                      >
-                        <img
-                          src="/icon-and-logos/social-icons/youtube-icon.svg"
-                          alt="youtube-icon"
-                        />
-                      </a>
-                      {/* linkedin-link */}
-                      <a
-                        href="https://linkedin.com"
-                        target="_blank"
-                        className="focus:outline-none"
-                      >
-                        <img
-                          src="/icon-and-logos/social-icons/linkedin-icon.svg"
-                          alt="linkedin-icon"
-                        />
-                      </a>
-                    </div>
+                <div className="flex flex-col items-start md:flex-row gap-2 md:gap-3.5">
+                  <p className="text-lg-bold text-white  w-fit text-left float-right whitespace-nowrap">
+                    Follow Us
+                  </p>
+                  <div className="flex-cent-vh w-fit flex justify-between gap-5">
+                    {/* telegram icon */}
+                    <a
+                      href="https://telegram.com"
+                      target="_blank"
+                      className="focus:outline-none"
+                    >
+                      <img
+                        src="/icon-and-logos/social-icons/telegram-icon.svg"
+                        alt="telegram-icon"
+                      />
+                    </a>
+                    {/* facebook-link */}
+                    <a
+                      href="https://facebook.com"
+                      target="_blank"
+                      className="focus:outline-none"
+                    >
+                      <img
+                        src="/icon-and-logos/social-icons/facebook-icon.svg"
+                        alt="facebook-icon"
+                      />
+                    </a>
+                    {/* twitter-link */}
+                    <a
+                      href="https://x.com"
+                      target="_blank"
+                      className="focus:outline-none"
+                    >
+                      <img
+                        src="/icon-and-logos/social-icons/x-icon.svg"
+                        alt="twitter-icon"
+                      />
+                    </a>
+                    {/* instagram-link */}
+                    <a
+                      href="https://instagram.com"
+                      target="_blank"
+                      className="focus:outline-none"
+                    >
+                      <img
+                        src="/icon-and-logos/social-icons/instagram-icon.svg"
+                        alt="instagram-icon"
+                      />
+                    </a>
+                    {/* youtube-link */}
+                    <a
+                      href="https://youtube.com"
+                      target="_blank"
+                      className="focus:outline-none"
+                    >
+                      <img
+                        src="/icon-and-logos/social-icons/youtube-icon.svg"
+                        alt="youtube-icon"
+                      />
+                    </a>
+                    {/* linkedin-link */}
+                    <a
+                      href="https://linkedin.com"
+                      target="_blank"
+                      className="focus:outline-none"
+                    >
+                      <img
+                        src="/icon-and-logos/social-icons/linkedin-icon.svg"
+                        alt="linkedin-icon"
+                      />
+                    </a>
                   </div>
                 </div>
                 {/* footer support content */}
-                <div className="absolute h-[42.34%] w-full -white bottom-0 ">
-                  <div className="flex justify-between items-baseline w-full h-full ">
+                <div className="  absolute h-[42.34%] top-110 md:top-14.5 w-full -white bottom-[100%]   md:bottom-0 ">
+                  <div className="flex flex-col md:flex-row md:gap-0 gap-2 justify-between items-baseline w-full h-full ">
                     {/* footer support info */}
-                    <div className="relative w-fit h-full flex-cent-vh rounded-[50px] border-[1.5px] border-white ">
-                      <div className=" flex-cent-vhb h-full w-full gap-5 px-8">
+                    <div className="relative w-fit h-fit md:h-full flex-cent-vh rounded-[50px] border-[1.5px] border-white ">
+                      <div className=" flex-cent-vhb h-full w-full gap-5  px-2 py-1 md:px-8">
                         <div className="flex-cent-vh gap-2">
                           <img
                             src="/icon-and-logos/icons-svg/phone-icon.svg"
                             alt="phone-icon"
                           />
-                          <p className="text-lg-bold text-white "> Support:</p>
+                          <p className="text-lg-bold text-white ">Support:</p>
                         </div>
                         <p className="text-lg-bold text-white "> +251951</p>
                       </div>
                     </div>
                     {/* app store links */}
-                    <div className="mr-[1%] flex gap-4 w-fit">
+                    <div className="mr-[1%] flex gap-4 w-fit items-end">
                       {/* app store */}
                       <img
                         src="/icon-and-logos/logos-svg/appstore.svg"
