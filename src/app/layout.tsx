@@ -51,7 +51,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${manrope.variable} ${ptSans.variable} ${manrope.variable} ${ptSansCaptions.variable}  antialiased`}
+        className={`  ${geistSans.variable} ${geistMono.variable} ${manrope.variable} ${ptSans.variable} ${manrope.variable} ${ptSansCaptions.variable}  antialiased`}
       >
         <SubNavigation />
         <PrimaryNavigation />

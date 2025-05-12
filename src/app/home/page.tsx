@@ -20,7 +20,7 @@ export default function Home() {
           statistics and social responsibilities section
         </div>
         {/* news section  */}
-        <div className="flex-cent-vh h-[114.44vh] sm:h-[130vh] lg brr">
+        <div className="flex-cent-vh h-[101.44vh] sm:h-[130vh] lg brr">
           news section
         </div>
       </div>
