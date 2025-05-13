@@ -1,6 +1,6 @@
 'use client'  
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 
 const newsItems = [
     {
@@ -57,6 +57,40 @@ const newsItems = [
   export default function Gallary() {
     const [activePage, setActivePage] = useState(1);
     const [activeImage, setActiveImage] = useState<string | null>(null);
+    const [selectedTitle, setSelectedTitle] = useState("CBE Sport");
+    const [showMore, setShowMore] = useState(false);
+    const dropdownRef = useRef<HTMLDivElement>(null);
+
+    const extraTitles = [
+        "CBE Dinner",
+        "CBE Tower"
+    ];
+    
+        useEffect(() => {
+        function handleClickOutside(event: MouseEvent) {
+            if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+            setShowMore(false);
+            }
+        }
+
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+        }, []);
+
+        useEffect(() => {
+    if (activeImage) {
+        document.body.style.overflow = 'hidden';
+    } else {
+        document.body.style.overflow = '';
+    }
+
+    return () => {
+        document.body.style.overflow = '';
+    };
+    }, [activeImage]);
+
     
     return (
         <div className="bg-white text-white w-full">
@@ -69,7 +103,7 @@ const newsItems = [
                     objectFit="cover"
                     className="opacity-90"
                 />
-                <div className="absolute top-1/4 left-4 sm:left-8 md:left-[274px] lg:left-auto lg:right-12 w-full sm:w-3/4 md:w-2/3 lg:w-[523px] max-w-[523px] space-y-4 sm:space-y-5 p-4 sm:p-6 gap-[20px]">
+                <div className="absolute top-1/4 left-5/7 -translate-x-1/2 w-full max-w-[523px] h-[232px] space-y-4 sm:space-y-5 p-4 sm:p-6 gap-[20px] text-left">
                     <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-[48px] font-pt-sans-caption font-bold leading-tight tracking-tight text-white width-[523px] height-[60px] font-weight-700">
                         Media Programmes
                     </h1>
@@ -98,33 +132,72 @@ const newsItems = [
                             Gallery
                         </h2>
                     </div>
-                       <div className="flex flex-wrap justify-center gap-4">
-                            <button className="h-[40px] px-5 py-2.5 bg-white leading-5 tracking-tight text-[#000000] text-[14px] font-pt-sans-caption font-normal rounded-lg border border-[#892890] hover:bg-[#892890] hover:text-white transition-colors gap-[10px] cursor-pointer">
-                            CBE Sport
+                       <div className="relative" ref={dropdownRef}>
+      <div className="flex flex-wrap justify-center gap-2 h-auto w-full max-w-[1108px] mx-auto px-4">
+                            {[
+                            "CBE Sport",
+                            "CBE Green Day",
+                            "CBE Head Quarter Visit",
+                            "CBE Planting",
+                            "Diaspora Branch Opening"
+                            ].map((title) => (
+                            <button
+                                key={title}
+                                onClick={() => setSelectedTitle(title)}
+                                className={`px-5 py-2.5 text-[14px] font-pt-sans-caption font-normal rounded-lg border border-[#892890] transition-colors gap-[10px] cursor-pointer ${
+                                selectedTitle === title
+                                    ? "bg-[#892890] text-white"
+                                    : "bg-white text-[#000000] hover:bg-[#892890] hover:text-white"
+                                }`}
+                            >
+                                {title}
                             </button>
-                            <button className="h-[40px] px-5 py-2.5 bg-white leading-5 tracking-tight text-[#000000] text-[14px] font-pt-sans-caption font-normal rounded-lg border border-[#892890] hover:bg-[#892890] hover:text-white transition-colors gap-[10px] cursor-pointer">
-                            CBE Green Day
+                            ))}
+
+                            {/* Dropdown toggle button */}
+                            <div className="relative" ref={dropdownRef}>
+                            <button
+                                onClick={() => setShowMore((prev) => !prev)}
+                                className={`h-[40px] w-[44px] flex justify-center items-center p-2 rounded-sm border border-solid border-[#892890] transition-colors gap-2 cursor-pointer rotate-90 ${
+                                showMore
+                                    ? "bg-[#892890] text-white"
+                                    : "bg-white text-[#000000] hover:bg-[#892890] hover:text-white"
+                                }`}
+                            >
+                                <span className="flex items-center justify-center text-2xl">&gt;</span>
                             </button>
-                            <button className="h-[40px] px-5 py-2.5 bg-white leading-5 tracking-tight text-[#000000] text-[14px] font-pt-sans-caption font-normal rounded-lg border border-[#892890] hover:bg-[#892890] hover:text-white transition-colors gap-[10px] cursor-pointer">
-                            CBE Head Quearter Visit
-                            </button>
-                            <button className="h-[40px] px-5 py-2.5 bg-white leading-5 tracking-tight text-[#000000] text-[14px] font-pt-sans-caption font-normal rounded-lg border border-[#892890] hover:bg-[#892890] hover:text-white transition-colors gap-[10px]s cursor-pointer">
-                            CBE Planting
-                            </button>
-                            <button className="h-[40px] px-5 py-2.5 bg-white leading-5 tracking-tight text-[#000000] text-[14px] font-pt-sans-caption font-normal rounded-lg border border-[#892890] hover:bg-[#892890] hover:text-white transition-colors gap-[10px] cursor-pointer">
-                            Diaspora Branch Opening
-                            </button>
-                            <button className="h-[40px] w-[44px] flex justify-center items-center p-2.5 bg-white text-[#000000] rotate-90 rounded-lg border border-[#892890] hover:bg-[#892890] hover:text-white transition-colors gap-[10px] cursor-pointer">
-                                <span className="flex items-center justify-center ">&gt;</span>
-                            </button>
-                                 </div>
+
+                            {/* Dropdown content box */}
+                            {showMore && (
+                                <div className="absolute w-[177px] left-0 mt-2 bg-white rounded-lg shadow-lg p-4 z-50 flex flex-col gap-2">
+                                {extraTitles.map((title) => (
+                                    <button
+                                    key={title}
+                                    onClick={() => {
+                                        setSelectedTitle(title);
+                                        setShowMore(false);
+                                    }}
+                                    className={`w-[137px] h-[18px] gap-[4px] font-pt-sans-caption font-normal text-[12px] leading-[18px] tracking-[0] transition-colors cursor-pointer flex justify-start items-center ${
+                                        selectedTitle === title
+                                        ? "bg-[#892890] text-white"
+                                        : "bg-white text-[#000000] hover:bg-[#892890] hover:text-white"
+                                    }`}
+                                    >
+                                    {title}
+                                    </button>
+                                ))}
+                                </div>
+                            )}
+                            </div>
+                        </div>
+                        </div>
                         </div>
                          <h1 className="h-[30px] text-[#000000] text-[20px] leading-[30px] tracking-normal font-bold font-weight-700 font-pt-sans-caption mt-2 ml-4 self-start">
-                              CBE Sport
+                                {selectedTitle}
                          </h1>
                     
                     {/* News Grid Container */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10 mt-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10 mt-6">
                         {newsItems.map((item) => (
                             <div key={item.id} className="bg-white w-full">
                                 <div className="relative w-[370.96px] h-[247.5px] cursor-pointer" onClick={() => item.image && setActiveImage(item.image)}>
