@@ -1,6 +1,6 @@
 'use client'  
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const newsItems = [
     {
@@ -99,6 +99,28 @@ const newsItems = [
   export default function Gallary() {
     const [activePage, setActivePage] = useState(1);
     const [activeVideo, setActiveVideo] = useState<string | null>(null);
+    const [selectedTitle, setSelectedTitle] = useState("Amharic Programs");
+    const [showMore, setShowMore] = useState(false);
+
+    const extraTitles = [
+        "CBE Somali",
+        "CBE Sidama",
+        "CBE Wolayta"
+    ]
+
+
+    useEffect(() => {
+      if (activeVideo) {
+        document.body.style.overflow = 'hidden';
+    } else {
+        document.body.style.overflow = '';
+    }
+
+    return () => {
+        document.body.style.overflow = '';
+    };
+}, [activeVideo]);
+
     
     return (
         <div className="bg-white text-white w-full">
@@ -140,32 +162,69 @@ const newsItems = [
                             Media Programmes
                         </h2>
                     </div>
-                       <div className="flex flex-wrap justify-center gap-4">
-                            <button className="h-[40px] px-5 py-2.5 bg-white leading-5 tracking-tight text-[#000000] text-[14px] font-pt-sans-caption font-normal rounded-lg border border-[#892890] hover:bg-[#892890] hover:text-white transition-colors gap-[10px] cursor-pointer">
-                            Amharic TV Programms
+                 <div className="relative">
+      <div className="flex flex-wrap justify-center gap-4">
+                            {[
+                            "Amharic TV Programs",
+                            "TV Afan oromo",
+                            "Product and Service advert",
+                            "CBE Documentary",
+                            "CBE Drama",
+                            "CBE Tigrigna",
+                            ].map((title) => (
+                            <button
+                                key={title}
+                                onClick={() => setSelectedTitle(title)}
+                                className={`h-[40px] px-5 py-2.5 text-[14px] font-pt-sans-caption font-normal rounded-lg border border-[#892890] transition-colors gap-[10px] cursor-pointer ${
+                                selectedTitle === title
+                                    ? "bg-[#892890] text-white"
+                                    : "bg-white text-[#000000] hover:bg-[#892890] hover:text-white"
+                                }`}
+                            >
+                                {title}
                             </button>
-                            <button className="h-[40px] px-5 py-2.5 bg-white leading-5 tracking-tight text-[#000000] text-[14px] font-pt-sans-caption font-normal rounded-lg border border-[#892890] hover:bg-[#892890] hover:text-white transition-colors gap-[10px] cursor-pointer">
-                            TV Afan oromo
+                            ))}
+
+                            {/* Dropdown toggle button */}
+                            <div className="relative">
+                            <button
+                                onClick={() => setShowMore((prev) => !prev)}
+                                className={`h-[40px] w-[44px] flex justify-center items-center p-2 rounded-sm border border-solid border-[#892890] transition-colors gap-2 cursor-pointer rotate-90 ${
+                                showMore
+                                    ? "bg-[#892890] text-white"
+                                    : "bg-white text-[#000000] hover:bg-[#892890] hover:text-white"
+                                }`}
+                            >
+                                <span className="flex items-center justify-center text-2xl">&gt;</span>
                             </button>
-                            <button className="h-[40px] px-5 py-2.5 bg-white leading-5 tracking-tight text-[#000000] text-[14px] font-pt-sans-caption font-normal rounded-lg border border-[#892890] hover:bg-[#892890] hover:text-white transition-colors gap-[10px] cursor-pointer">
-                            Product and Service advert
-                            </button>
-                            <button className="h-[40px] px-5 py-2.5 bg-white leading-5 tracking-tight text-[#000000] text-[14px] font-pt-sans-caption font-normal rounded-lg border border-[#892890] hover:bg-[#892890] hover:text-white transition-colors gap-[10px]s cursor-pointer">
-                            CBE Documentary
-                            </button>
-                            <button className="h-[40px] px-5 py-2.5 bg-white leading-5 tracking-tight text-[#000000] text-[14px] font-pt-sans-caption font-normal rounded-lg border border-[#892890] hover:bg-[#892890] hover:text-white transition-colors gap-[10px] cursor-pointer">
-                            CBE Drama
-                            </button>
-                            <button className="h-[40px] px-5 py-2.5 bg-white leading-5 tracking-tight text-[#000000] text-[14px] font-pt-sans-caption font-normal rounded-lg border border-[#892890] hover:bg-[#892890] hover:text-white transition-colors gap-[10px] cursor-pointer">
-                            CBE Tigrigna
-                            </button>
-                            <button className="h-[40px] w-[44px] flex justify-center items-center p-2.5 bg-white text-[#000000] rotate-90 rounded-lg border border-[#892890] hover:bg-[#892890] hover:text-white transition-colors gap-[10px] cursor-pointer">
-                                <span className="flex items-center justify-center ">&gt;</span>
-                            </button>
-                                 </div>
+
+                            {/* Dropdown content box */}
+                            {showMore && (
+                                <div className="absolute w-[177px] left-0 mt-2 bg-white rounded-lg shadow-md p-4 z-50 flex flex-col gap-2">
+                                {extraTitles.map((title) => (
+                                    <button
+                                    key={title}
+                                    onClick={() => {
+                                        setSelectedTitle(title);
+                                        setShowMore(false);
+                                    }}
+                                    className={`w-[137px] h-[18px] gap-[4px] font-pt-sans-caption font-normal text-[12px] leading-[18px] tracking-[0] transition-colors cursor-pointer ${
+                                        selectedTitle === title
+                                        ? "bg-[#892890] text-white"
+                                        : "bg-white text-[#000000] hover:bg-[#892890] hover:text-white"
+                                    }`}
+                                    >
+                                    {title}
+                                    </button>
+                                ))}
+                                </div>
+                            )}
+                            </div>
+                        </div>
+                        </div>
                         </div>
                          <h1 className="h-[30px] text-[#000000] text-[20px] leading-[30px] tracking-normal font-bold font-weight-700 font-pt-sans-caption mt-2 ml-4 self-start">
-                              Amharic TV Programms
+                              {selectedTitle}
                          </h1>
                     
                     {/* News Grid Container */}
@@ -223,7 +282,7 @@ const newsItems = [
                                     )}
 
 
-                                <div className="w-full h-[30px] mt-4">
+                                <div className="w-full h-[50px] mt-4">
                                     <p className="text-[#892890] font-pt-sans-caption font-bold text-[20px] leading-[30px] tracking-normal mt-2">
                                         {item.description}
                                     </p>
