@@ -414,3 +414,15 @@ body {
   justify-content: space-between;
   align-items: center;
 }
+.card-content {
+  color: white;
+  font-size: 20px;
+}
+
+.white {
+  @apply text-white;
+}
+
+.purple {
+  @apply text-[#892890];
+}
