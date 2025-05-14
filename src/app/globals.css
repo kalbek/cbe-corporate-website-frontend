@@ -50,6 +50,10 @@
   --font-mono: var(--font-geist-mono);
 }
 
+.text-purple-800 {
+  color: var(--color-puple-800);
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
