@@ -1,6 +1,16 @@
 "use client";
 import { useState, useMemo } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import Hero from "@/components/hero";
+
+const navItems = [
+  { label: "Annual Report", href: "/cbe-resources/publications/annual-report" },
+  { label: "Mudaye Neway", href: "/cbe-resources/publications/mudaye-neway" },
+  { label: "Press Release", href: "/cbe-resources/publications/press-release" },
+  { label: "Downloads", href: "/cbe-resources/publications/downloads" },
+];
+
 const data = [
   {
     title: "CBE Annual Report 2023/24",
@@ -64,7 +74,7 @@ const data = [
   },
 
   // 2nd page
-   {
+  {
     title: "CBE Annual Report 2023/24",
     size: "29873.95 KB",
     date: "2025-03-07",
@@ -146,6 +156,7 @@ export default function AnnualReport() {
   );
 
   if (page > totalPages && page !== 1) setPage(1);
+  const pathname = usePathname();
   return (
     <div className="font-primary">
       <Hero
@@ -158,87 +169,122 @@ export default function AnnualReport() {
           <h2 className="text-accent text-[30px] font-bold mb-5 text-[#892890]">
             Publications
           </h2>
-             <div className="mb-10 flex items-center justify-end ">
-        <input
-          type="search"
-          className="w-[300px] px-3 py-1 border border-gray-300 rounded focus:outline-none focus:border-[#892890] pr-0"
-          placeholder="Search"
-          value={search}
-          onChange={(e) => {
-            setSearch(e.target.value);
-            setPage(1);
-          }}
-          aria-label="Search Title"
-        />
-      </div>
-      <table className="w-full ">
-        <thead>
-          <tr className="border-b border-[#892890] grid grid-cols-4">
-            <th className="py-5 px-2 text-[#892890] text-left">Title</th>
-            <th className="py-5 px-2 text-[#892890] text-left">Size</th>
-            <th className="py-5 px-2 text-[#892890] text-left">Date</th>
-            <th className="py-5 px-2 text-[#892890] text-left">Downloads</th>
-          </tr>
-        </thead>
-        <tbody className="text-sm">
-          {showRows.map((row, i) => (
-            <tr key={i} className="border-b border-[#E6E6E6] hover:bg-purple-50 grid grid-cols-4">
-              <td className="py-5 px-2 max-w-xs break-words">{row.title}</td>
-              <td className="py-5 px-2">{row.size}</td>
-              <td className="py-5 px-2">{row.date}</td>
-              <td className="py-5 px-2">
-                <a px-2
-                  className="text-[#892890] underline hover:text-purple-900"
-                  href={`/${row.download}`}
+          <div className="flex items-center justify-between gap-4 flex-wrap">
+            <div className="flex gap-2 flex-wrap">
+              {navItems.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className={
+                    (pathname === item.href
+                      ? "bg-[#892890] white border-transparent "
+                      : "bg-white  hover:bg-purple-50 ") +
+                    "px-4 py-2 rounded border border-[#892890] text-sm font-medium transition-all"
+                  }
                 >
-                  {row.download}
-                </a>
-              </td>
-            </tr>
-          ))}
-          {showRows.length === 0 && (
-            <tr>
-              <td colSpan={4} className="text-gray-500 py-4 text-center">
-                No results
-              </td>
-            </tr>
-          )}
-        </tbody>
-      </table>
-      <div className="flex justify-end items-center gap-2 mt-6">
-        <button
-          className="rounded border px-3 py-1 text-sm purple border-[#E9E9E9] bg-white hover:bg-purple-50"
-          onClick={() => setPage((p) => p - 1)}
-          disabled={page === 1}
-        >
-          {"< Back"}
-        </button>
-        {Array.from({ length: totalPages }).map((_, i) => (
-          <button
-            key={i}
-            className={`w-8 h-8 flex items-center justify-center text-sm rounded border ${
-              page === i + 1
-                ? "white bg-[#892890] border-[#892890]"
-                : "border-[#E9E9E9] bg-white purple"
-            }`}
-            onClick={() => setPage(i + 1)}
-          >
-            {i + 1}
-          </button>
-        ))}
-        <button
-          className="rounded border px-3 py-1 text-sm purple border-[#E9E9E9] bg-white hover:bg-purple-50"
-          onClick={() => setPage((p) => p + 1)}
-          disabled={page === totalPages}
-        >
-           {"Next >"}
-        </button>
-      </div>
+                  {item.label}
+                </Link>
+              ))}
+            </div>
+
+            <div className="relative w-full max-w-sm">
+              <input
+                type="search"
+                className="w-full px-3 py-1 pr-10 border border-gray-300 rounded focus:outline-none focus:border-[#892890]"
+                placeholder="Search"
+                value={search}
+                onChange={(e) => {
+                  setSearch(e.target.value);
+                  setPage(1);
+                }}
+                aria-label="Search Title"
+              />
+              {search === "" && (
+                <div className="absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none">
+                  <img
+                    src="/icon-and-logos/icons-svg/search.svg"
+                    alt="Search Icon"
+                    className="w-4 h-4 text-gray-400"
+                  />
+                </div>
+              )}
+            </div>
+          </div>
+          <h2 className="text-[18px] font-semibold py-5">Annual Report</h2>
+          <table className="w-full ">
+            <thead>
+              <tr className="border-b border-t border-[#892890] grid grid-cols-4">
+                <th className="py-5 px-2 text-[#892890] text-left">Title</th>
+                <th className="py-5 px-2 text-[#892890] text-left">Size</th>
+                <th className="py-5 px-2 text-[#892890] text-left">Date</th>
+                <th className="py-5 px-2 text-[#892890] text-left">
+                  Downloads
+                </th>
+              </tr>
+            </thead>
+            <tbody className="text-sm">
+              {showRows.map((row, i) => (
+                <tr
+                  key={i}
+                  className="border-b border-[#E6E6E6] hover:bg-purple-50 grid grid-cols-4"
+                >
+                  <td className="py-5 px-2 max-w-xs break-words">
+                    {row.title}
+                  </td>
+                  <td className="py-5 px-2">{row.size}</td>
+                  <td className="py-5 px-2">{row.date}</td>
+                  <td className="py-5 px-2">
+                    <a
+                      className="text-[#892890] underline hover:text-purple-900"
+                      href={`/${row.download}`}
+                    >
+                      {row.download}
+                    </a>
+                  </td>
+                </tr>
+              ))}
+              {showRows.length === 0 && (
+                <tr>
+                  <td colSpan={4} className="text-gray-500 py-4 text-center">
+                    No results
+                  </td>
+                </tr>
+              )}
+            </tbody>
+          </table>
+          <div className="flex justify-end items-center gap-2 mt-6">
+            <button
+              className="rounded border px-3 py-1 text-sm purple border-[#E9E9E9] bg-white hover:bg-purple-50"
+              onClick={() => setPage((p) => p - 1)}
+              disabled={page === 1}
+            >
+              {"< Back"}
+            </button>
+            {Array.from({ length: totalPages }).map((_, i) => (
+              <button
+                key={i}
+                className={`w-8 h-8 flex items-center justify-center text-sm rounded border ${
+                  page === i + 1
+                    ? "white bg-[#892890] border-[#892890]"
+                    : "border-[#E9E9E9] bg-white purple"
+                }`}
+                onClick={() => setPage(i + 1)}
+              >
+                {i + 1}
+              </button>
+            ))}
+            <button
+              className="rounded border px-3 py-1 text-sm purple border-[#E9E9E9] bg-white hover:bg-purple-50"
+              onClick={() => setPage((p) => p + 1)}
+              disabled={page === totalPages}
+            >
+              {"Next >"}
+            </button>
+          </div>
         </div>
-        
       </section>
-   
-      <div className="absolute w-[15.48%] aspect-square left-0 -bottom-65 -translate-x-[70%]">
+
+      <div className="absolute w-[15.48%] aspect-square left-0 -bottom-100 -translate-x-[70%]">
         <img
           src="/icon-and-logos/logos-svg/mask-light-bg.svg"
           alt="Decorative mask"
