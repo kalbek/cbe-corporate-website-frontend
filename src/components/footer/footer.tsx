@@ -95,13 +95,12 @@ export default function Footer() {
                 <li className="relative w-fit md:w-[75.4%]">
                   <ul className="flex flex-col md:flex-row  md:justify-between items-start text-left">
                     <li className="w-fit flex flex-col items-start gap-[18px]">
-                      <button onClick={toggleAboutUs}>
-                        <h1
-                          className="text-md-bold md:text-lg-bold w-full text-white underline text-left"
-                          role="menu"
-                        >
-                          About Us
-                        </h1>
+                      <button
+                        onClick={toggleAboutUs}
+                        role="menu"
+                        className="text-md-bold md:text-lg-bold w-full text-white underline text-left"
+                      >
+                        About Us
                       </button>
                       <ul
                         className={`${
@@ -139,13 +138,12 @@ export default function Footer() {
                       </ul>
                     </li>
                     <li className="w-fit flex flex-col items-start gap-[18px]">
-                      <button onClick={toggleDepositAccounts}>
-                        <h1
-                          className="text-md-bold md:text-lg-bold text-white underline w-[130%] md:w-full text-left"
-                          role="menu"
-                        >
-                          Deposit Accounts
-                        </h1>
+                      <button
+                        onClick={toggleDepositAccounts}
+                        className="text-md-bold md:text-lg-bold text-white underline w-[130%] md:w-full text-left"
+                        role="menu"
+                      >
+                        Deposit Accounts
                       </button>
                       <ul
                         className={`${
@@ -175,18 +173,17 @@ export default function Footer() {
                       </ul>
                     </li>
                     <li className="w-fit flex flex-col items-start gap-[18px]">
-                      <button onClick={toggleServices}>
-                        <h1
-                          className="text-md-bold md:text-lg-bold text-white underline"
-                          role="menu"
-                        >
-                          Services
-                        </h1>
+                      <button
+                        onClick={toggleServices}
+                        className="text-md-bold md:text-lg-bold text-white underline"
+                        role="menu"
+                      >
+                        Services
                       </button>
                       <ul
                         className={`${
                           servicesOpen ? `flex` : `hidden  `
-                        } md:flex flex-col gap-2 ml-2 md:ml-0 -mt-3 md:mt-0 `}
+                        } md:flex flex-col gap-2 ml-2 md:ml-0 -mt-3 md:mt-0  `}
                       >
                         <li className="text-white text-xs">
                           <Link href="/cbe-services/cbe-birr" passHref>
@@ -206,13 +203,12 @@ export default function Footer() {
                       </ul>
                     </li>
                     <li className="w-fit -blue flex flex-col items-start gap-[18px]">
-                      <button onClick={toggleWaysOfBanking}>
-                        <h1
-                          className="text-md-bold md:text-lg-bold w-35 md:w-full text-white underline text-left"
-                          role="menu"
-                        >
-                          Ways of Banking
-                        </h1>
+                      <button
+                        onClick={toggleWaysOfBanking}
+                        className="text-md-bold md:text-lg-bold w-35 md:w-full text-white underline text-left"
+                        role="menu"
+                      >
+                        Ways of Banking
                       </button>
                       <ul
                         className={`${
@@ -243,13 +239,12 @@ export default function Footer() {
                       </ul>
                     </li>
                     <li className="w-fit flex flex-col items-start gap-[18px]">
-                      <button onClick={toggleResources}>
-                        <h1
-                          className="text-md-bold md:text-lg-bold text-white underline"
-                          role="menu"
-                        >
-                          Resources
-                        </h1>
+                      <button
+                        onClick={toggleResources}
+                        className="text-md-bold md:text-lg-bold text-white underline"
+                        role="menu"
+                      >
+                        Resources
                       </button>
                       <ul
                         className={`${
@@ -287,13 +282,12 @@ export default function Footer() {
                       </ul>
                     </li>
                     <li className="w-fit -blue flex flex-col items-start gap-[18px]">
-                      <button onClick={toggleContactUs}>
-                        <h1
-                          className="text-md-bold md:text-lg-bold text-white underline w-full text-left"
-                          role="menu"
-                        >
-                          Contact Us
-                        </h1>
+                      <button
+                        onClick={toggleContactUs}
+                        className="text-md-bold md:text-lg-bold text-white underline w-full text-left"
+                        role="menu"
+                      >
+                        Contact Us
                       </button>
                       <ul
                         className={`${

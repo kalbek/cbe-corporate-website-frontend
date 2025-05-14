@@ -84,7 +84,7 @@ export default function SubNavigation() {
             <li
               className="flex flex-col md:flex-row   p-5 gap-0 md:gap-8 relative"
               onMouseLeave={() => setAboutOpen(false)}
-              onClick={() => setAboutOpen(false)}
+              // onClick={() => setAboutOpen(false)}
             >
               {/* tooltip diamond image */}
               <img
@@ -360,7 +360,7 @@ export default function SubNavigation() {
           </li>
 
           {/* lang section  */}
-          <li
+          <button
             className={`w-fit flex gap-1 text-xs text-white  ${
               !langOpen ? `hover:cursor-pointer` : `cursor-default`
             }`}
@@ -372,26 +372,26 @@ export default function SubNavigation() {
               alt=""
             />
             {/* languages sub menu */}
-            <ul
-              className={`${
-                langOpen ? `visible` : `hidden`
-              } absolute left-0 md:left-[65%]  bg-white  top-[200%] md:top-[160%] shadow rounded-sm flex flex-col py-4   font-bold`}
-              onMouseLeave={() => setLangOpen(false)}
-            >
-              <li className="flex gap-1 flex-cent-v pl-4 pr-10 w-fit cursor-default mb-3.5">
-                <p className="text-xs text-black">English</p>
-              </li>
-              <li className="flex gap-1 pl-4 pr-10 w-fit cursor-pointer">
-                <a
-                  target="_"
-                  href="https://www.google.com/"
-                  className="text-xs text-black"
-                >
-                  Amharic
-                </a>
-              </li>
-            </ul>
-          </li>
+          </button>
+          <ul
+            className={`${
+              langOpen ? `visible` : `hidden`
+            } absolute left-0 md:left-[65%]  bg-white  top-[200%] md:top-[160%] shadow rounded-sm flex flex-col py-4   font-bold`}
+            onMouseLeave={() => setLangOpen(false)}
+          >
+            <li className="flex gap-1 flex-cent-v pl-4 pr-10 w-fit cursor-default mb-3.5">
+              <p className="text-xs text-black">English</p>
+            </li>
+            <li className="flex gap-1 pl-4 pr-10 w-fit cursor-pointer">
+              <a
+                target="_"
+                href="https://www.google.com/"
+                className="text-xs text-black"
+              >
+                Amharic
+              </a>
+            </li>
+          </ul>
         </ul>
       </ul>
     </nav>

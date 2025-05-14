@@ -180,25 +180,43 @@ export default function PrimaryNavigation() {
                   ? 'relative  ml-4 mt-2 -mb-2'
                   : 'absolute top-[100%] w-48 py-5'
               } z-50`}
-              onClick={resetMenuOpens}
             >
               <li
                 className={`py-2 border-b border-b-[#E6E6E6] hover:text-[var(--color-purple-800)]`}
               >
-                <Link href="/products/deposit" passHref>
-                  <p onClick={() => setMobileMenuOpen(false)}>
-                    Deposit Accounts
-                  </p>
+                <Link
+                  href="/products/deposit"
+                  passHref
+                  onClick={() => {
+                    setMobileMenuOpen(false)
+                    resetMenuOpens()
+                  }}
+                >
+                  Deposit Accounts
                 </Link>
               </li>
               <li className="py-2 border-b border-b-[#E6E6E6] hover:text-[var(--color-purple-800)]">
-                <Link href="/products/cards" passHref>
-                  <p onClick={() => setMobileMenuOpen(false)}>CBE Cards</p>
+                <Link
+                  href="/products/cards"
+                  passHref
+                  onClick={() => {
+                    setMobileMenuOpen(false)
+                    resetMenuOpens()
+                  }}
+                >
+                  CBE Cards
                 </Link>
               </li>
               <li className="py-2 border-b border-b-[#E6E6E6] hover:text-[var(--color-purple-800)]">
-                <Link href="/products/loan" passHref>
-                  <p onClick={() => setMobileMenuOpen(false)}>Loans</p>
+                <Link
+                  href="/products/loan"
+                  passHref
+                  onClick={() => {
+                    setMobileMenuOpen(false)
+                    resetMenuOpens()
+                  }}
+                >
+                  Loans
                 </Link>
               </li>
               <li
@@ -206,8 +224,15 @@ export default function PrimaryNavigation() {
                   isSmallScreen ? `border-b border-b-[#E6E6E6]` : ``
                 } py-2 hover:text-[var(--color-purple-800)]`}
               >
-                <Link href="/products/trade-services" passHref>
-                  <p onClick={() => setMobileMenuOpen(false)}>Trade Services</p>
+                <Link
+                  href="/products/trade-services"
+                  passHref
+                  onClick={() => {
+                    setMobileMenuOpen(false)
+                    resetMenuOpens()
+                  }}
+                >
+                  Trade Services
                 </Link>
               </li>
             </ul>
@@ -232,16 +257,29 @@ export default function PrimaryNavigation() {
                   ? 'relative  ml-4 mt-2 -mb-2'
                   : 'absolute top-[100%] w-48 py-5'
               } z-50`}
-              onClick={resetMenuOpens}
             >
               <li className="py-2 border-b border-b-[#E6E6E6] hover:text-[var(--color-purple-800)]">
-                <Link href="/cbe-services/cbe-birr" passHref>
-                  <p onClick={() => setMobileMenuOpen(false)}>CBE Birr Plus</p>
+                <Link
+                  href="/cbe-services/cbe-birr"
+                  passHref
+                  onClick={() => {
+                    setMobileMenuOpen(false)
+                    resetMenuOpens()
+                  }}
+                >
+                  CBE Birr Plus
                 </Link>
               </li>
               <li className="py-2 border-b border-b-[#E6E6E6] hover:text-[var(--color-purple-800)]">
-                <Link href="/cbe-services/cbe-ethio-direct " passHref>
-                  <p onClick={() => setMobileMenuOpen(false)}>Ethio Direct</p>
+                <Link
+                  href="/cbe-services/cbe-ethio-direct "
+                  passHref
+                  onClick={() => {
+                    setMobileMenuOpen(false)
+                    resetMenuOpens()
+                  }}
+                >
+                  Ethio Direct
                 </Link>
               </li>
               <li
@@ -249,8 +287,15 @@ export default function PrimaryNavigation() {
                   isSmallScreen ? `border-b border-b-[#E6E6E6]` : ``
                 } py-2 hover:text-[var(--color-purple-800)]`}
               >
-                <Link href="/cbe-services/cbe-nedaj" passHref>
-                  <p onClick={() => setMobileMenuOpen(false)}>CBE Nedaj</p>
+                <Link
+                  href="/cbe-services/cbe-nedaj"
+                  passHref
+                  onClick={() => {
+                    setMobileMenuOpen(false)
+                    resetMenuOpens()
+                  }}
+                >
+                  CBE Nedaj
                 </Link>
               </li>
             </ul>
@@ -275,26 +320,41 @@ export default function PrimaryNavigation() {
                   ? 'relative  ml-4 mt-2 -mb-2'
                   : 'absolute top-[100%] w-48 py-5'
               } z-50`}
-              onClick={resetMenuOpens}
             >
               <li className="py-2 border-b border-b-[#E6E6E6] hover:text-[var(--color-purple-800)]">
-                <Link href="/ways-of-banking/internet-banking" passHref>
-                  <p onClick={() => setMobileMenuOpen(false)}>
-                    Internet Banking
-                  </p>
+                <Link
+                  href="/ways-of-banking/internet-banking"
+                  passHref
+                  onClick={() => {
+                    setMobileMenuOpen(false)
+                    resetMenuOpens()
+                  }}
+                >
+                  Internet Banking
                 </Link>
               </li>
               <li className="py-2 border-b border-b-[#E6E6E6] hover:text-[var(--color-purple-800)]">
-                <Link href="/ways-of-banking/mobile-banking" passHref>
-                  <p onClick={() => setMobileMenuOpen(false)}>
-                    {' '}
-                    Mobile Banking
-                  </p>
+                <Link
+                  href="/ways-of-banking/mobile-banking"
+                  passHref
+                  onClick={() => {
+                    setMobileMenuOpen(false)
+                    resetMenuOpens()
+                  }}
+                >
+                  Mobile Banking
                 </Link>
               </li>
               <li className="py-2 border-b border-b-[#E6E6E6] hover:text-[var(--color-purple-800)]">
-                <Link href="/ways-of-banking/network/branch" passHref>
-                  <p onClick={() => setMobileMenuOpen(false)}>Branches</p>
+                <Link
+                  href="/ways-of-banking/network/branch"
+                  passHref
+                  onClick={() => {
+                    setMobileMenuOpen(false)
+                    resetMenuOpens()
+                  }}
+                >
+                  Branches
                 </Link>
               </li>
               <li
@@ -302,8 +362,15 @@ export default function PrimaryNavigation() {
                   isSmallScreen ? `border-b border-b-[#E6E6E6]` : ``
                 } py-2 hover:text-[var(--color-purple-800)]`}
               >
-                <Link href="/ways-of-banking/atm-branch-locator" passHref>
-                  <p onClick={() => setMobileMenuOpen(false)}>ATM Locator</p>
+                <Link
+                  href="/ways-of-banking/atm-branch-locator"
+                  passHref
+                  onClick={() => {
+                    setMobileMenuOpen(false)
+                    resetMenuOpens()
+                  }}
+                >
+                  ATM Locator
                 </Link>
               </li>
             </ul>
@@ -334,24 +401,29 @@ export default function PrimaryNavigation() {
                       ? 'relative  ml-4 mt-2 -mb-2'
                       : '  top-[100%] w-48 py-5'
                   } z-50`}
-                  onClick={resetMenuOpens}
                 >
                   <li className="py-2 border-b border-b-[#E6E6E6] hover:text-[var(--color-purple-800)]">
                     <Link
                       href="/cbe-resources/publications/annual-report"
                       passHref
+                      onClick={() => {
+                        setMobileMenuOpen(false)
+                        resetMenuOpens()
+                      }}
                     >
-                      <p onClick={() => setMobileMenuOpen(false)}>
-                        Publication
-                      </p>
+                      Publication
                     </Link>
                   </li>
                   <li className="py-2 border-b border-b-[#E6E6E6] hover:text-[var(--color-purple-800)]">
-                    <Link href="/cbe-resources/media/programs" passHref>
-                      <p onClick={() => setMobileMenuOpen(false)}>
-                        {' '}
-                        Media Programmes
-                      </p>
+                    <Link
+                      href="/cbe-resources/media/programs"
+                      passHref
+                      onClick={() => {
+                        setMobileMenuOpen(false)
+                        resetMenuOpens()
+                      }}
+                    >
+                      Media Programmes
                     </Link>
                   </li>
                   <li
@@ -359,8 +431,15 @@ export default function PrimaryNavigation() {
                       isSmallScreen ? `border-b border-b-[#E6E6E6]` : ``
                     } py-2 hover:text-[var(--color-purple-800)]`}
                   >
-                    <Link href="/cbe-resources/media/gallary" passHref>
-                      <p onClick={() => setMobileMenuOpen(false)}>Gallery</p>
+                    <Link
+                      href="/cbe-resources/media/gallary"
+                      passHref
+                      onClick={() => {
+                        setMobileMenuOpen(false)
+                        resetMenuOpens()
+                      }}
+                    >
+                      Gallery
                     </Link>
                   </li>
                 </ul>
@@ -371,20 +450,30 @@ export default function PrimaryNavigation() {
                       ? 'relative  ml-4 mt-2 -mb-2'
                       : '  top-[100%] right-0 w-48 py-5'
                   } z-50`}
-                  onClick={resetMenuOpens}
                 >
                   {/* 2ndst column */}
                   <li className="py-2 border-b border-b-[#E6E6E6] hover:text-[var(--color-purple-800)]">
-                    <Link href="/cbe-resources/news" passHref>
-                      <p onClick={() => setMobileMenuOpen(false)}>News</p>
+                    <Link
+                      href="/cbe-resources/news"
+                      passHref
+                      onClick={() => {
+                        setMobileMenuOpen(false)
+                        resetMenuOpens()
+                      }}
+                    >
+                      News
                     </Link>
                   </li>
                   <li className="py-2 border-b border-b-[#E6E6E6] hover:text-[var(--color-purple-800)]">
-                    <Link href="/cbe-resources/announcements" passHref>
-                      <p onClick={() => setMobileMenuOpen(false)}>
-                        {' '}
-                        Announcements
-                      </p>
+                    <Link
+                      href="/cbe-resources/announcements"
+                      passHref
+                      onClick={() => {
+                        setMobileMenuOpen(false)
+                        resetMenuOpens()
+                      }}
+                    >
+                      Announcements
                     </Link>
                   </li>
                 </ul>
@@ -397,14 +486,17 @@ export default function PrimaryNavigation() {
           <li className={`${isSmallScreen ? `` : `px-2.5`}  text-sm h-full`}>
             <Link href="/products/cbe-noor">
               <button
-                onClick={toogleCbeNoor}
+                onClick={() => {
+                  setMobileMenuOpen(false)
+                  toogleCbeNoor()
+                }}
                 className={`h-[100%] border-b-4 hover:border-b-[var(--color-purple-800)] hover:text-[var(--color-purple-800)] ${
                   !cbeNoorOpen
                     ? `hover:cursor-pointer border-b-4  border-b-white`
                     : `cursor-default border-b-[var(--color-purple-800)] text-[var(--color-purple-800)]`
                 }`}
               >
-                <p onClick={() => setMobileMenuOpen(false)}>CBE Noor</p>
+                CBE Noor
               </button>
             </Link>
           </li>
@@ -418,11 +510,10 @@ export default function PrimaryNavigation() {
       {/* absolute bg for menu */}
       {/* {menuOpen && ( */}
       {menuOpen && (
-        <ul
-          role="presentation  "
-          className=" lg:block absolute min-h-52 w-[100vw] top-[100%]  left-0 bg-white border-t-2 border-t-[#E6E6E6] z-30"
+        <div
+          className="lg:block absolute min-h-52 w-[100vw] top-[100%]   left-0 bg-white border-t-2 border-t-[#E6E6E6] z-30"
           onMouseLeave={resetMenuOpens}
-        ></ul>
+        ></div>
       )}
       {/* cbe logo */}
       <ul className={`z-80  ${isSmallScreen ? `-ml-2 md:-ml-4` : `ml-0`}`}>

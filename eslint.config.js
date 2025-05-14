@@ -9,7 +9,8 @@ import tsParser from '@typescript-eslint/parser'
 
 export default [
   {
-    files: ['**/*.{js,jsx,ts,tsx}'],
+    files: ['**/*.{js,jsx,ts,tsx}', 'eslint.config.js'],
+    ignores: ['node_modules/**', '.next/**'],
     plugins: {
       '@typescript-eslint': ts,
       react,
