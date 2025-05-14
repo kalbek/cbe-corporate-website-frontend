@@ -180,15 +180,19 @@ export default function PrimaryNavigation() {
                   ? 'relative  ml-4 mt-2 -mb-2'
                   : 'absolute top-[100%] w-48 py-5'
               } z-50`}
-              onClick={resetMenuOpens}
             >
               <li
                 className={`py-2 border-b border-b-[#E6E6E6] hover:text-[var(--color-purple-800)]`}
               >
-                <Link href="/products/deposit" passHref>
-                  <p onClick={() => setMobileMenuOpen(false)}>
-                    Deposit Accounts
-                  </p>
+                <Link
+                  href="/products/deposit"
+                  passHref
+                  onClick={() => {
+                    setMobileMenuOpen(false)
+                    resetMenuOpens()
+                  }}
+                >
+                  Deposit Accounts
                 </Link>
               </li>
               <li className="py-2 border-b border-b-[#E6E6E6] hover:text-[var(--color-purple-800)]">
@@ -375,8 +379,12 @@ export default function PrimaryNavigation() {
                 >
                   {/* 2ndst column */}
                   <li className="py-2 border-b border-b-[#E6E6E6] hover:text-[var(--color-purple-800)]">
-                    <Link href="/cbe-resources/news" passHref>
-                      <p onClick={() => setMobileMenuOpen(false)}>News</p>
+                    <Link
+                      href="/cbe-resources/news"
+                      passHref
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      News
                     </Link>
                   </li>
                   <li className="py-2 border-b border-b-[#E6E6E6] hover:text-[var(--color-purple-800)]">
