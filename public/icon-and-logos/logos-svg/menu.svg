@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
+  <g transform="matrix(0.1, 0, 0, -0.1, -2, 342.424322)" fill="#000000" stroke="none">
+    <rect x="24.771" y="-184.06" width="0.981" height="23.539" style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" transform="matrix(1, 0, 0, -1, 0, 0)"/>
+    <rect style="stroke: rgb(0, 0, 0); fill: rgb(137, 40, 144);" transform="matrix(1, 0, 0, -1, 0, 0)" x="118.08" y="-274.28" width="193.806" height="28.247" rx="14" ry="14"/>
+    <rect style="stroke: rgb(0, 0, 0); fill: rgb(137, 40, 144); stroke-width: 1;" transform="matrix(1, 0, 0, -1, 0, 0)" x="118.08" y="-229.55" width="196.945" height="28.247" rx="14" ry="14"/>
+    <rect style="stroke: rgb(0, 0, 0); fill: rgb(137, 40, 144); stroke-width: 1;" transform="matrix(1, 0, 0, -1, 0, 0)" x="118.08" y="-184.04" width="196.945" height="28.247" rx="14" ry="14"/>
+  </g>
+</svg>

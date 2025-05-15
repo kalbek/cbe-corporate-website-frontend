@@ -1,6 +1,3 @@
-export default function TradeServices
-() {
-    return (
-      <>trade services</>
-    )
-  }
+export default function TradeServices() {
+  return <>trade services</>
+}

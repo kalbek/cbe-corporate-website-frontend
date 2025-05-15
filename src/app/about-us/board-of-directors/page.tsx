@@ -1,5 +1,3 @@
 export default function BoradOfDirectors() {
-    return (
-      <>board of directors</>
-    )
-  } 
+  return <>board of directors</>
+}

@@ -1,6 +1,3 @@
-export default function Cards
-() {
-    return (
-      <>cards</>
-    )
-  }
+export default function Cards() {
+  return <>cards</>
+}

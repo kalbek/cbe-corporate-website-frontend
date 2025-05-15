@@ -1,5 +1,3 @@
 export default function Detail() {
-    return (
-      <>csr detail</>
-    )
-  }
+  return <>csr detail</>
+}
