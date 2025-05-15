@@ -73,7 +73,24 @@ export default function Home() {
               <p className="text-center text-sm md:text-lg">Trade Services</p>
             </li>
           </ul>
-          <div className="flex flex-col md:flex-row  gap-8 md:gap-0  justify-between items-center w-full   md:w-full h-auto md:h-[757px]   px-2 md:pt-10 pb-20 md:px-20">
+          {/* ANNOUNCEMENT AND EXCHANGE RATE SECTION */}
+          <div className="relative flex flex-col md:flex-row  gap-8 md:gap-0  justify-between overflow-hidden items-center w-full  md:w-full h-auto md:h-[757px]   px-2 md:pt-10 pb-20 md:px-20">
+            {/* decorative right mask  component to hide the right mask overflow => width is arbitrary value*/}
+            <div className="absolute img md:h-[193px] h-[40%] -blue -right-32 top-20 z-80">
+              <img
+                src="/icon-and-logos/logos-svg/mask-light-bg.svg"
+                alt="Decorative mask"
+                className="object-left h-full w-auto object-cover"
+              />
+            </div>
+            {/* decorative left mask */}
+            <div className="absolute img md:h-[193px] h-[40%] -blue -left-32 bottom-10 z-80">
+              <img
+                src="/icon-and-logos/logos-svg/mask-light-bg.svg"
+                alt="Decorative mask"
+                className="h-full object-fill"
+              />
+            </div>
             <div className="w-[100%] md:w-[55%] h-auto md:h-full  relative">
               <div className="flex flex-col items-start border border-[var(--color-purple-800)] w-full">
                 <h1 className="text-xl-bold pl-7 py-2.5 bg-[var(--color-purple-800)] w-full text-white">
