@@ -92,14 +92,11 @@ export default function Home() {
                           alt="announcement"
                           className=" max-w-70  md:max-w-[250px] md:h-[80px]"
                         />
-                        {/* <div
-                          className={`"flex flex-col h-full relative justify-center brr-blue items-start gap-2 w-full bg-amber-200"`}
-                        > */}
-                        <div className="flex flex-col h-full relative justify-between items-start w-full  ">
+                        <div className="flex flex-col h-full relative justify-between items-start w-full   ">
                           <h2 className="text-md-bold text-[var(--color-purple-800)]   ">
                             {ann.header}
                           </h2>
-                          <p className={`text-xs-bold mt-2`}>
+                          <p className={`text-xs-bold mt-2 overflow-hidden`}>
                             {!isExpanded
                               ? truncateText(ann.content)
                               : ann.content}
@@ -124,6 +121,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
+            {/* Exchange rate section */}
             <div className="w-full md:w-[40.7%] h-auto md:h-full relative">
               <div className="flex flex-col h-full bg-[#FBFBFB]">
                 <div className="flex justify-between pl-7 pr-2 md:pr-7 lg:pr-10 xl:pr-20 py-2.5 bg-[var(--color-purple-800)] w-full">
@@ -158,17 +156,17 @@ export default function Home() {
                                   className="w-6 h-6"
                                 />
                                 <div className="flex flex-col">
-                                  <p className="text-xs font-bold">
+                                  <p className="font-bold text-sm-bold">
                                     {curr.abbr}
                                   </p>
                                   <p className="text-xs">{curr.name}</p>
                                 </div>
                               </div>
                             </td>
-                            <td className="border-b border-[var(--color-gold-400)]">
+                            <td className="border-b border-[var(--color-gold-400)] text-xs-bold md:text-sm">
                               {curr.buying}
                             </td>
-                            <td className="border-b border-[var(--color-gold-400)]">
+                            <td className="border-b border-[var(--color-gold-400)] text-xs-bold md:text-sm">
                               {curr.selling}
                             </td>
                           </tr>

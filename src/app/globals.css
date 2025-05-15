@@ -335,7 +335,7 @@ body {
   font-size: 14px;
   line-height: 20px;
   letter-spacing: 0%;
-  /* color: var(--color-gray-neutral-900); */
+  color: var(--color-gray-neutral-900);
 }
 
 .text-xs {
@@ -350,7 +350,7 @@ body {
 .text-xs-bold {
   font-family: var(--font-pt-sans-caption);
   font-weight: 700;
-  font-size: 14px;
+  font-size: 12px;
   line-height: 18px;
   letter-spacing: 0%;
   /* color: var(--color-gray-neutral-900); */
