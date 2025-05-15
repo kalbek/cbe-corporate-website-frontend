@@ -1,3 +1,3 @@
 export default function PressRelease() {
-    return <>PressRelease</>;
+  return <>PressRelease</>
 }

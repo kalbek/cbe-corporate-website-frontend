@@ -1,5 +1,3 @@
 export default function Gallary() {
-    return (
-      <>Gallary</>
-    )
-  }
+  return <>Gallary</>
+}

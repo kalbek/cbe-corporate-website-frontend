@@ -1,5 +1,3 @@
 export default function FAQ() {
-    return (
-      <>FAQ</>
-    )
-  }
+  return <>FAQ</>
+}

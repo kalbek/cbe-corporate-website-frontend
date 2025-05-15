@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 :root {
   --background: #ffffff;
@@ -15,39 +15,33 @@
   --color-black: #000000;
   --color-grey: #eae8e8;
 
-  --color-puple-50A: #fbf6fd;
-  --color-puple-50: #fcf5fe;
-  --color-puple-100A: #efd4f8;
-  --color-puple-100: #f9eafd;
-  --color-puple-200A: #efb8f1;
-  --color-puple-200: #f2d4fa;
-  --color-puple-300A: #d39de7;
-  --color-puple-300: #ebb3f4;
-  --color-puple-400A: #d18fe3;
-  --color-puple-400: #e085ed;
-  --color-puple-500A: #ba64d1;
-  --color-puple-500: #ce57de;
-  --color-puple-600A: #9f44b5;
-  --color-puple-600: #b437c2;
-  --color-puple-700A: #7c328b;
-  --color-puple-700: #972aa1;
-  --color-puple-800A: #6f2e7a;
-  --color-puple-800: #892890;
-  --color-puple-900A: #5d2a65;
-  --color-puple-900: #69236c;
+  --color-purple-50A: #fbf6fd;
+  --color-purple-50: #fcf5fe;
+  --color-purple-100A: #efd4f8;
+  --color-purple-100: #f9eafd;
+  --color-purple-200A: #efb8f1;
+  --color-purple-200: #f2d4fa;
+  --color-purple-300A: #d39de7;
+  --color-purple-300: #ebb3f4;
+  --color-purple-400A: #d18fe3;
+  --color-purple-400: #e085ed;
+  --color-purple-500A: #ba64d1;
+  --color-purple-500: #ce57de;
+  --color-purple-600A: #9f44b5;
+  --color-purple-600: #b437c2;
+  --color-purple-700A: #7c328b;
+  --color-purple-700: #972aa1;
+  --color-purple-800A: #6f2e7a;
+  --color-purple-800: #892890;
+  --color-purple-900A: #5d2a65;
+  --color-purple-900: #69236c;
 
   --color-gold-50: #fdf8ed;
   --color-gold-100: #f9eccc;
   --color-gold-200: #f4d793;
   --color-gold-300: #eebd5b;
   --color-gold-400: #e8a029;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-gold-500: #f59c00;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -110,7 +104,19 @@ body {
 
 /* COLORS */
 .bg-purple-800 {
-  background-color: var(--color-puple-800);
+  background-color: var(--color-purple-800);
+}
+
+.color-purple-800 {
+  color: var(--color-purple-800);
+}
+
+.color-gold-400 {
+  color: var(--color-gold-400);
+}
+
+.bg-gold-400 {
+  background-color: var(--color-gold-400);
 }
 
 /* HEADLINE */
@@ -284,7 +290,7 @@ body {
   font-size: 18px;
   line-height: 28px;
   letter-spacing: 0%;
-  color: var(--color-gray-neutral-900);
+  /* color: var(--color-gray-neutral-900); */
 }
 
 .text-lg-bold {
@@ -293,7 +299,7 @@ body {
   font-size: 18px;
   line-height: 28px;
   letter-spacing: 0%;
-  color: var(--color-gray-neutral-900);
+  /* color: var(--color-gray-neutral-900); */
 }
 
 .text-md {
@@ -302,7 +308,7 @@ body {
   font-size: 16px;
   line-height: 24px;
   letter-spacing: 0%;
-  color: var(--color-gray-neutral-900);
+  /* color: var(--color-gray-neutral-900); */
 }
 
 .text-md-bold {
@@ -311,7 +317,7 @@ body {
   font-size: 16px;
   line-height: 24px;
   letter-spacing: 0%;
-  color: var(--color-gray-neutral-900);
+  /* color: var(--color-gray-neutral-900); */
 }
 
 .text-sm {
@@ -320,7 +326,7 @@ body {
   font-size: 14px;
   line-height: 20px;
   letter-spacing: 0%;
-  color: var(--color-gray-neutral-900);
+  /* color: var(--color-gray-neutral-900); */
 }
 
 .text-sm-bold {
@@ -338,7 +344,7 @@ body {
   font-size: 12px;
   line-height: 18px;
   letter-spacing: 0%;
-  color: var(--color-gray-neutral-900);
+  /* color: var(--color-gray-neutral-900); */
 }
 
 .text-xs-bold {
@@ -349,8 +355,6 @@ body {
   letter-spacing: 0%;
   color: var(--color-gray-neutral-900);
 }
-
-/* ================= */
 
 /* Supporting Text Styles */
 .headline-2xl-regular {
@@ -412,4 +416,13 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+/* utilities */
+.hidden {
+  display: hidden;
+}
+
+.visible {
+  display: block;
 }
