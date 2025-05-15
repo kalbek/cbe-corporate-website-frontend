@@ -335,7 +335,7 @@ body {
   font-size: 14px;
   line-height: 20px;
   letter-spacing: 0%;
-  color: var(--color-gray-neutral-900);
+  /* color: var(--color-gray-neutral-900); */
 }
 
 .text-xs {
@@ -425,4 +425,14 @@ body {
 
 .visible {
   display: block;
+}
+
+/* styles/global.css */
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
 }

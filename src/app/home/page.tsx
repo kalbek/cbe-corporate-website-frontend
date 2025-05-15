@@ -1,156 +1,18 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
+import { formatDate } from '@/utils/formatDate'
+import announcementContent from '@/data/announcementContent.json'
+import currency from '@/data/currency.json'
 
 export default function Home() {
-  const announcementContent = [
-    {
-      id: 0,
-      imgSrc: '/icon-and-logos/home-page/announcement/image-1.png',
-      header: 'የብድር ወለድ ምጣኔ ማሻሻያን ስለማሳወቅ',
-      content:
-        'መንግስት የኢትዮጵያን የፋይናንስ ዘርፍ ተወዳዳሪ እና ሳቢ ለማድረግ ገበያ መር የሆኑ ፖሊሲዎችን እና እስትራቴጂዎችን በመቅረጽ ተግባራዊ እያደረገ ይገኛል...',
-    },
-    {
-      id: 1,
-      imgSrc: '/icon-and-logos/home-page/announcement/image-2.png',
-      header: 'እንኳን ለደንበኞች አገልግሎት ወር በሰላም አደረሰዎ!',
-      content:
-        'ትላንት ለገንዘብዎ ሁነኛ ባላደራ ሲፈልጉ በመላው ሀገራችን ቅርንጫፎቹን በመክፈት እርስዎ ወዳሉበት የደረሰው ባንካችን፣ ዛሬም በፈጣን እንቅስቃሴ...',
-    },
-    {
-      id: 0,
-      imgSrc: '/icon-and-logos/home-page/announcement/image-1.png',
-      header: 'የብድር ወለድ ምጣኔ ማሻሻያን ስለማሳወቅ',
-      content:
-        'መንግስት የኢትዮጵያን የፋይናንስ ዘርፍ ተወዳዳሪ እና ሳቢ ለማድረግ ገበያ መር የሆኑ ፖሊሲዎችን እና እስትራቴጂዎችን በመቅረጽ ተግባራዊ እያደረገ ይገኛል...',
-    },
-    {
-      id: 1,
-      imgSrc: '/icon-and-logos/home-page/announcement/image-2.png',
-      header: 'እንኳን ለደንበኞች አገልግሎት ወር በሰላም አደረሰዎ!',
-      content:
-        'ትላንት ለገንዘብዎ ሁነኛ ባላደራ ሲፈልጉ በመላው ሀገራችን ቅርንጫፎቹን በመክፈት እርስዎ ወዳሉበት የደረሰው ባንካችን፣ ዛሬም በፈጣን እንቅስቃሴ...',
-    },
-    {
-      id: 1,
-      imgSrc: '/icon-and-logos/home-page/announcement/image-2.png',
-      header: 'እንኳን ለደንበኞች አገልግሎት ወር በሰላም አደረሰዎ!',
-      content:
-        'ትላንት ለገንዘብዎ ሁነኛ ባላደራ ሲፈልጉ በመላው ሀገራችን ቅርንጫፎቹን በመክፈት እርስዎ ወዳሉበት የደረሰው ባንካችን፣ ዛሬም በፈጣን እንቅስቃሴ...',
-    },
-    {
-      id: 0,
-      imgSrc: '/icon-and-logos/home-page/announcement/image-1.png',
-      header: 'የብድር ወለድ ምጣኔ ማሻሻያን ስለማሳወቅ',
-      content:
-        'መንግስት የኢትዮጵያን የፋይናንስ ዘርፍ ተወዳዳሪ እና ሳቢ ለማድረግ ገበያ መር የሆኑ ፖሊሲዎችን እና እስትራቴጂዎችን በመቅረጽ ተግባራዊ እያደረገ ይገኛል...',
-    },
-    {
-      id: 1,
-      imgSrc: '/icon-and-logos/home-page/announcement/image-2.png',
-      header: 'እንኳን ለደንበኞች አገልግሎት ወር በሰላም አደረሰዎ!',
-      content:
-        'ትላንት ለገንዘብዎ ሁነኛ ባላደራ ሲፈልጉ በመላው ሀገራችን ቅርንጫፎቹን በመክፈት እርስዎ ወዳሉበት የደረሰው ባንካችን፣ ዛሬም በፈጣን እንቅስቃሴ...',
-    },
-    {
-      id: 1,
-      imgSrc: '/icon-and-logos/home-page/announcement/image-2.png',
-      header: 'እንኳን ለደንበኞች አገልግሎት ወር በሰላም አደረሰዎ!',
-      content:
-        'ትላንት ለገንዘብዎ ሁነኛ ባላደራ ሲፈልጉ በመላው ሀገራችን ቅርንጫፎቹን በመክፈት እርስዎ ወዳሉበት የደረሰው ባንካችን፣ ዛሬም በፈጣን እንቅስቃሴ...',
-    },
-    {
-      id: 0,
-      imgSrc: '/icon-and-logos/home-page/announcement/image-1.png',
-      header: 'የብድር ወለድ ምጣኔ ማሻሻያን ስለማሳወቅ',
-      content:
-        'መንግስት የኢትዮጵያን የፋይናንስ ዘርፍ ተወዳዳሪ እና ሳቢ ለማድረግ ገበያ መር የሆኑ ፖሊሲዎችን እና እስትራቴጂዎችን በመቅረጽ ተግባራዊ እያደረገ ይገኛል...',
-    },
-    {
-      id: 1,
-      imgSrc: '/icon-and-logos/home-page/announcement/image-2.png',
-      header: 'እንኳን ለደንበኞች አገልግሎት ወር በሰላም አደረሰዎ!',
-      content:
-        'ትላንት ለገንዘብዎ ሁነኛ ባላደራ ሲፈልጉ በመላው ሀገራችን ቅርንጫፎቹን በመክፈት እርስዎ ወዳሉበት የደረሰው ባንካችን፣ ዛሬም በፈጣን እንቅስቃሴ...',
-    },
-    {
-      id: 1,
-      imgSrc: '/icon-and-logos/home-page/announcement/image-2.png',
-      header: 'እንኳን ለደንበኞች አገልግሎት ወር በሰላም አደረሰዎ!',
-      content:
-        'ትላንት ለገንዘብዎ ሁነኛ ባላደራ ሲፈልጉ በመላው ሀገራችን ቅርንጫፎቹን በመክፈት እርስዎ ወዳሉበት የደረሰው ባንካችን፣ ዛሬም በፈጣን እንቅስቃሴ...',
-    },
-    {
-      id: 0,
-      imgSrc: '/icon-and-logos/home-page/announcement/image-1.png',
-      header: 'የብድር ወለድ ምጣኔ ማሻሻያን ስለማሳወቅ',
-      content:
-        'መንግስት የኢትዮጵያን የፋይናንስ ዘርፍ ተወዳዳሪ እና ሳቢ ለማድረግ ገበያ መር የሆኑ ፖሊሲዎችን እና እስትራቴጂዎችን በመቅረጽ ተግባራዊ እያደረገ ይገኛል...',
-    },
-    {
-      id: 1,
-      imgSrc: '/icon-and-logos/home-page/announcement/image-2.png',
-      header: 'እንኳን ለደንበኞች አገልግሎት ወር በሰላም አደረሰዎ!',
-      content:
-        'ትላንት ለገንዘብዎ ሁነኛ ባላደራ ሲፈልጉ በመላው ሀገራችን ቅርንጫፎቹን በመክፈት እርስዎ ወዳሉበት የደረሰው ባንካችን፣ ዛሬም በፈጣን እንቅስቃሴ...',
-    },
-  ]
-
-  const currency = [
-    {
-      icon: '/icon-and-logos/home-page/exchange-rate/usd.svg',
-      abbr: 'USD',
-      name: 'US Dollar',
-      buying: '1244.0086',
-      selling: '1244.0086',
-    },
-    {
-      icon: '/icon-and-logos/home-page/exchange-rate/gbp.svg',
-      abbr: 'GBP',
-      name: 'Pound Sterling',
-      buying: '152.3866',
-      selling: '1244.0086',
-    },
-    {
-      icon: '/icon-and-logos/home-page/exchange-rate/',
-      abbr: 'EUR',
-      name: 'Euro',
-      buying: '152.3866',
-      selling: '1244.0086',
-    },
-    {
-      icon: '/icon-and-logos/home-page/exchange-rate/',
-      abbr: 'CHF',
-      name: 'Swiss Frank',
-      buying: '152.3866',
-      selling: '1244.0086',
-    },
-    {
-      icon: '/icon-and-logos/home-page/exchange-rate/',
-      abbr: 'AED',
-      name: 'UAE Dirham',
-      buying: '152.3866',
-      selling: '1244.0086',
-    },
-    {
-      icon: '/icon-and-logos/home-page/exchange-rate/',
-      abbr: 'KWD',
-      name: 'Kuwaiti Dinar',
-      buying: '152.3866',
-      selling: '1244.0086',
-    },
-  ]
+  const formatted = formatDate(Date.now())
 
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null)
 
-  useEffect(() => {
-    console.log('readddd mode is ', expandedIndex)
-  }, [expandedIndex])
-
   // method to truncate large text
   function truncateText(text: string) {
-    return text.slice(0, 10) + '...'
+    return text.slice(0, 100) + '...'
   }
 
   // toggle read more button with text
@@ -170,9 +32,9 @@ export default function Home() {
           />
         </div>
         {/* services section*/}
-        <div className="max-h[951px] flex flex-col py-10 items-center justify-center brr">
+        <div className="max-h[951px] flex flex-col  items-center">
           {/* services */}
-          <ul className="grid grid-cols-2 md:grid-cols-7 justify-items-center items-center gap-[11px]">
+          <ul className="grid grid-cols-2 md:grid-cols-7 py-10 justify-items-center items-center gap-[11px]">
             <li className="flex flex-col items-center gap-3 w-fit">
               <img
                 src="/icon-and-logos/home-page/svg-icons/deposit-icon.svg"
@@ -211,46 +73,48 @@ export default function Home() {
               <p className="text-center text-sm md:text-lg">Trade Services</p>
             </li>
           </ul>
-          <div className="flex flex-col md:flex-row   md:gap-0   justify-between items-center w-full   md:w-full h-auto md:h-[757px]   px-2 pt-10 pb-20 md:px-20 brr">
+          <div className="flex flex-col md:flex-row   md:gap-0   justify-between items-center w-full   md:w-full h-auto md:h-[757px]   px-2 pt-10 pb-20 md:px-20">
             <div className="w-[100%] md:w-[55%] h-auto md:h-full  relative">
               <div className="flex flex-col items-start border border-[var(--color-purple-800)] w-full">
                 <h1 className="text-xl-bold pl-7 py-2.5 bg-[var(--color-purple-800)] w-full text-white">
                   Announcements
                 </h1>
-                <div className="py-5 max-h-[579px] px-7 relative overflow-y-scroll w-full">
+                <div className="py-5 max-h-[579px] px-7 relative overflow-y-auto scrollbar-hide w-full">
                   {announcementContent.map((ann, idx) => {
                     const isExpanded = idx === expandedIndex
                     return (
                       <div
-                        className={`relative flex flex-col gap-10   md:flex-row  w-full min-h-[110px] ${idx < announcementContent.length - 1 ? `` : ``}border-b border-[var(--color-gold-400)] mb-4`}
+                        className={`relative flex flex-col gap-10   md:flex-row  w-full  ${isExpanded ? `h-auto` : `min-h-[110px] md:h-[110px]`} ${idx < announcementContent.length - 1 ? `` : ``}border-b border-[var(--color-gold-400)] mb-4`}
                         key={idx}
                       >
                         <img
                           src={ann.imgSrc}
                           alt="announcement"
-                          className="  max-w-[250px] "
+                          className=" max-w-70  md:max-w-[250px] md:h-[80px]"
                         />
-                        <div
-                          className={`"flex flex-col h-full items-between  items-start gap-2"`}
-                        >
-                          <h2 className="text-md-bold text-[var(--color-purple-800)] ">
+                        {/* <div
+                          className={`"flex flex-col h-full relative justify-center brr-blue items-start gap-2 w-full bg-amber-200"`}
+                        > */}
+                        <div className="flex flex-col h-full relative justify-between items-start w-full  ">
+                          <h2 className="text-md-bold text-[var(--color-purple-800)]   ">
                             {ann.header}
                           </h2>
-                          <p>
+                          <p className={`text-xs-bold mt-2 h-4 md:h-auto overflow-hidden`}>
                             {!isExpanded
                               ? truncateText(ann.content)
                               : ann.content}
                           </p>
                           <button
-                            className="flex gap-1 items-center justify-center"
+                            className="flex gap-1 items-center justify-center py-2 hover:cursor-pointer text-[var(--color-purple-800)]"
                             onClick={() => toggleReadMore(idx)}
                           >
                             <p className="text-sm color-[var(--color-purple-800)">
                               {isExpanded ? <>Read Less</> : <>Read More</>}
                             </p>
                             <img
-                              src="/icon-and-logos/home-page/svg-icons/right-arrow-icon.svg"
+                              src="/icon-and-logos/icons-svg/right-arrow-icon.svg"
                               alt=""
+                              className={`w-4 mt-1 ${isExpanded ? `rotate-180` : ``} `}
                             />
                           </button>
                         </div>
@@ -260,8 +124,60 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="w-[80%] md:w-[40.7%] h-auto md:h-full brr-blue">
-              Exchange Rate
+            <div className="w-[80%] md:w-[40.7%] h-auto md:h-full relative">
+              <div className="flex flex-col h-full bg-[#FBFBFB]">
+                <div className="flex justify-between pl-7 pr-2 md:pr-7 lg:pr-10 xl:pr-20 py-2.5 bg-[var(--color-purple-800)] w-full">
+                  <h1 className="text-xl-bold  text-white">Exchange Rage</h1>
+                  <p className="text-lg-bold text-white">{formatted}</p>
+                </div>
+                <div className="px-7 py-5 w-full h-full">
+                  <div className="flex flex-col justify-items-start max-h-[579px] relative overflow-y-auto scrollbar-hide">
+                    {/* exchange rate table header */}
+                    <table className="w-full table-auto border-collapse">
+                      <thead>
+                        <tr className="text-sm font-bold text-[var(--color-purple-800)]">
+                          <th className="text-left text-sm-bold py-3">
+                            Currency
+                          </th>
+                          <th className="text-left text-sm py-3">Cash Buying</th>
+                          <th className="text-left text-sm py-3">
+                            Cash Selling
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {currency.map((curr, idx) => (
+                          <tr key={idx} className="align-middle">
+                            <td className="py-3">
+                              <div className="flex items-center gap-4">
+                                <img
+                                  src={curr.icon}
+                                  alt={curr.name}
+                                  className="w-6 h-6"
+                                />
+                                <div className="flex flex-col">
+                                  <p className="text-xs font-bold">
+                                    {curr.abbr}
+                                  </p>
+                                  <p className="text-xs">{curr.name}</p>
+                                </div>
+                              </div>
+                            </td>
+                            <td className="border-b border-[var(--color-gold-400)]">
+                              {curr.buying}
+                            </td>
+                            <td className="border-b border-[var(--color-gold-400)]">
+                              {curr.selling}
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+
+                    {/* table body */}
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

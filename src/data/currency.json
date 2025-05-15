@@ -1,0 +1,58 @@
+[
+  {
+    "icon": "/icon-and-logos/home-page/exchange-rate/usd.svg",
+    "abbr": "USD",
+    "name": "US Dollar",
+    "buying": "1244.0086",
+    "selling": "1244.0086"
+  },
+  {
+    "icon": "/icon-and-logos/home-page/exchange-rate/gbp.svg",
+    "abbr": "GBP",
+    "name": "Pound Sterling",
+    "buying": "152.3866",
+    "selling": "1244.0086"
+  },
+  {
+    "icon": "/icon-and-logos/home-page/exchange-rate/eur.svg",
+    "abbr": "EUR",
+    "name": "Euro",
+    "buying": "152.3866",
+    "selling": "1244.0086"
+  },
+  {
+    "icon": "/icon-and-logos/home-page/exchange-rate/chf.svg",
+    "abbr": "CHF",
+    "name": "Swiss Frank",
+    "buying": "152.3866",
+    "selling": "1244.0086"
+  },
+  {
+    "icon": "/icon-and-logos/home-page/exchange-rate/usd.svg",
+    "abbr": "USD",
+    "name": "US Dollar",
+    "buying": "1244.0086",
+    "selling": "1244.0086"
+  },
+  {
+    "icon": "/icon-and-logos/home-page/exchange-rate/gbp.svg",
+    "abbr": "GBP",
+    "name": "Pound Sterling",
+    "buying": "152.3866",
+    "selling": "1244.0086"
+  },
+  {
+    "icon": "/icon-and-logos/home-page/exchange-rate/eur.svg",
+    "abbr": "EUR",
+    "name": "Euro",
+    "buying": "152.3866",
+    "selling": "1244.0086"
+  },
+  {
+    "icon": "/icon-and-logos/home-page/exchange-rate/chf.svg",
+    "abbr": "CHF",
+    "name": "Swiss Frank",
+    "buying": "152.3866",
+    "selling": "1244.0086"
+  }
+]
