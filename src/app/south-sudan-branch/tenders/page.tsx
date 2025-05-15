@@ -1,5 +1,3 @@
 export default function Tenders() {
-    return (
-      <>tenders</>
-    )
-  }
+  return <>tenders</>
+}

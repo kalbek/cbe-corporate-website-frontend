@@ -1,6 +1,3 @@
-export default function TermsAndTarrif
-() {
-    return (
-      <>TermsAndTarrif</>
-    )
-  }
+export default function TermsAndTarrif() {
+  return <>TermsAndTarrif</>
+}

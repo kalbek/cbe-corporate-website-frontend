@@ -1,5 +1,3 @@
 export default function OrgStructure() {
-    return (
-      <>org-structure</>
-    )
-  }
+  return <>org-structure</>
+}

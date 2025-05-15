@@ -1,0 +1,5 @@
+node_modules
+.next
+out
+build
+# Add any other directories or files you want ESLint to ignore

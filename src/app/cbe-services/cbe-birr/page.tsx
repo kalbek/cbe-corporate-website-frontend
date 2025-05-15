@@ -1,3 +1,3 @@
 export default function CbeBirr() {
-  return <>Cbe Birr</>;
+  return <>Cbe Birr</>
 }
