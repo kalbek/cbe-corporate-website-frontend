@@ -281,7 +281,7 @@ body {
   font-size: 20px;
   line-height: 30px;
   letter-spacing: 0%;
-  color: var(--color-gray-neutral-900);
+  /* color: var(--color-gray-neutral-900); */
 }
 
 .text-lg {
@@ -353,7 +353,7 @@ body {
   font-size: 14px;
   line-height: 18px;
   letter-spacing: 0%;
-  color: var(--color-gray-neutral-900);
+  /* color: var(--color-gray-neutral-900); */
 }
 
 /* Supporting Text Styles */
