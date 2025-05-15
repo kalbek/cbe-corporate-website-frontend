@@ -1,7 +1,7 @@
-'use client';
+'use client'
 
-import Image from 'next/image';
-import { useParams } from 'next/navigation';
+import Image from 'next/image'
+import { useParams } from 'next/navigation'
 
 const newsItems = [
   {
@@ -25,8 +25,7 @@ const newsItems = [
   },
   {
     id: 3,
-    title:
-      'የኢትዮጵያ ንግድ ባንክ በባንክ ኢንዱስትሪው ውስጥ ያለውን የገበያ ድርሻ ማሳደጉ ተገለፀ፡፡',
+    title: 'የኢትዮጵያ ንግድ ባንክ በባንክ ኢንዱስትሪው ውስጥ ያለውን የገበያ ድርሻ ማሳደጉ ተገለፀ፡፡',
     date: '04 Apr 2025',
     image: '/images/news-image3.png',
     slug: 'news-title-three',
@@ -35,8 +34,7 @@ const newsItems = [
   },
   {
     id: 4,
-    title:
-      'የኢትዮጵያ ንግድ ባንክ በስምንት ወራት ብር 367.40 ቢሊዮን ተቀማጭ ገንዘብ አሰባሰበ፡፡',
+    title: 'የኢትዮጵያ ንግድ ባንክ በስምንት ወራት ብር 367.40 ቢሊዮን ተቀማጭ ገንዘብ አሰባሰበ፡፡',
     date: '04 Apr 2025',
     image: '/images/news-image4.png',
     slug: 'news-title-Four',
@@ -45,8 +43,7 @@ const newsItems = [
   },
   {
     id: 5,
-    title:
-      'የኢትዮጵያ ንግድ ባንክ የፖስ ማሽኖችን በመጠቀም ክፍያ የፈጸሙ ደንበኞችን ሸለመ።',
+    title: 'የኢትዮጵያ ንግድ ባንክ የፖስ ማሽኖችን በመጠቀም ክፍያ የፈጸሙ ደንበኞችን ሸለመ።',
     date: '03 Apr 2025',
     image: '/images/news-image5.png',
     slug: 'news-title-five',
@@ -82,15 +79,15 @@ const newsItems = [
     description:
       'ባቡል ኽይር የበጎ አድራጎት ድርጅት በቀን ከአራት ሺህ ስምንት መቶ በላይ አባወራዎችን የምገባ አገልግሎት ይሰጣል፡፡',
   },
-];
+]
 
 export default function NewsArticle() {
-  const { slug } = useParams();
+  const { slug } = useParams()
 
-  const newsItem = newsItems.find((item) => item.slug === slug);
+  const newsItem = newsItems.find((item) => item.slug === slug)
 
   if (!newsItem) {
-    return <div>News not found</div>;
+    return <div>News not found</div>
   }
 
   return (
@@ -126,5 +123,5 @@ export default function NewsArticle() {
         </section>
       </div>
     </div>
-  );
+  )
 }

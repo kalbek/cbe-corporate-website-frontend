@@ -1,7 +1,7 @@
-'use client';
-import Link from 'next/link';
-import Image from 'next/image';
-import { useState } from 'react';
+'use client'
+import Link from 'next/link'
+import Image from 'next/image'
+import { useState } from 'react'
 
 const newsItems = [
   {
@@ -25,8 +25,7 @@ const newsItems = [
   },
   {
     id: 3,
-    title:
-      'የኢትዮጵያ ንግድ ባንክ በባንክ ኢንዱስትሪው ውስጥ ያለውን የገበያ ድርሻ ማሳደጉ ተገለፀ፡፡',
+    title: 'የኢትዮጵያ ንግድ ባንክ በባንክ ኢንዱስትሪው ውስጥ ያለውን የገበያ ድርሻ ማሳደጉ ተገለፀ፡፡',
     date: '04 Apr 2025',
     image: '/images/news-image3.png',
     slug: 'news-title-three',
@@ -35,8 +34,7 @@ const newsItems = [
   },
   {
     id: 4,
-    title:
-      'የኢትዮጵያ ንግድ ባንክ በስምንት ወራት ብር 367.40 ቢሊዮን ተቀማጭ ገንዘብ አሰባሰበ፡፡',
+    title: 'የኢትዮጵያ ንግድ ባንክ በስምንት ወራት ብር 367.40 ቢሊዮን ተቀማጭ ገንዘብ አሰባሰበ፡፡',
     date: '04 Apr 2025',
     image: '/images/news-image4.png',
     slug: 'news-title-Four',
@@ -45,8 +43,7 @@ const newsItems = [
   },
   {
     id: 5,
-    title:
-      'የኢትዮጵያ ንግድ ባንክ የፖስ ማሽኖችን በመጠቀም ክፍያ የፈጸሙ ደንበኞችን ሸለመ።',
+    title: 'የኢትዮጵያ ንግድ ባንክ የፖስ ማሽኖችን በመጠቀም ክፍያ የፈጸሙ ደንበኞችን ሸለመ።',
     date: '03 Apr 2025',
     image: '/images/news-image5.png',
     slug: 'news-title-five',
@@ -82,41 +79,43 @@ const newsItems = [
     description:
       'ባቡል ኽይር የበጎ አድራጎት ድርጅት በቀን ከአራት ሺህ ስምንት መቶ በላይ አባወራዎችን የምገባ አገልግሎት ይሰጣል፡፡',
   },
-];
+]
 
 export default function News() {
-  const [activePage, setActivePage] = useState(1);
+  const [activePage, setActivePage] = useState(1)
 
   return (
     <div className="bg-[#ffffff] text-white w-full">
       {/* Hero Section */}
       <div className="relative w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[549.14px]">
-                      <Image
-                          src="/images/announcement-img.png"
-                          alt="News Hero"
-                          layout="fill"
-                          objectFit="cover"
-                          className="opacity-90"
-                      />
-                      <div className="absolute top-1/4 left-4 sm:left-8 md:left-[274px] lg:left-auto lg:right-12 w-full sm:w-3/4 md:w-2/3 lg:w-[523px] max-w-[523px] space-y-4 sm:space-y-5 p-4 sm:p-6 gap-[20px]">
-                          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-[48px] font-pt-sans-caption font-bold leading-tight tracking-tight text-white width-[523px] height-[60px] font-weight-700">
-                              News
-                          </h1>
-                          <p className="sm:text-base lg:text-[18px] font-pt-sans-caption font-normal leading-relaxed text-white width-[523px] height-[84px] font-weight-400">
-                              Explore past announcements, updates, and media coverage from CBE—your source for historical insights and institutional milestones.
-                          </p>
-                          <button className="bg-gray-400 hover:bg-gray-500 text-white sm:text-base px-4 sm:px-5 py-2 sm:py-3 rounded-lg transition-colors font-weight-700 cursor-pointer">
-                              Know More
-                          </button>
-                      </div>
-                      {/* Arrows */}
-                      <div className="absolute left-4 sm:left-6 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-10 sm:h-10 text-white cursor-pointer">
-                          &lt;
-                      </div>
-                      <div className="absolute right-4 sm:right-6 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-10 sm:h-10 text-white cursor-pointer">
-                          &gt;
-                      </div>
-                  </div>
+        <Image
+          src="/images/announcement-img.png"
+          alt="News Hero"
+          layout="fill"
+          objectFit="cover"
+          className="opacity-90"
+        />
+        <div className="absolute top-1/4 left-4 sm:left-8 md:left-[274px] lg:left-auto lg:right-12 w-full sm:w-3/4 md:w-2/3 lg:w-[523px] max-w-[523px] space-y-4 sm:space-y-5 p-4 sm:p-6 gap-[20px]">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-[48px] font-pt-sans-caption font-bold leading-tight tracking-tight text-white width-[523px] height-[60px] font-weight-700">
+            News
+          </h1>
+          <p className="sm:text-base lg:text-[18px] font-pt-sans-caption font-normal leading-relaxed text-white width-[523px] height-[84px] font-weight-400">
+            Explore past announcements, updates, and media coverage from
+            CBE—your source for historical insights and institutional
+            milestones.
+          </p>
+          <button className="bg-gray-400 hover:bg-gray-500 text-white sm:text-base px-4 sm:px-5 py-2 sm:py-3 rounded-lg transition-colors font-weight-700 cursor-pointer">
+            Know More
+          </button>
+        </div>
+        {/* Arrows */}
+        <div className="absolute left-4 sm:left-6 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-10 sm:h-10 text-white cursor-pointer">
+          &lt;
+        </div>
+        <div className="absolute right-4 sm:right-6 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-10 sm:h-10 text-white cursor-pointer">
+          &gt;
+        </div>
+      </div>
 
       {/* News Section */}
       <div className="bg-[#ffffff]">
@@ -144,7 +143,7 @@ export default function News() {
                       objectFit="cover"
                     />
                   </div>
-                <div className="w-full min-h-[312px] gap-[8px] flex flex-col">
+                  <div className="w-full min-h-[312px] gap-[8px] flex flex-col">
                     <p className="w-full h-[18px] font-pt font-bold text-[12px] leading-[18px] tracking-[0] text-[#E8A029] mt-2">
                       {item.date}
                     </p>
@@ -170,7 +169,9 @@ export default function News() {
             <div className="flex justify-center sm:justify-end mt-8 sm:mt-16 gap-[6px] w-[352] h-[36px]">
               <button
                 className="flex w-[77px] h-[36px] px-3 py-2 gap-1 border border-gray-400 rounded-[4px] cursor-pointer items-center disabled:opacity-50 disabled:cursor-not-allowed"
-                onClick={() => setActivePage((prev) => (prev > 1 ? prev - 1 : 1))}
+                onClick={() =>
+                  setActivePage((prev) => (prev > 1 ? prev - 1 : 1))
+                }
                 disabled={activePage === 1}
               >
                 <span className="w-4 h-4 text-[#892890]">&lt;</span>
@@ -191,7 +192,9 @@ export default function News() {
               ))}
               <button
                 className="flex w-[76px] h-[36px] px-3 py-2 gap-1 border border-gray-400 rounded-[4px] cursor-pointer items-center disabled:opacity-50 disabled:cursor-not-allowed"
-                onClick={() => setActivePage((prev) => (prev < 5 ? prev + 1 : 5))}
+                onClick={() =>
+                  setActivePage((prev) => (prev < 5 ? prev + 1 : 5))
+                }
                 disabled={activePage === 5}
               >
                 <span className="w-[32px] h-[20px] text-[#892890] font-inter font-normal text-sm leading-5 tracking-normal">
@@ -204,5 +207,5 @@ export default function News() {
         </div>
       </div>
     </div>
-  );
+  )
 }
