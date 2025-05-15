@@ -1,110 +1,110 @@
-'use client';
+'use client'
 
-import { Metadata } from "next";
-import { DataTable } from "@/components/ui/data-table";
-import { columns, CbeNoorBranchData } from "./columns";
+import { Metadata } from 'next'
+import { DataTable } from '@/components/ui/data-table'
+import { columns, CbeNoorBranchData } from './columns'
 
 const sampleData: CbeNoorBranchData[] = [
   {
-    id: "1",
-    branchName: "ANSAR BRANCH",
-    district: "MEKELLE",
-    branchGrade: "-",
-    region: "-",
-    city: "Alamata",
-    telephone: "-"
+    id: '1',
+    branchName: 'ANSAR BRANCH',
+    district: 'MEKELLE',
+    branchGrade: '-',
+    region: '-',
+    city: 'Alamata',
+    telephone: '-',
   },
   {
-    id: "2",
-    branchName: "HASSEN HUSSEN MESJID",
-    district: "MERKATO",
-    branchGrade: "-",
-    region: "-",
-    city: "Addis Ababa",
-    telephone: "-"
+    id: '2',
+    branchName: 'HASSEN HUSSEN MESJID',
+    district: 'MERKATO',
+    branchGrade: '-',
+    region: '-',
+    city: 'Addis Ababa',
+    telephone: '-',
   },
   {
-    id: "3",
-    branchName: "AMANAH BRANCH",
-    district: "KOLFE",
-    branchGrade: "-",
-    region: "-",
-    city: "Addis Ababa",
-    telephone: "-"
+    id: '3',
+    branchName: 'AMANAH BRANCH',
+    district: 'KOLFE',
+    branchGrade: '-',
+    region: '-',
+    city: 'Addis Ababa',
+    telephone: '-',
   },
   {
-    id: "4",
-    branchName: "BABU RAHEMA BRANCH",
-    district: "DIRE DAWA",
-    branchGrade: "-",
-    region: "-",
-    city: "Dire Dawa",
-    telephone: "-"
+    id: '4',
+    branchName: 'BABU RAHEMA BRANCH',
+    district: 'DIRE DAWA',
+    branchGrade: '-',
+    region: '-',
+    city: 'Dire Dawa',
+    telephone: '-',
   },
   {
-    id: "5",
-    branchName: "SELAM MESJID BRANCH",
-    district: "KIRKOS",
-    branchGrade: "-",
-    region: "-",
-    city: "Addis Ababa",
-    telephone: "-"
+    id: '5',
+    branchName: 'SELAM MESJID BRANCH',
+    district: 'KIRKOS',
+    branchGrade: '-',
+    region: '-',
+    city: 'Addis Ababa',
+    telephone: '-',
   },
   {
-    id: "6",
-    branchName: "MUBAREK BRANCH",
-    district: "JIJIGA",
-    branchGrade: "-",
-    region: "-",
-    city: "-",
-    telephone: "-"
+    id: '6',
+    branchName: 'MUBAREK BRANCH',
+    district: 'JIJIGA',
+    branchGrade: '-',
+    region: '-',
+    city: '-',
+    telephone: '-',
   },
   {
-    id: "7",
-    branchName: "NESSIHA BRANCH",
-    district: "SHASHEMENE",
-    branchGrade: "-",
-    region: "-",
-    city: "Shashemene",
-    telephone: "-"
+    id: '7',
+    branchName: 'NESSIHA BRANCH',
+    district: 'SHASHEMENE',
+    branchGrade: '-',
+    region: '-',
+    city: 'Shashemene',
+    telephone: '-',
   },
   {
-    id: "8",
-    branchName: "Mecca",
-    district: "MEGENAGNA",
-    branchGrade: "-",
-    region: "-",
-    city: "Addis Ababa",
-    telephone: "-"
+    id: '8',
+    branchName: 'Mecca',
+    district: 'MEGENAGNA',
+    branchGrade: '-',
+    region: '-',
+    city: 'Addis Ababa',
+    telephone: '-',
   },
   {
-    id: "9",
-    branchName: "IKLAS BRANCH",
-    district: "ASSELA",
-    branchGrade: "-",
-    region: "-",
-    city: "Asassa",
-    telephone: "-"
+    id: '9',
+    branchName: 'IKLAS BRANCH',
+    district: 'ASSELA',
+    branchGrade: '-',
+    region: '-',
+    city: 'Asassa',
+    telephone: '-',
   },
   {
-    id: "10",
-    branchName: "NASRI BRANCH",
-    district: "SHASHEMENE",
-    branchGrade: "-",
-    region: "-",
-    city: "Dodolla",
-    telephone: "-"
-  }
-];
+    id: '10',
+    branchName: 'NASRI BRANCH',
+    district: 'SHASHEMENE',
+    branchGrade: '-',
+    region: '-',
+    city: 'Dodolla',
+    telephone: '-',
+  },
+]
 
-import { useState } from "react";
+import { useState } from 'react'
 
 export default function CbeNoorBranches() {
-  const [activeTab, setActiveTab] = useState('Cbe Noor Branches');
+  const [activeTab, setActiveTab] = useState('Cbe Noor Branches')
 
   const handleTabClick = (tab: string) => {
-    setActiveTab(tab);
-  };
+    setActiveTab(tab)
+  }
 
   return (
     <div className="bg-white">
@@ -117,19 +117,26 @@ export default function CbeNoorBranches() {
         <div className="absolute inset-0 flex">
           {/* Navigation Arrows */}
           <div className="absolute left-4 top-1/2 transform -translate-y-1/2 z-10">
-            <span className="text-2xl text-white cursor-pointer hover:text-gray-300 transition-colors">&lt;</span>
+            <span className="text-2xl text-white cursor-pointer hover:text-gray-300 transition-colors">
+              &lt;
+            </span>
           </div>
           <div className="absolute right-4 top-1/2 transform -translate-y-1/2 z-10">
-            <span className="text-2xl text-white cursor-pointer hover:text-gray-300 transition-colors">&gt;</span>
+            <span className="text-2xl text-white cursor-pointer hover:text-gray-300 transition-colors">
+              &gt;
+            </span>
           </div>
           {/* Left half - empty */}
           <div className="w-1/2"></div>
           {/* Right half - content */}
           <div className="w-1/2 flex items-center justify-center">
             <div className="max-w-2xl px-8 py-6">
-              <h1 className="text-4xl font-bold mb-4 text-white">Branch Network</h1>
+              <h1 className="text-4xl font-bold mb-4 text-white">
+                Branch Network
+              </h1>
               <p className="max-w-2xl text-base mb-4 text-white !text-white">
-              From city centers to rural communities, our branches bring banking closer to you.
+                From city centers to rural communities, our branches bring
+                banking closer to you.
               </p>
               <a
                 href="#"
@@ -147,77 +154,75 @@ export default function CbeNoorBranches() {
           <div className="flex items-center gap-4 mb-4">
             <div className="flex-1">
               <div className="flex gap-2">
-                <button 
+                <button
                   className={`px-4 py-2 rounded-sm border-[--color-puple-800] text-black font-medium ${
-                    activeTab === 'Branch Network' 
-                      ? 'bg-[#892890]' 
-                      : 'bg-white'
+                    activeTab === 'Branch Network' ? 'bg-[#892890]' : 'bg-white'
                   }`}
                   onClick={() => handleTabClick('Branch Network')}
                 >
                   Branch Network
                 </button>
-                <button 
+                <button
                   className={`px-4 py-2 rounded-sm border-[--color-puple-800] text-black font-medium ${
-                    activeTab === 'POS' 
-                      ? 'bg-[#892890]' 
-                      : 'bg-white'
+                    activeTab === 'POS' ? 'bg-[#892890]' : 'bg-white'
                   }`}
                   onClick={() => handleTabClick('POS')}
                 >
                   POS
                 </button>
-                <button 
+                <button
                   className={`px-4 py-2 rounded-sm border-[--color-puple-800] text-black font-medium ${
-                    activeTab === 'CBE Birr Agents' 
-                      ? 'bg-[#892890]' 
+                    activeTab === 'CBE Birr Agents'
+                      ? 'bg-[#892890]'
                       : 'bg-white'
                   }`}
                   onClick={() => handleTabClick('CBE Birr Agents')}
                 >
                   CBE Birr Agents
                 </button>
-                <button 
+                <button
                   className={`px-4 py-2 rounded-sm border-[--color-puple-800] text-black font-medium ${
-                    activeTab === 'Cbe Noor Branches' 
-                      ? 'bg-[#892890]' 
+                    activeTab === 'Cbe Noor Branches'
+                      ? 'bg-[#892890]'
                       : 'bg-white'
                   }`}
                   onClick={() => handleTabClick('Cbe Noor Branches')}
                 >
                   Cbe Noor Branches
                 </button>
+              </div>
             </div>
-          </div>
-          
-          <div className="flex-1">
-            <div className="relative">
-              <input
-                type="text"
-                placeholder="Search for branch"
-                className="w-full px-4 py-2 pl-10 pr-4 rounded-lg border border-gray-300 focus:border-[#a58aa8] focus:ring-1 focus:ring-[#a58aa8]"
-              />
-              <svg
-                className="absolute left-3 top-2.5 h-5 w-5 text-gray-400"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                />
-              </svg>
-            </div>
-          </div>
-        </div>
 
-        <div className="rounded-lg shadow overflow-hidden">
-        <h4 className="text-2xl font-semibold text-black mb-4">CBE Noor Branches</h4>
-          <DataTable columns={columns} data={sampleData} />
-        </div>
+            <div className="flex-1">
+              <div className="relative">
+                <input
+                  type="text"
+                  placeholder="Search for branch"
+                  className="w-full px-4 py-2 pl-10 pr-4 rounded-lg border border-gray-300 focus:border-[#a58aa8] focus:ring-1 focus:ring-[#a58aa8]"
+                />
+                <svg
+                  className="absolute left-3 top-2.5 h-5 w-5 text-gray-400"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <div className="rounded-lg shadow overflow-hidden">
+            <h4 className="text-2xl font-semibold text-black mb-4">
+              CBE Noor Branches
+            </h4>
+            <DataTable columns={columns} data={sampleData} />
+          </div>
         </div>
 
         <div className="flex items-center justify-center mt-6">
@@ -247,5 +252,5 @@ export default function CbeNoorBranches() {
         </div>
       </div>
     </div>
-  );
+  )
 }

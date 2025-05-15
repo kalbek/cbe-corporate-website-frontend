@@ -1,7 +1,12 @@
-'use client';
+'use client'
 
-import * as React from "react";
-import { ColumnDef, getCoreRowModel, useReactTable, flexRender } from "@tanstack/react-table";
+import * as React from 'react'
+import {
+  ColumnDef,
+  getCoreRowModel,
+  useReactTable,
+  flexRender,
+} from '@tanstack/react-table'
 import {
   Table,
   TableBody,
@@ -9,11 +14,11 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "../table";
+} from '../table'
 
 interface DataTableProps<TData, TValue> {
-  columns: ColumnDef<TData, TValue>[];
-  data: TData[];
+  columns: ColumnDef<TData, TValue>[]
+  data: TData[]
 }
 
 export function DataTable<TData, TValue>({
@@ -24,7 +29,7 @@ export function DataTable<TData, TValue>({
     data,
     columns,
     getCoreRowModel: getCoreRowModel(),
-  });
+  })
 
   return (
     <div className="rounded-md border">
@@ -34,7 +39,13 @@ export function DataTable<TData, TValue>({
             <TableRow key={headerGroup.id}>
               {headerGroup.headers.map((header) => (
                 <TableHead key={header.id}>
-                  {typeof header.column.columnDef.header === 'string' ? header.column.columnDef.header : header.column.columnDef.header?.({ column: header.column, header, table: table })}
+                  {typeof header.column.columnDef.header === 'string'
+                    ? header.column.columnDef.header
+                    : header.column.columnDef.header?.({
+                        column: header.column,
+                        header,
+                        table: table,
+                      })}
                 </TableHead>
               ))}
             </TableRow>
@@ -45,18 +56,20 @@ export function DataTable<TData, TValue>({
             table.getRowModel().rows.map((row) => (
               <TableRow
                 key={row.id}
-                data-state={row.getIsSelected() && "selected"}
+                data-state={row.getIsSelected() && 'selected'}
               >
                 {row.getVisibleCells().map((cell) => (
                   <TableCell key={cell.id}>
-                    {typeof cell.column.columnDef.cell === 'string' ? cell.column.columnDef.cell : cell.column.columnDef.cell?.({
-  row: cell.row,
-  column: cell.column,
-  cell,
-  table: table,
-  getValue: () => cell.getValue(),
-  renderValue: () => cell.renderValue()
-})}
+                    {typeof cell.column.columnDef.cell === 'string'
+                      ? cell.column.columnDef.cell
+                      : cell.column.columnDef.cell?.({
+                          row: cell.row,
+                          column: cell.column,
+                          cell,
+                          table: table,
+                          getValue: () => cell.getValue(),
+                          renderValue: () => cell.renderValue(),
+                        })}
                   </TableCell>
                 ))}
               </TableRow>
@@ -71,5 +84,5 @@ export function DataTable<TData, TValue>({
         </TableBody>
       </Table>
     </div>
-  );
+  )
 }

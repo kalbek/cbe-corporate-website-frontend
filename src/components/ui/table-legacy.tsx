@@ -1,7 +1,7 @@
-'use client';
+'use client'
 
-import * as React from "react";
-import { cn } from "@/lib/utils";
+import * as React from 'react'
+import { cn } from '@/lib/utils'
 
 export const Table = React.forwardRef<
   HTMLTableElement,
@@ -9,11 +9,11 @@ export const Table = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <table
     ref={ref}
-    className={cn("w-full caption-bottom text-sm", className)}
+    className={cn('w-full caption-bottom text-sm', className)}
     {...props}
   />
-));
-Table.displayName = "Table";
+))
+Table.displayName = 'Table'
 
 export const TableHeader = React.forwardRef<
   HTMLTableSectionElement,
@@ -23,39 +23,31 @@ export const TableHeader = React.forwardRef<
     ref={ref}
     className={cn(
       [
-        "sticky top-0 z-[50] border-b bg-background/95 backdrop-blur-sm",
-        "[&>tr]:last:[&>th]:border-b-0",
+        'sticky top-0 z-[50] border-b bg-background/95 backdrop-blur-sm',
+        '[&>tr]:last:[&>th]:border-b-0',
       ],
       className
     )}
     {...props}
   />
-));
-TableHeader.displayName = "TableHeader";
+))
+TableHeader.displayName = 'TableHeader'
 
 export const TableBody = React.forwardRef<
   HTMLTableSectionElement,
   React.HTMLAttributes<HTMLTableSectionElement>
 >(({ className, ...props }, ref) => (
-  <tbody
-    ref={ref}
-    className={cn("relative", className)}
-    {...props}
-  />
-));
-TableBody.displayName = "TableBody";
+  <tbody ref={ref} className={cn('relative', className)} {...props} />
+))
+TableBody.displayName = 'TableBody'
 
 export const TableFooter = React.forwardRef<
   HTMLTableSectionElement,
   React.HTMLAttributes<HTMLTableSectionElement>
 >(({ className, ...props }, ref) => (
-  <tfoot
-    ref={ref}
-    className={cn("border-t", className)}
-    {...props}
-  />
-));
-TableFooter.displayName = "TableFooter";
+  <tfoot ref={ref} className={cn('border-t', className)} {...props} />
+))
+TableFooter.displayName = 'TableFooter'
 
 export const TableRow = React.forwardRef<
   HTMLTableRowElement,
@@ -65,15 +57,15 @@ export const TableRow = React.forwardRef<
     ref={ref}
     className={cn(
       [
-        "hover:bg-muted/50 data-[state=selected]:bg-muted",
-        "focus-within:relative focus-within:z-[1]",
+        'hover:bg-muted/50 data-[state=selected]:bg-muted',
+        'focus-within:relative focus-within:z-[1]',
       ],
       className
     )}
     {...props}
   />
-));
-TableRow.displayName = "TableRow";
+))
+TableRow.displayName = 'TableRow'
 
 export const TableHead = React.forwardRef<
   HTMLTableCellElement,
@@ -83,15 +75,15 @@ export const TableHead = React.forwardRef<
     ref={ref}
     className={cn(
       [
-        "h-12 px-4 text-left align-middle font-medium text-muted-foreground",
-        "border-b [&:has([role=checkbox])]:pr-0",
+        'h-12 px-4 text-left align-middle font-medium text-muted-foreground',
+        'border-b [&:has([role=checkbox])]:pr-0',
       ],
       className
     )}
     {...props}
   />
-));
-TableHead.displayName = "TableHead";
+))
+TableHead.displayName = 'TableHead'
 
 export const TableCell = React.forwardRef<
   HTMLTableCellElement,
@@ -101,15 +93,15 @@ export const TableCell = React.forwardRef<
     ref={ref}
     className={cn(
       [
-        "p-4 align-middle [&:has([role=checkbox])]:pr-0",
-        "border-b [&:has([role=checkbox])]:border-b-0",
+        'p-4 align-middle [&:has([role=checkbox])]:pr-0',
+        'border-b [&:has([role=checkbox])]:border-b-0',
       ],
       className
     )}
     {...props}
   />
-));
-TableCell.displayName = "TableCell";
+))
+TableCell.displayName = 'TableCell'
 
 export const TableCaption = React.forwardRef<
   HTMLTableCaptionElement,
@@ -117,8 +109,8 @@ export const TableCaption = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <caption
     ref={ref}
-    className={cn("mt-4 text-sm text-muted-foreground", className)}
+    className={cn('mt-4 text-sm text-muted-foreground', className)}
     {...props}
   />
-));
-TableCaption.displayName = "TableCaption";
+))
+TableCaption.displayName = 'TableCaption'

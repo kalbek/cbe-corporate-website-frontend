@@ -1,46 +1,46 @@
-'use client';
+'use client'
 
-import { ColumnDef } from "@tanstack/react-table";
+import { ColumnDef } from '@tanstack/react-table'
 
 export interface CbeNoorBranchData {
-  id: string;
-  branchName: string;
-  district: string;
-  branchGrade: string;
-  region: string;
-  city: string;
-  telephone: string;
+  id: string
+  branchName: string
+  district: string
+  branchGrade: string
+  region: string
+  city: string
+  telephone: string
 }
 
 export const columns: ColumnDef<CbeNoorBranchData, any>[] = [
   {
     accessorFn: (row: CbeNoorBranchData) => row.branchName,
-    header: "Branch Name",
+    header: 'Branch Name',
     cell: ({ row }) => row.original.branchName,
   },
   {
     accessorFn: (row: CbeNoorBranchData) => row.district,
-    header: "District",
+    header: 'District',
     cell: ({ row }) => row.original.district,
   },
   {
     accessorFn: (row: CbeNoorBranchData) => row.branchGrade,
-    header: "Branch Grade",
+    header: 'Branch Grade',
     cell: ({ row }) => row.original.branchGrade,
   },
   {
     accessorFn: (row: CbeNoorBranchData) => row.region,
-    header: "Region",
+    header: 'Region',
     cell: ({ row }) => row.original.region,
   },
   {
     accessorFn: (row: CbeNoorBranchData) => row.city,
-    header: "City",
+    header: 'City',
     cell: ({ row }) => row.original.city,
   },
   {
     accessorFn: (row: CbeNoorBranchData) => row.telephone,
-    header: "Telephone",
+    header: 'Telephone',
     cell: ({ row }) => row.original.telephone,
   },
-];
+]
