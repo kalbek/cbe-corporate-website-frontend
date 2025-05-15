@@ -44,7 +44,7 @@ export default function News() {
           objectFit="cover"
           className="opacity-90"
         />
-        <div className="absolute top-1/4 left-4 sm:left-8 md:left-[274px] lg:left-auto lg:right-12 w-full sm:w-3/4 md:w-2/3 lg:w-[523px] max-w-[523px] space-y-4 sm:space-y-5 p-4 sm:p-6 gap-[20px]">
+        <div className="absolute top-1/4 left-5/9 max-w-[523px] space-y-4 sm:space-y-5 p-4 sm:p-6 gap-[20px] text-left">
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-[48px] font-pt-sans-caption font-bold leading-tight tracking-tight text-white width-[523px] height-[60px] font-weight-700">
             Announcements
           </h1>

@@ -82,12 +82,14 @@ const newsItems = [
 ]
 
 export default function News() {
-  const [activePage, setActivePage] = useState(1)
+  const [activePage, setActivePage] = useState(1);
+  const [expandedCardId, setExpandedCardId] = useState<number | null>(null);
+
 
   return (
-    <div className="bg-[#ffffff] text-white w-full">
+    <div className="bg-[#ffffff] text-white w-full flex flex-col">
       {/* Hero Section */}
-      <div className="relative w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[549.14px]">
+      <div className="relative aspect-[1440/519]">
         <Image
           src="/images/announcement-img.png"
           alt="News Hero"
@@ -95,7 +97,7 @@ export default function News() {
           objectFit="cover"
           className="opacity-90"
         />
-        <div className="absolute top-1/4 left-4 sm:left-8 md:left-[274px] lg:left-auto lg:right-12 w-full sm:w-3/4 md:w-2/3 lg:w-[523px] max-w-[523px] space-y-4 sm:space-y-5 p-4 sm:p-6 gap-[20px]">
+        <div className="absolute top-1/4 left-5/9 max-w-[523px] space-y-4 sm:space-y-5 p-4 sm:p-6 gap-[20px] text-left">
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-[48px] font-pt-sans-caption font-bold leading-tight tracking-tight text-white width-[523px] height-[60px] font-weight-700">
             News
           </h1>
@@ -110,10 +112,10 @@ export default function News() {
         </div>
         {/* Arrows */}
         <div className="absolute left-4 sm:left-6 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-10 sm:h-10 text-white cursor-pointer">
-          &lt;
+          <img src="/images/Previous-Slide-Button.png" alt='icon'/>
         </div>
         <div className="absolute right-4 sm:right-6 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-10 sm:h-10 text-white cursor-pointer">
-          &gt;
+            <img src="/images/Next-Slide-Button.png" alt='icon'/>
         </div>
       </div>
 
@@ -133,7 +135,7 @@ export default function News() {
               {newsItems.map((item) => (
                 <div
                   key={item.id}
-                  className="bg-[#ffffff] overflow-hidden transition w-full max-w-[299px] mx-auto h-[569.69px] gap-[20px]"
+                  className="bg-[#ffffff] overflow-hidden transition w-full max-w-[299px] mx-auto flex flex-col h-full gap-[20px]"
                 >
                   <div className="relative w-full h-[237.69px]">
                     <Image
@@ -143,24 +145,30 @@ export default function News() {
                       objectFit="cover"
                     />
                   </div>
-                  <div className="w-full min-h-[312px] gap-[8px] flex flex-col">
-                    <p className="w-full h-[18px] font-pt font-bold text-[12px] leading-[18px] tracking-[0] text-[#E8A029] mt-2">
+                  <div className="w-full flex-1 gap-[8px] flex flex-col">
+                    <p className=" font-pt font-bold text-[12px] leading-[18px] tracking-[0] text-[#E8A029] mt-2">
                       {item.date}
                     </p>
-                    <h3 className="w-full font-bold text-[20px] leading-[24px] tracking-[0] font-kefa text-black mt-2">
+                    <h3 className="font-bold text-[20px] leading-[24px] tracking-[0] font-kefa text-black mt-2">
                       {item.title}
                     </h3>
-                    <p className="w-full font-normal text-[14px] leading-[24px] tracking-[0] text-black mt-2">
-                      {item.description}
-                    </p>
-                    <Link href={`/cbe-resources/news/${item.slug}`}>
-                      <button className="w-[107px] h-[24px] font-pt font-normal text-[16px] leading-[24px] tracking-[0] text-[#892890] cursor-pointer flex items-center">
-                        <span className="w-[83px] h-[24px] font-pt-sans-caption font-normal text-base leading-6 tracking-normal text-[#892890]">
-                          Read More
-                        </span>
-                        <span className="w-[24px] h-[24px]"> &gt; </span>
-                      </button>
-                    </Link>
+                    <div
+  className={`transition-all duration-300 ease-in-out ${
+    expandedCardId === item.id ? 'max-h-[200px] overflow-y-auto' : 'max-h-[60px] overflow-hidden'
+  } text-[#000000] text-sm font-normal leading-relaxed font-pt-sans-caption`}
+>
+  {item.description}
+</div>
+
+                   <button
+  className="text-[#892890] text-sm font-semibold mt-2 hover:underline self-start"
+  onClick={() =>
+    setExpandedCardId(expandedCardId === item.id ? null : item.id)
+  }
+>
+  {expandedCardId === item.id ? 'Read Less' : 'Read More'}
+</button>
+
                   </div>
                 </div>
               ))}
@@ -180,12 +188,10 @@ export default function News() {
                 </span>
               </button>
               {[1, 2, 3, 4, 5].map((page) => (
-                <button
-                  key={page}
-                  className={`w-[31px] h-[36px] px-3 py-2 text-purple-800 bg-white border border-gray-400 rounded-[4px] hover:bg-purple-100 transition-colors ${
+                <button key={page} className="w-[31px] h-[36px] px-3 py-2 text-purple-800 bg-white border border-gray-400 rounded-[4px] hover:bg-purple-100 transition-colors cursor-pointer ${
                     activePage === page ? 'bg-purple-800 text-white' : ''
-                  }`}
-                  onClick={() => setActivePage(page)}
+                  }}
+                  onClick={() => setActivePage(page)"
                 >
                   {page}
                 </button>
