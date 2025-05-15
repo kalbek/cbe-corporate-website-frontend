@@ -73,7 +73,7 @@ export default function Home() {
               <p className="text-center text-sm md:text-lg">Trade Services</p>
             </li>
           </ul>
-          <div className="flex flex-col md:flex-row   md:gap-0   justify-between items-center w-full   md:w-full h-auto md:h-[757px]   px-2 pt-10 pb-20 md:px-20">
+          <div className="flex flex-col md:flex-row  gap-8 md:gap-0  justify-between items-center w-full   md:w-full h-auto md:h-[757px]   px-2 md:pt-10 pb-20 md:px-20">
             <div className="w-[100%] md:w-[55%] h-auto md:h-full  relative">
               <div className="flex flex-col items-start border border-[var(--color-purple-800)] w-full">
                 <h1 className="text-xl-bold pl-7 py-2.5 bg-[var(--color-purple-800)] w-full text-white">
@@ -99,7 +99,7 @@ export default function Home() {
                           <h2 className="text-md-bold text-[var(--color-purple-800)]   ">
                             {ann.header}
                           </h2>
-                          <p className={`text-xs-bold mt-2 h-4 md:h-auto overflow-hidden`}>
+                          <p className={`text-xs-bold mt-2`}>
                             {!isExpanded
                               ? truncateText(ann.content)
                               : ann.content}
@@ -124,7 +124,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="w-[80%] md:w-[40.7%] h-auto md:h-full relative">
+            <div className="w-full md:w-[40.7%] h-auto md:h-full relative">
               <div className="flex flex-col h-full bg-[#FBFBFB]">
                 <div className="flex justify-between pl-7 pr-2 md:pr-7 lg:pr-10 xl:pr-20 py-2.5 bg-[var(--color-purple-800)] w-full">
                   <h1 className="text-xl-bold  text-white">Exchange Rage</h1>
@@ -139,7 +139,9 @@ export default function Home() {
                           <th className="text-left text-sm-bold py-3">
                             Currency
                           </th>
-                          <th className="text-left text-sm py-3">Cash Buying</th>
+                          <th className="text-left text-sm py-3">
+                            Cash Buying
+                          </th>
                           <th className="text-left text-sm py-3">
                             Cash Selling
                           </th>
