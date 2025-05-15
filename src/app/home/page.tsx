@@ -199,7 +199,14 @@ export default function Home() {
           </div>
         </div>
         {/* digital banking section */}
-        <div className="brr h-96 flex-cent-vh">Digital Banking section</div>
+        <div className="brr min-h-96 flex flex-col justify-center items-center gap-5 bg-[var(--color-purple-800)]">
+          <h1 className="text-white text-2xl-bold">CBE Digital Banking</h1>
+          <p className="text-white text-md">
+            Welcome to CBE digital banking—your gateway to a smarter, faster,
+            and more secure way to manage your money from your hand.
+          </p>
+          <h1 className="text-white text-2xl-bold">CBE Digital Banking</h1>
+        </div>
         {/* statistics and social responsibilities section */}
         <div className="brr flex-cent-vh h-[89.33vh] sm:h-[80vh] lg:h-[74.44vh]">
           statistics and social responsibilities section

@@ -275,6 +275,22 @@ body {
   color: var(--color-gray-neutral-900);
 }
 
+.text-2xl {
+  font-family: var(--font-pt-sans-caption);
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 38px;
+  letter-spacing: 0;
+}
+
+.text-2xl-bold {
+  font-family: var(--font-pt-sans-caption);
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 38px;
+  letter-spacing: 0;
+}
+
 .text-xl-bold {
   font-family: var(--font-pt-sans-caption);
   font-weight: 700;
