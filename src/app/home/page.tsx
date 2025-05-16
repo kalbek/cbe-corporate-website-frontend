@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { formatDate } from '@/utils/formatDate'
 import announcementContent from '@/data/announcementContent.json'
 import currency from '@/data/currency.json'
+import { useRef } from 'react'
 
 export default function Home() {
   const formatted = formatDate(Date.now())
@@ -76,7 +77,7 @@ export default function Home() {
           {/* ANNOUNCEMENT AND EXCHANGE RATE SECTION */}
           <div className="relative flex flex-col md:flex-row  gap-8 md:gap-0  justify-between overflow-hidden items-center w-full  md:w-full h-auto md:h-[757px]   px-2 md:pt-10 pb-20 md:px-20">
             {/* decorative right mask  component to hide the right mask overflow => width is arbitrary value*/}
-            <div className="absolute img md:h-[193px] h-[40%] -blue -right-32 top-20 z-80">
+            <div className="absolute img  h-[193px]   -right-32 top-20 z-80">
               <img
                 src="/icon-and-logos/logos-svg/mask-light-bg.svg"
                 alt="Decorative mask"
@@ -84,7 +85,7 @@ export default function Home() {
               />
             </div>
             {/* decorative left mask */}
-            <div className="absolute img md:h-[193px] h-[40%] -blue -left-32 bottom-10 z-80">
+            <div className="absolute img h-[193px] -left-32 bottom-10 z-80">
               <img
                 src="/icon-and-logos/logos-svg/mask-light-bg.svg"
                 alt="Decorative mask"
@@ -199,13 +200,97 @@ export default function Home() {
           </div>
         </div>
         {/* digital banking section */}
-        <div className="brr min-h-96 flex flex-col justify-center items-center gap-5 bg-[var(--color-purple-800)]">
+        <div className="px-[94px] md:px-10 py-20 min-h-96 flex flex-col justify-center items-center gap-6 bg-[var(--color-purple-800)]">
           <h1 className="text-white text-2xl-bold">CBE Digital Banking</h1>
           <p className="text-white text-md">
             Welcome to CBE digital banking—your gateway to a smarter, faster,
             and more secure way to manage your money from your hand.
           </p>
-          <h1 className="text-white text-2xl-bold">CBE Digital Banking</h1>
+          <div className="w-full">
+            <ul className="md:px-6 grid grid-cols-3 md:flex items-center justify-between flex-wrap">
+              <li className="flex flex-col items-center gap-[11px]">
+                <img
+                  src="/icon-and-logos/home-page/svg-icons/internet-banking-icon.svg"
+                  alt=""
+                />
+                <p className="text-sm md:text-lg text-white text-center">
+                  ⁠Internet banking
+                </p>
+              </li>
+              <li>
+                <img
+                  src="/icon-and-logos/icons-svg/divider-line.svg"
+                  alt=""
+                  className="hidden md:block"
+                />
+              </li>
+              <li className="flex flex-col items-center gap-[11px]">
+                <img
+                  src="/icon-and-logos/home-page/svg-icons/mobile-banking-icon.svg"
+                  alt=""
+                />
+                <p className="text-sm md:text-lg text-white text-center whitespace-nowrap">
+                  CBE Mobile <br className='md:hidden' />
+                  <span>Banking</span>
+                </p>
+              </li>
+              <li>
+                <img
+                  src="/icon-and-logos/icons-svg/divider-line.svg"
+                  alt=""
+                  className="hidden md:block"
+                />
+              </li>
+              <li className="flex flex-col items-center gap-[11px] mt-3 md:mt-0">
+                <img
+                  src="/icon-and-logos/home-page/svg-icons/cbe-birr-plus-icon.svg"
+                  alt=""
+                />
+                <p className="text-sm md:text-lg text-white text-center">
+                  CBE Birr Plus
+                </p>
+              </li>
+              <li>
+                <img
+                  src="/icon-and-logos/icons-svg/divider-line.svg"
+                  alt=""
+                  className="hidden md:block"
+                />
+              </li>
+              <li className="flex flex-col items-center gap-[11px]">
+                <img
+                  src="/icon-and-logos/home-page/svg-icons/ethio-direct-icon.svg"
+                  alt=""
+                />
+                <p className="text-sm md:text-lg text-white text-center">
+                  Ethio Direct
+                </p>
+              </li>
+              <li>
+                <img
+                  src="/icon-and-logos/icons-svg/divider-line.svg"
+                  alt=""
+                  className="hidden md:block"
+                />
+              </li>
+              <li className="flex flex-col items-center gap-[11px]">
+                <img
+                  src="/icon-and-logos/home-page/svg-icons/cbe-nedaj-icon.svg"
+                  alt=""
+                />
+                <p className="text-sm md:text-lg text-white text-center">
+                  CBE Nedaj
+                </p>
+              </li>
+              {/* <li>
+                <img
+                  src="/icon-and-logos/icons-svg/divider-line.svg"
+                  alt=""
+                  className="hidden"
+                />
+              </li> */}
+            </ul>
+          </div>
         </div>
         {/* statistics and social responsibilities section */}
         <div className="brr flex-cent-vh h-[89.33vh] sm:h-[80vh] lg:h-[74.44vh]">
