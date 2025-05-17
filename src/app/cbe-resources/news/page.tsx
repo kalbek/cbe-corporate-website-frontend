@@ -89,7 +89,7 @@ export default function News() {
   return (
     <div className="bg-[#ffffff] text-white w-full flex flex-col">
       {/* Hero Section */}
-      <div className="relative aspect-[1440/519]">
+      <div className="relative lg:aspect-[1440/519] sm:aspect-[9/6] aspect-[13/7]">
         <Image
           src="/images/announcement-img.png"
           alt="News Hero"
@@ -97,16 +97,16 @@ export default function News() {
           objectFit="cover"
           className="opacity-90"
         />
-        <div className="absolute top-1/4 left-5/9 max-w-[523px] space-y-4 sm:space-y-5 p-4 sm:p-6 gap-[20px] text-left">
-          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-[48px] font-pt-sans-caption font-bold leading-tight tracking-tight text-white width-[523px] height-[60px] font-weight-700">
+        <div className="absolute lg:top-1/4 md:top-40 top-10 left-5/9 max-w-[523px]  space-y-4 sm:space-y-5 p-4 sm:p-2 gap-[20px] text-left">
+          <h1 className="text-2xl sm:text-1xl md:text-4xl lg:text-[48px] font-pt-sans-caption font-bold leading-tight tracking-tight text-white width-[523px] height-[60px] font-weight-700">
             News
           </h1>
-          <p className="sm:text-base lg:text-[18px] font-pt-sans-caption font-normal leading-relaxed text-white width-[523px] height-[84px] font-weight-400">
+          <p className="text-[12px] md:text-[18px] lg:text-[18px] font-pt-sans-caption font-normal leading-relaxed text-white width-[523px] height-[84px] font-weight-400">
             Explore past announcements, updates, and media coverage from
             CBE—your source for historical insights and institutional
             milestones.
           </p>
-          <button className="bg-gray-400 hover:bg-gray-500 text-white sm:text-base px-4 sm:px-5 py-2 sm:py-3 rounded-lg transition-colors font-weight-700 cursor-pointer">
+          <button className="bg-gray-400 hover:bg-gray-500 text-white text-[10px] md:text-[18px] lg:text-[18px] px-4 sm:px-5 py-2 sm:py-3 rounded-lg transition-colors font-weight-700 cursor-pointer">
             Know More
           </button>
         </div>
@@ -152,23 +152,20 @@ export default function News() {
                     <h3 className="font-bold text-[20px] leading-[24px] tracking-[0] font-kefa text-black mt-2">
                       {item.title}
                     </h3>
-                    <div
-  className={`transition-all duration-300 ease-in-out ${
-    expandedCardId === item.id ? 'max-h-[200px] overflow-y-auto' : 'max-h-[60px] overflow-hidden'
-  } text-[#000000] text-sm font-normal leading-relaxed font-pt-sans-caption`}
->
-  {item.description}
-</div>
-
-                   <button
-  className="text-[#892890] text-sm font-semibold mt-2 hover:underline self-start"
-  onClick={() =>
-    setExpandedCardId(expandedCardId === item.id ? null : item.id)
-  }
->
-  {expandedCardId === item.id ? 'Read Less' : 'Read More'}
-</button>
-
+                    <div className={`transition-all duration-300 ease-in-out ${
+                          expandedCardId === item.id ? 'max-h-[200px] overflow-y-auto' : 'max-h-[60px] overflow-hidden'
+                        } text-[#000000] text-sm font-normal leading-relaxed font-pt-sans-caption`}
+                      >
+                        {item.description}
+                      </div>
+                    <button className="text-[#892890] font-pt-sans-serif mt-2 hover:underline self-start cursor-pointer flex items-center gap-1"
+                        onClick={() =>
+                          setExpandedCardId(expandedCardId === item.id ? null : item.id)
+                        }
+                      >
+                        {expandedCardId === item.id ? 'Read Less' : 'Read More'}
+                        <img src="/images/Frame.png" alt='greater-than-sign'/>
+                      </button>
                   </div>
                 </div>
               ))}
